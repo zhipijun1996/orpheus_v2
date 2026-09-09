@@ -7,6 +7,12 @@
 __pycache__/
 *.pyc
 
+# Node
+node_modules/
+
+# Harness transient worker sessions
+runtime/FRESH_SESSIONS/
+
 # Ren'Py generated
 game/saves/
 game/cache/
