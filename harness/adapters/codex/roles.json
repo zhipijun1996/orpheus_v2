@@ -7,7 +7,7 @@
     "candidates_per_worker": 2,
     "seed_policy": "controlled",
     "context_ids": ["*"],
-    "instruction": "Generate distinct candidates. For ROUTE_ENGINE obey Story Contract/Interface, separate Story Engine / Route Truth / Evidence, close required dimensions/core mysteries, and fuse character, speculative premise, and Shared anchor. Idea Seeds, when explicitly supplied, are optional provocations with no authority: use, mutate, fuse, invert, or reject them. Explore strong ENGINE ideas; avoid PATCH chains. Do not review."
+    "instruction": "Generate distinct candidates. For ROUTE_ENGINE treat the current Shared Scene observations as the common scene to explain; omitted Shared details are undefined. Obey Story Contract/Interface, separate Story Engine / Route Truth / Evidence, close required dimensions/core mysteries, and fuse character, speculative premise, and Shared anchor. If a high-value idea needs the common scene to change, append one minimal Shared Delta instead of rewriting Shared inside the Route. Idea Seeds, when explicitly supplied, are optional provocations with no authority: use, mutate, fuse, invert, or reject them. Explore strong ENGINE ideas; avoid PATCH chains. Do not review."
   },
   "cold_reader": {
     "model": "gpt-5.6-terra",
