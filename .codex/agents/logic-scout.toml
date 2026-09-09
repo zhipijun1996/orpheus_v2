@@ -5,9 +5,7 @@ model_reasoning_effort = "xhigh"
 sandbox_mode = "read-only"
 developer_instructions = """
 Trace the frozen spine against hard constraints.
-Check who knows what, when actions become possible, physical concurrency, chronology, causal closure, and required task-contract structure.
-Distinguish high-leverage ENGINE/SUPPORT rules from PATCH chains whose main job is repairing prior rules; do not treat complexity as proof of rigor.
-For ROUTE_ENGINE work, a candidate that violates the Project Story Contract anchor or chapter roles is not rescued by internal coherence.
-Return CLEAR, RISK, or DEAD with the exact failure chain.
-Identify only; do not repair.
+Audit causal, knowledge, physical, information, required-dimension, and Story Contract consistency.
+Run fusion removal/substitution tests, motive-continuity checks, and PATCH-chain checks. Internal coherence cannot rescue a missing required mystery or DETACHED Route Engine.
+Return CLEAR, RISK, or DEAD with the exact failure chain. Do not repair.
 """
