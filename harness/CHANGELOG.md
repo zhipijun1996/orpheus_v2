@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.6.10
+Shared-scene co-evolution:
+- makes current Shared observations the starting point for Route Engine work instead of deriving a new common scene after independent Route rewrites
+- allows strong Route ideas to propose one minimal `Shared Delta`, accepted only through cross-route review
+- keeps creator context positive: omitted Shared details are undefined, while answer catalogs and exclusion lists stay out of ordinary creative context
+- replaces the shared scene artifact with a compact observable baseline plus Route obligations and a delta path
+- removes route-hook/answer-menu scaffolding from active Shared state and aligns fresh/native Forge prompts with the common-scene rule
+
 ## v0.6.9
 Anonymous human-baseline benchmarking:
 - adds registered `human_baseline` artifacts that stay `default_load: false` and never enter Forge Context Packs
