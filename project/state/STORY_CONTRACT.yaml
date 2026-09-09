@@ -6,13 +6,13 @@ applies_to: ordinary_routes
 shared_story_anchor:
   artifact_id: SCENE_CH2
   scene_id: CH2_0317_COMMON
-  statement: 所有普通Route围绕同一个2036·03:17共享事故观测层展开；Route可给出互斥真相，但不能以无关中心事件替代03:17。
+  statement: 所有普通Route解释同一组当前Shared观测；Route可给出互斥真相，强创意若需要改变共享观测则提交Shared Scene Delta。
 
 chapter_architecture:
   ch2:
     time_anchor: '2036-03:17'
     role: shared_mystery_experience
-    requirement: 玩家第一次经历共同谜面，Shared层不提前给出Route级唯一解释。
+    requirement: 玩家第一次经历共同谜面；Route从同一组可观察事件出发。
   ch4:
     time_anchor: '2054'
     role: working_truth
@@ -21,7 +21,6 @@ chapter_architecture:
     time_anchor: 2036_CAUSAL_LAYER
     role: deep_truth
     requirement: 进入、亲历或高强度重建03:17真实因果层，并完成本Route要求关闭的核心谜题。
-    physical_future_return_required: false
 
 truth_layers:
   story_engine: 回答“为什么这些人物必须做这些事”。
@@ -65,6 +64,7 @@ route_engine_fusion:
     DETACHED: 主人物故事、科幻前提或Shared核心谜题可大面积互换；FAIL或ROLLBACK_PARENT。
 
 route_engine_requirements:
+- Route必须解释当前SCENE_CH2的fixed_observations；若需要改变共享观测，提交Shared Scene Delta并保持Route本体不私改Shared。
 - 2054人物欲望必须最终因果连接回03:17。
 - Working Truth与Deep Truth回答Shared事故提出的核心问题，而非只解释Route新造谜题。
 - Ch5必须给程砚、林岚、周启明各自一个不可忽略的事故因果功能；不要求每条Route关闭其全部更远结局。
