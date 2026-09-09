@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.6.5
+Story-spine retention:
+- adds task-semantic context routing through Registry `load_for_modes` instead of relying only on target dependencies
+- adds a Project Story Contract so ordinary Route Engines must remain attached to the shared story anchor without forcing one Route mechanism
+- defines the current chapter function contract: Ch2 shared mystery experience, Ch4 2054 Working Truth, Ch5 entry into the 2036 causal layer; physical future return remains Route-local
+- Route Interfaces can add Route-specific `story_obligations`
+- Story Gate now rejects internally coherent but detached Route Engines whose main causal story survives removal of the required shared anchor
+- Forge/Review/Synthesis role adapters explicitly enforce Story Contract obligations
+- adds regression coverage for detached Route Engines and CI coverage for semantic Context Packs
+
 ## v0.6.4
 Fresh-session execution:
 - distinguishes `FRESH_SESSION`, `SUBAGENT_THREAD`, and `SELF_REVIEW` instead of treating native subagents as guaranteed context-isolated reviewers
