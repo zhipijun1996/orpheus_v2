@@ -47,6 +47,12 @@ else:
         errors.append("Story Contract Ch5 must enter the 2036 causal layer")
     if chapters.get("ch5",{}).get("physical_future_return_required") is not False:
         errors.append("Story Contract must not require physical future return in every Route")
+    mech=contract.get("mechanism_discipline",{})
+    classes=mech.get("classes",{})
+    if set(classes) != {"ENGINE","SUPPORT","PATCH"}:
+        errors.append("Mechanism discipline must distinguish ENGINE/SUPPORT/PATCH")
+    if not mech.get("explore") or not mech.get("synthesis_preference"):
+        errors.append("Mechanism discipline must protect Explore novelty and rank by leverage at Synthesis")
 
 origin_iface=yaml.safe_load((root/"project/state/interfaces/ORIGIN.yaml").read_text(encoding="utf-8"))
 if origin_iface.get("story_obligations",{}).get("shared_anchor") != "CH2_0317_COMMON":
