@@ -32,6 +32,31 @@ unknown=" ".join(ch2["character_knowledge"]["does_not_know"])
 if "未来是否成功发展出成熟阿尔戈" not in unknown:
     errors.append("CH2 missing future-success knowledge boundary")
 
+# Project Story Contract: retain the shared story spine without forcing one Route mechanism.
+contract_path=root/"project/state/STORY_CONTRACT.yaml"
+if not contract_path.exists():
+    errors.append("Missing Project Story Contract")
+else:
+    contract=yaml.safe_load(contract_path.read_text(encoding="utf-8"))
+    if contract.get("shared_story_anchor",{}).get("artifact_id") != "SCENE_CH2":
+        errors.append("Story Contract must anchor ordinary Routes to SCENE_CH2")
+    chapters=contract.get("chapter_architecture",{})
+    if str(chapters.get("ch4",{}).get("time_anchor")) != "2054":
+        errors.append("Story Contract Ch4 must anchor to 2054")
+    if chapters.get("ch5",{}).get("time_anchor") != "2036_CAUSAL_LAYER":
+        errors.append("Story Contract Ch5 must enter the 2036 causal layer")
+    if chapters.get("ch5",{}).get("physical_future_return_required") is not False:
+        errors.append("Story Contract must not require physical future return in every Route")
+
+origin_iface=yaml.safe_load((root/"project/state/interfaces/ORIGIN.yaml").read_text(encoding="utf-8"))
+if origin_iface.get("story_obligations",{}).get("shared_anchor") != "CH2_0317_COMMON":
+    errors.append("ORIGIN Interface missing shared story anchor obligation")
+
+registry=yaml.safe_load((root/"project/registry/ARTIFACT_REGISTRY.yaml").read_text(encoding="utf-8"))["entries"]
+story_entry=next((e for e in registry if e.get("id")=="STORY_CONTRACT"),None)
+if not story_entry or "ROUTE_ENGINE" not in story_entry.get("load_for_modes",[]):
+    errors.append("STORY_CONTRACT must load for ROUTE_ENGINE mode")
+
 for p in (root/"harness").rglob("*"):
     if not p.is_file() or p.name == "CHANGELOG.md":
         continue
