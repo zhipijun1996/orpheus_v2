@@ -45,6 +45,17 @@ Record only audits actually run. For each:
 - decisive evidence
 - unresolved risk
 
+Also record compact execution provenance for cognition-sensitive roles:
+```yaml
+role:
+agent:
+model:
+reasoning_effort:
+context_mode: FRESH_ALLOWLIST | INHERITED | SELF_REVIEW
+independent: true | false
+```
+
+`Cold Reader: PASS` is independence-qualified only when `context_mode: FRESH_ALLOWLIST` and `independent: true`.
 End with one final Harness verdict.
 
 ### STATE_DELTA.yaml
