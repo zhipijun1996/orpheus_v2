@@ -16,6 +16,7 @@ Default:
 - `RAW_SEED`: Forge / Seed Collision only.
 - `ARCHIVED`: provenance, audit, or recovery only.
 - Cross-route work reads Interfaces before full Routes.
+- Creator context states positive commitments and observations; omitted content is undefined. Answer catalogs and exclusion lists are not routed unless the task is explicitly evaluative.
 
 ## Task semantics
 Task mode activates Registry artifacts tagged `load_for_modes`; their dependencies load normally. Use this for required story/chapter contracts or anchor material instead of repeating them in prompts or default context.
