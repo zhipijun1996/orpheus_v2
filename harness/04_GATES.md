@@ -14,7 +14,7 @@ Working Truth is credible/actionable; Deep Truth creates Reveal Delta; evidence 
 6–12 beats form one causal story; actions/mechanisms are plain-language legible; project comprehension tests pass; required core characters retain causal function; mechanism count alone is not a quality metric.
 
 ## Integration Gate
-Interfaces are current; Shared-open dimensions remain open; Route-required commitments exist; collisions are resolved/deferred/escalated.
+A Route explains the current Shared observations without silently replacing them. Any proposed Shared Delta is reviewed across affected Routes before Shared changes; Interfaces and Route commitments remain current.
 
 ## Closure Gate
 `PLAUSIBLE -> SOLVABLE -> PROVEN`
