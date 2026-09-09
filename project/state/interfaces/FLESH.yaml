@@ -2,25 +2,25 @@ route_id: FLESH
 status: current
 promise: 独立未来肉身参与2036救援。
 shared_inputs:
-  required:
-  - SH-001
-  - SH-002
-  - SH-004
-  - SH-005
-  - SH-006
-  must_remain_open:
-  - 成熟阿尔戈机制
-  - NULL身份
-  - 周启明最后关键区间
-  - 林岚消失机制
+  required: [SH-001, SH-002, SH-004, SH-005, SH-006]
+shared_open_dimensions:
+- mature_argo_capability
+- null_ontology
+- zhou_final_interval
+- lin_disappearance_mechanism
+route_dimensions:
+  route_defining_embodiment:
+    engagement: REQUIRED
+    resolution: LOCAL_COMMITMENT_REQUIRED
+story_obligations:
+  shared_anchor: CH2_0317_COMMON
+  must_reinterpret: [core_route_mysteries]
 route_outputs:
   can_explain:
   - 未来程砚为何能成为独立第四人
   - 部分NULL物理动作
   - 周启明被替换出危险位置的可能性
-  leaves_unexplained:
-  - 养女DNA意义
-  - 其它Route机制
+  leaves_unexplained: [biological_relation_meaning, other_route_mechanisms]
 collision_surface:
 - Shared层若宣布阿尔戈绝不传物质则FLESH失效。
 - Shared层若锁死NULL为某个非独立身体机制会压缩FLESH。
