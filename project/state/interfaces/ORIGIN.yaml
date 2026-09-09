@@ -1,24 +1,35 @@
 route_id: ORIGIN
 status: draft
-promise: 真实父女关系驱动的黑暗Route；机制与越线行为仍开放。
+promise: 事故后真实父女关系驱动的黑暗Route；具体身份与时间机制由本Route自行发现。
 shared_inputs:
-  required:
-  - SH-001
-  - SH-006
-  must_remain_open:
-  - 养女2036参与方式
-  - DNA意义
-  - 成熟阿尔戈机制
-  - NULL身份
+  required: [SH-001, SH-004, SH-005, SH-006]
+shared_open_dimensions:
+- daughter_temporal_role
+- biological_relation_meaning
+- mature_argo_capability
+- null_ontology
+route_dimensions:
+  daughter_temporal_role:
+    engagement: REQUIRED
+    resolution: LOCAL_COMMITMENT_REQUIRED
+  parent_child_temporal_causality:
+    engagement: REQUIRED
+    resolution: LOCAL_COMMITMENT_REQUIRED
+  biological_relation_meaning:
+    engagement: OPTIONAL
+    resolution: MAY_REMAIN_OPEN
 story_obligations:
   shared_anchor: CH2_0317_COMMON
-  must_reinterpret:
-  - 至少一个03:17核心Shared观测必须进入本Route主因果链，并在Ch4形成Working Truth、在Ch5获得新的因果或人物意义。
+  must_reinterpret: [core_route_mysteries]
+  fusion:
+  - 父女关系必须由事故后的真实共同人生形成，并直接驱动高潮中的关键选择。
+  - Route定义性时间/因果前提必须改变父女能够做出的选择，而非仅作为调查工具。
+  - 父女关键选择必须制造、阻止或重新定义03:17核心因果，而非只恢复证据。
 route_outputs:
   can_explain:
-  - 父女关系对2054程砚最终选择的影响（待开发）
+  - 父女关系如何进入03:17因果链并改变其意义
   leaves_unexplained:
-  - 其它Route核心机制
+  - 未承担本Route核心功能的跨Route机制
 collision_surface:
-- Shared层把养女写成林岚替代品会直接伤害ORIGIN。
-- 在ORIGIN Story Engine成熟前，不应耗尽所有Shared异常的解释自由。
+- Shared层把女儿关系预先解释为替代关系会伤害ORIGIN。
+- Shared层不得在ORIGIN Story Engine成熟前锁死其核心身份、时间角色或机制维度。
