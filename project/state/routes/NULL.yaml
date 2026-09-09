@@ -1,0 +1,25 @@
+route_id: 'NULL'
+status: draft
+truth_scope: meta
+promise: 在多个普通Route都以彼此冲突的因果模型闭合后，处理‘同一组观测为何容纳多个完整模型’以及来源/无源问题。
+development_rule: 普通Route未成熟前不反向规定它们必须服务某个预写Meta答案。
+candidate_seeds:
+- 某些奥菲斯信息、算法、参数或名字可能不存在世界内部第一作者。
+- 玩家是唯一跨Route看到互不兼容闭合模型的观察者。
+- NULL可在Meta层指向‘世界内部来源缺失’，不必只指某个人。
+story_engine:
+  status: deferred
+  spine_candidate: null
+working_truth:
+  status: open
+  statement: null
+deep_truth:
+  status: open
+  statement: null
+closure: open
+depends_on_routes:
+- FLESH
+- ECHO
+- ORIGIN
+- BLINDSPOT
+- NOBODY

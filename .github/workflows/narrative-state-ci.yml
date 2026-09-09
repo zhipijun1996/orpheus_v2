@@ -1,0 +1,25 @@
+name: narrative-state-ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  narrative-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pyyaml
+      - run: python harness/tools/lint_harness.py
+      - run: python tools/lint_project.py
+      - run: python tools/validate_registry.py
+      - run: python tools/build_context_pack.py ROUTE_FLESH CI_FLESH
+      - run: python tools/build_context_pack.py ROUTE_ECHO CI_ECHO
+      - run: python tools/build_context_pack.py ROUTE_ORIGIN CI_ORIGIN
+      - run: python tools/build_context_pack.py ROUTE_BLINDSPOT CI_BLINDSPOT
+      - run: python tools/build_context_pack.py ROUTE_NOBODY CI_NOBODY
+      - run: python tools/build_context_pack.py ROUTE_NULL CI_NULL

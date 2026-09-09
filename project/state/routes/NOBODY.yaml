@@ -1,0 +1,29 @@
+route_id: NOBODY
+status: candidate
+truth_scope: route
+promise: 03:17完全没有未来干预；2054程砚只通过2036本地证据重建事故，所有疑似未来来源的观测均由2036人物或系统解释。
+human_seed_constraints:
+- 本Route阿尔戈从未成功实现时间旅行。
+- 2036事故没有未来人、未来人格、未来物件或未来信息干涉。
+- NOBODY角色不提出‘时间机器成功/未来访客’假设；跨Route反差只发生在玩家层。
+- 2054林岚可以是由2036人格数据经普通时间保存后在2054本地重建的副本；这不是Route主轴。
+story_engine:
+  status: promising_candidate
+  spine_candidate: 2054程砚重新调查03:17本地事故，试图识别NULL。Ch4可先把证据收束到‘周启明就是NULL’，Ch5再发现NULL从来不是唯一人物身份，而是多个2036本地执行者/身份未知记录被归并后的表象。
+  human_core: 程砚失去的不是时间机器，而是他18年里一直投射成外部敌人的那个‘NULL’。
+working_truth:
+  status: candidate
+  statement: 周启明就是NULL。
+deep_truth:
+  status: provisional_core
+  statement: 没有任何未来演员进入03:17；NULL并非唯一神秘人物，所有Shared异常都能由2036本地人物/系统完整解释。
+candidate_mechanisms:
+- 'NULL可能源于IDENTITY: NULL等身份缺失字段，而不是人名。'
+- 多个相同/近似黑色应急装备的本地穿戴者可能被玩家误认为一个人。
+- 周启明可以是至少一组NULL动作的执行者。
+closure: solvable-risk
+open_questions:
+- 建立共享Ch2逐项Anomaly Ledger并给每一项2036本地解释。
+- 任何看似‘提前知道未来’的动作都必须由2036已有信息、专业判断或系统预警解释。
+- 肩部动作需要可信的2036本地技术/医疗动机。
+- NULL多穿戴者演出必须公平而非终章偷换。

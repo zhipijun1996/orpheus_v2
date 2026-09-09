@@ -1,0 +1,18 @@
+route_id:
+status: draft
+promise:
+shared_inputs:
+  required: []
+  must_remain_open: []
+shared_observations:
+  accepts: []
+route_outputs:
+  can_explain: []
+  leaves_unexplained: []
+route_local_truth:
+  owns: []
+exposure:
+  required: []
+collision_surface:
+  sensitive_facts: []
+depends_on: []

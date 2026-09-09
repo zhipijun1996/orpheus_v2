@@ -1,0 +1,5 @@
+state: EMPTY
+task_id: null
+generated_by: tools/build_context_pack.py
+files: []
+notes: Disposable runtime artifact. Do not infer project truth from an old Context Pack.

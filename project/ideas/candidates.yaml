@@ -1,0 +1,54 @@
+status: provisional_registry
+default_load: false
+candidates:
+- id: CAND-DAUGHTER-DNA
+  scope:
+  - ECHO
+  - ORIGIN
+  - shared
+  status: candidate
+  statement: 成年养女与林岚具有相同/近似核DNA；程砚仍明确把她当独立女儿而非林岚替代。
+  risk: 若过早Shared化，会让FLESH/BLINDSPOT/NOBODY背负不必要解释义务。
+- id: CAND-ECHO-DAUGHTER-OVERLAY
+  scope:
+  - ECHO
+  status: candidate
+  statement: 成年养女可能叠写2036林岚，形成第二组人格/身体关系。
+  risk: 可能重复程砚/年轻程砚的主体性冲突。
+- id: CAND-FLESH-ZHOU-SWAP
+  scope:
+  - FLESH
+  status: candidate
+  statement: 未来程砚利用独立身体替周启明承担原本危险位置，使导师能离开。
+  risk: 需要更强Ch5二次反转，不能只做闭环自我牺牲。
+- id: CAND-BLINDSPOT-REPAIR-LOOP
+  scope:
+  - BLINDSPOT
+  status: candidate
+  statement: 每次合理修正过去都解决一个问题并产生新下游问题，程砚不断有理由‘再改一次’。
+  risk: 闭环知识账本复杂，不能变成宇宙自动收税。
+- id: CAND-BLINDSPOT-NULL-DOOR
+  scope:
+  - BLINDSPOT
+  status: candidate
+  statement: 某次用于救人的盲区干预同时建立NULL后来伤害林岚的局部条件。
+  risk: 如果仅为制造痛苦而追加，会显作者手。
+- id: CAND-NOBODY-IDENTITY-NULL
+  scope:
+  - NOBODY
+  status: candidate
+  statement: 'NULL可能源于IDENTITY: NULL等身份字段缺失，多个2036本地执行者被归并成一个神秘人物。'
+  risk: 过于机械时会削弱人物反转；需靠周启明等本地行动动机赋予戏剧性。
+- id: CAND-EVIDENCE-SHAPES-18Y
+  scope:
+  - architecture
+  - shared
+  status: candidate
+  statement: Ch2救援行动的证据存活形状，成为Ch3解释和18年研究路径的种子，而不是直接菜单式选Route。
+  risk: 若显式化为保存A数据=选择A Route，会机械化。
+- id: CAND-NULL-NO-SOURCE
+  scope:
+  - 'NULL'
+  status: candidate
+  statement: 某些奥菲斯信息/算法/名字可能不存在世界内部第一作者；不同Route中仍可能出现共同表象。
+  risk: 不能预先强迫所有普通Route为Meta答案服务。

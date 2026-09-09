@@ -1,0 +1,17 @@
+# OS/editor
+.DS_Store
+*.swp
+*.tmp
+
+# Python
+__pycache__/
+*.pyc
+
+# Ren'Py generated
+game/saves/
+game/cache/
+*.rpyc
+
+# Build outputs
+dist/
+build/

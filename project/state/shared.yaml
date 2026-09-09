@@ -1,0 +1,66 @@
+state_id: SHARED_CURRENT
+status: provisional
+scope: shared
+records:
+- id: SH-001
+  status: provisional
+  statement: 2036年03:17发生奥菲斯实验重大事故，成为程砚、林岚、周启明关系与后续18年故事的共同创伤节点。
+  exposure:
+    shared: 'yes'
+- id: SH-002
+  status: provisional
+  statement: 2036事故前，程砚、林岚、周启明共同参与面向过去的信息实验/奥菲斯研究。
+  exposure:
+    shared: 'yes'
+- id: SH-003
+  status: candidate
+  statement: 事故最后阶段，年轻程砚直接确认周启明仍在核心区域；其后的精确行动不在Shared层被完整确定。
+  exposure:
+    shared: candidate
+- id: SH-004
+  status: provisional
+  statement: 事故现场存在被角色/日志称作NULL的黑色应急人物表象，但Shared层不把NULL固定为唯一身份、唯一身体或唯一来源。
+  exposure:
+    shared: 'yes'
+- id: SH-005
+  status: provisional
+  statement: 林岚在事故现场遭受肩部相关伤害，并从年轻程砚之后的正常可确认生活中消失。
+  exposure:
+    shared: 'yes'
+- id: SH-006
+  status: provisional
+  statement: 年轻程砚从03:17事故中幸存，并在之后多年持续调查事故与研究奥菲斯/阿尔戈。
+  exposure:
+    shared: 'yes'
+- id: SH-007
+  status: candidate
+  statement: 事故官方记录/留存证据不足以唯一重建周启明最后关键区间，也不足以在Shared层固定其Route级最终命运。
+  exposure:
+    shared: candidate
+- id: SH-008
+  status: candidate
+  statement: 事故中保留少量来源、执行者或意图未被当时人物完全解释的异常，供不同Route给出互斥解释。
+  exposure:
+    shared: candidate
+- id: SH-009
+  status: provisional
+  statement: 2036人物知道奥菲斯正在研究向过去发送信息，但不知道未来是否成功发展出成熟阿尔戈，也不知道任何‘未来访客’事实。
+  exposure:
+    shared: 'yes'
+- id: SH-010
+  status: candidate
+  statement: Shared层不把03:17事故的直接原因归结为NULL本人的蓄意能量破坏；NULL相关行为与事故失控原因保持可分离。
+  exposure:
+    shared: candidate
+must_remain_open:
+- 成熟阿尔戈到底能传递身体、人格、有限干预，还是根本未成功
+- NULL是一人、多主体、宿主现象、身份字段，还是其它Route级解释
+- 周启明最后关键区间的精确行动与Route级命运
+- 林岚从2036消失后的机制
+- 2054林岚的连续性/重建机制
+- 养女与林岚生物学相似性的意义与曝光方式
+- 所有事故异常是否同源
+- 2036是否客观存在任何真正未来来源的人/物/信息
+notes:
+- Shared状态是当前工作层，不等于全部LOCKED Canon。
+- 若任一普通Route Interface要求某事实保持开放，Shared层不得为了另一Route方便而提前写死。

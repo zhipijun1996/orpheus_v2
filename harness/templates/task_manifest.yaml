@@ -1,0 +1,13 @@
+task:
+  id:
+  mode:
+  target:
+  decision_required: false
+context:
+  must: []
+  may: []
+  late: []
+output:
+  required: []
+  max_length:
+terminal_state:

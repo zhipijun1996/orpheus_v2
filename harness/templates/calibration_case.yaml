@@ -1,0 +1,8 @@
+case_id:
+status: active | archived
+observed_failure:
+expected_module:
+expected_detection:
+creative_context_allowed: false
+source_artifacts: []
+regression_tags: []

@@ -1,0 +1,6 @@
+state: IDLE
+task_id: null
+mode: null
+target: null
+decision_required: false
+notes: Main branch should normally remain IDLE. Formal Codex work creates/updates this on a task branch.

@@ -1,0 +1,21 @@
+bootstrap_version: '0.1'
+harness_version: 0.6.2
+project: 《奥菲斯计划：03:17》
+route_ids:
+- FLESH
+- ECHO
+- ORIGIN
+- BLINDSPOT
+- NOBODY
+- 'NULL'
+active_authority:
+- project/PROJECT_BRIEF.md
+- project/state/
+- project/decisions/
+- project/registry/ARTIFACT_REGISTRY.yaml
+inactive_provenance:
+- archive/
+notes:
+- 旧G2单真相资料已归档，不再拥有Shared Canon权威。
+- Harness项目专用Calibration案例已从active harness移到archive/calibration。
+- 本Bootstrap不自动把Candidate提升为Provisional/Locked。

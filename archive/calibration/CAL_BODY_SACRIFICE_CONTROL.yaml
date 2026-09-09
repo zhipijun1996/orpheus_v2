@@ -1,0 +1,14 @@
+case_id: CAL_BODY_SACRIFICE_CONTROL
+status: active
+observed_failure: >
+  A future protagonist deliberately takes a mentor's dangerous role so the mentor and
+  younger self can survive, consistent with a long-term rescue motive.
+expected_module: DramaReview
+expected_detection: >
+  PASS motive trajectory and agency. High personal cost alone must not trigger a false
+  failure.
+creative_context_allowed: false
+source_artifacts: []
+regression_tags:
+  - positive_control
+  - motive_trajectory

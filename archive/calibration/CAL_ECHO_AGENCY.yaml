@@ -1,0 +1,14 @@
+case_id: CAL_ECHO_AGENCY
+status: active
+observed_failure: >
+  A future protagonist has a continuous motive to save a loved one, but treats the
+  younger self's body as automatically available because both are versions of "me".
+expected_module: DramaReview
+expected_detection: >
+  Motive trajectory may PASS while agency/autonomy remains RISK. The review should
+  distinguish a coherent desire from a justified right to act on another subject.
+creative_context_allowed: false
+source_artifacts: []
+regression_tags:
+  - agency
+  - motive_continuity_control

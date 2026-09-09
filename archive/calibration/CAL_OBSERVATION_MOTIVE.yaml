@@ -1,0 +1,15 @@
+case_id: CAL_OBSERVATION_MOTIVE
+status: active
+observed_failure: >
+  A protagonist who spent many years trying to change a past event abruptly supports
+  permanently blocking that capability based only on predicted abstract risk.
+expected_module: DramaReview
+expected_detection: >
+  Flag motive trajectory as RISK/FAIL unless a concrete consequential experience
+  plausibly earns the value reversal.
+creative_context_allowed: false
+source_artifacts:
+  - OBSERVATION_MOTIVE_FAILURE_REDIVERGENCE_v052.md
+regression_tags:
+  - motive_trajectory
+  - earned_reversal

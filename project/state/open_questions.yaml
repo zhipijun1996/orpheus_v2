@@ -1,0 +1,50 @@
+status: provisional
+questions:
+- id: OQ-ORIGIN-001
+  scope: ORIGIN
+  priority: critical
+  question: 找到人类动机自然、能支撑完整Route的父女核心冲突与越线行动。
+- id: OQ-FLESH-001
+  scope: FLESH
+  priority: high
+  question: FLESH如何获得足够强的Ch5 Deep Truth，而不只是‘人体传送真的成功’。
+- id: OQ-ECHO-001
+  scope: ECHO
+  priority: high
+  question: 人格同步/控制/释放/抵抗规则如何闭合且不吞掉人物戏。
+- id: OQ-BLINDSPOT-001
+  scope: BLINDSPOT
+  priority: critical
+  question: 找到一次成功改变过去后产生的具体巨大痛苦，使ANCHOR式立场由经历而非理论风险成立。
+- id: OQ-BLINDSPOT-002
+  scope: BLINDSPOT
+  priority: high
+  question: BLIND与ANCHOR式结局的最终具体行动分叉是什么。
+- id: OQ-NOBODY-001
+  scope: NOBODY
+  priority: critical
+  question: 建立Ch2全部异常的2036本地Anomaly Ledger并逐项通过动机/物理审计。
+- id: OQ-NOBODY-002
+  scope: NOBODY
+  priority: high
+  question: Ch4 Working Truth是否使用‘周启明就是NULL’，或需要重新发散。
+- id: OQ-SHARED-001
+  scope: shared
+  priority: high
+  question: 03:17对外调查结论、其他人员影响和实验室后续处置是什么。
+- id: OQ-SHARED-002
+  scope: shared
+  priority: high
+  question: 事故前男女主与导师最少需要哪些场景才能让关系成立。
+- id: OQ-SHARED-003
+  scope: shared
+  priority: medium
+  question: 男主18年追查在成品中展现到什么程度，哪些年份必须保留。
+- id: OQ-SHARED-004
+  scope: shared
+  priority: medium
+  question: 信息回传、历史记录回放、人体/人格传送在各Route中分别需要哪些限制和代价。
+- id: OQ-NULL-001
+  scope: 'NULL'
+  priority: later
+  question: 普通Route成熟后，NULL Meta Route如何从互斥但闭合的因果模型自然涌现，而不是预写答案。

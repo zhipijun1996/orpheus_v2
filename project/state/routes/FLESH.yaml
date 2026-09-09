@@ -1,0 +1,22 @@
+route_id: FLESH
+status: candidate
+truth_scope: route
+promise: 成熟阿尔戈能真实传送物质/人体；未来程砚作为独立身体回到2036，救援价值来自真正多出一具身体。
+story_engine:
+  status: developing
+  spine_candidate: 程砚用18年发展出真实人体回返能力，并主动成为自己曾憎恨的NULL；独立未来身体让他能承担原本缺失的第四人角色，甚至替周启明留在危险位置。
+  human_core: 他不是被迫成为NULL，而是为了救林岚/导师主动选择成为那个人。
+working_truth:
+  status: candidate
+  statement: 未来程砚能够以独立第四人身份回到事故现场并补足救援并发。
+deep_truth:
+  status: open
+  statement: 当前尚缺一个强于‘人体传送真的成功’本身的Ch5二次反转。
+route_truth:
+- 本Route成熟阿尔戈具备物质/人体传送能力。
+- 未来程砚可作为与年轻程砚同时存在的独立身体。
+closure: plausible-to-solvable
+open_questions:
+- FLESH如何获得区别于旧G1的Ch5 Deep Truth。
+- 未来程砚替周启明承担危险是否为最佳情绪终局。
+- NULL的共享演出如何不提前锁死ECHO/NOBODY。

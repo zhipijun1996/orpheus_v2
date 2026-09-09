@@ -1,0 +1,34 @@
+status: provisional
+decisions:
+- id: HD-001
+  status: locked
+  scope: architecture
+  decision: 每条普通Route内部采用单一、自洽时间线；不依赖平行世界之间的角色交互。
+- id: HD-002
+  status: provisional
+  scope: architecture
+  decision: 不同Route可以拥有彼此互斥的Route Truth；Shared层优先共享观测而非统一底层解释。
+- id: HD-003
+  status: provisional
+  scope: route_architecture
+  decision: BLIND与ANCHOR合并为BLINDSPOT同一母Route的后段价值分叉。
+- id: HD-004
+  status: provisional
+  scope: route_ids
+  decision: 当前工作Route名为FLESH / ECHO / ORIGIN / BLINDSPOT / NOBODY / NULL(meta)。
+- id: HD-005
+  status: provisional
+  scope: BLINDSPOT
+  decision: BLINDSPOT采用‘两次有限干预 + 一次真正完整回返’作为当前单线候选结构。
+- id: HD-006
+  status: provisional
+  scope: NOBODY
+  decision: NOBODY中03:17没有任何未来干预；角色不提出时间机器成功/未来访客假设，跨Route反差只发生在玩家层。
+- id: HD-007
+  status: provisional
+  scope: CH2
+  decision: 2036人物知道奥菲斯在研究向过去发送信息，但不知道未来阿尔戈是否成功，也不知道未来访客事实。
+- id: HD-008
+  status: provisional
+  scope: 'NULL'
+  decision: NULL Meta Route等普通Route成熟后再开发，不允许预写Meta真相反向约束普通Route。

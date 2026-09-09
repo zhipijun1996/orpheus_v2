@@ -1,0 +1,26 @@
+route_id: ECHO
+status: candidate
+truth_scope: route
+promise: 成熟阿尔戈传递人格/神经状态而非新增肉身；未来程砚抵达年轻程砚内部，救援冲突转为主体性与控制权。
+story_engine:
+  status: mature_candidate
+  spine_candidate: 2054程砚相信自己会作为独立未来人回到2036补足救援，但真正抵达时发现自己只进入年轻程砚；没有第四具身体，他必须面对是否把年轻自己的身体当作可支配资源。
+  human_core: 共同生命来源不等于拥有替另一个主体作决定的权利。
+working_truth:
+  status: candidate
+  statement: 未来程砚将作为独立返回者/第四人补足事故现场的救援并发。
+deep_truth:
+  status: candidate
+  statement: 未来程砚没有新增身体，而是进入年轻程砚内部；真正缺失的第四人依然不存在。
+signature_beats:
+- 未来程砚看到年轻程砚完好的手/身体，瞬间理解‘少了一个人’。
+- 后段出现重新夺取年轻身体控制权的机会，未来程砚最终选择不夺。
+route_truth:
+- 本Route成熟阿尔戈主要/仅传递人格或神经状态。
+- 年轻程砚保持本地主体性，未来程砚不能自动把年轻身体视作自己的资源。
+candidate_extensions:
+- 成年养女可能与2036林岚形成另一组人格/身体兼容关系，但当前不锁。
+closure: solvable-risk
+open_questions:
+- 人格同步、释放、抵抗规则需要Closure精确定义。
+- 第二个NULL/养女机制是否保留，以及它如何不重复程砚的主体性冲突。

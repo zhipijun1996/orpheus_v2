@@ -1,0 +1,10 @@
+id:
+path:
+kind:
+status: candidate
+default_load: false
+scope:
+supersedes: []
+superseded_by: []
+source: []
+notes:

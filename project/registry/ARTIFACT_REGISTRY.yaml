@@ -1,0 +1,63 @@
+version: '0.1'
+entries:
+- {id: HARNESS_CORE, path: harness/00_CORE.md, kind: policy, status: stable, default_load: true, scope: harness, depends_on: []}
+- {id: PROJECT_BRIEF, path: project/PROJECT_BRIEF.md, kind: state, status: provisional, default_load: true, scope: project, depends_on: []}
+- {id: HUMAN_DECISIONS, path: project/decisions/HUMAN_DECISIONS.yaml, kind: decision_state, status: provisional, default_load: true, scope: project, depends_on: []}
+- {id: SHARED_STATE, path: project/state/shared.yaml, kind: state, status: provisional, default_load: true, scope: shared, depends_on: []}
+- {id: CHAR_CHENG, path: project/state/characters/CHENG_YAN.yaml, kind: state, status: provisional, default_load: true, scope: character, depends_on: []}
+- {id: CHAR_LIN, path: project/state/characters/LIN_LAN.yaml, kind: state, status: provisional, default_load: true, scope: character, depends_on: []}
+- {id: CHAR_ZHOU, path: project/state/characters/ZHOU_QIMING.yaml, kind: state, status: provisional, default_load: true, scope: character, depends_on: []}
+- {id: CHAR_DAUGHTER, path: project/state/characters/DAUGHTER.yaml, kind: state, status: candidate, default_load: false, scope: character, depends_on: []}
+- {id: SCENE_CH2, path: project/state/scenes/CH2.yaml, kind: scene_state, status: candidate, default_load: false, scope: shared, depends_on: [SHARED_STATE]}
+- {id: OPEN_QUESTIONS, path: project/state/open_questions.yaml, kind: operational_state, status: provisional, default_load: false, scope: project, depends_on: []}
+- {id: INTEGRATION_DEBT, path: project/state/integration_debt.yaml, kind: operational_state, status: provisional, default_load: false, scope: project, depends_on: []}
+- id: ROUTE_FLESH
+  path: project/state/routes/FLESH.yaml
+  kind: route_state
+  status: candidate
+  default_load: false
+  scope: FLESH
+  depends_on: [SHARED_STATE, CHAR_CHENG, CHAR_LIN, CHAR_ZHOU]
+- id: ROUTE_ECHO
+  path: project/state/routes/ECHO.yaml
+  kind: route_state
+  status: candidate
+  default_load: false
+  scope: ECHO
+  depends_on: [SHARED_STATE, CHAR_CHENG, CHAR_LIN, CHAR_ZHOU]
+- id: ROUTE_ORIGIN
+  path: project/state/routes/ORIGIN.yaml
+  kind: route_state
+  status: draft
+  default_load: false
+  scope: ORIGIN
+  depends_on: [SHARED_STATE, CHAR_CHENG, CHAR_LIN, CHAR_ZHOU, CHAR_DAUGHTER]
+- id: ROUTE_BLINDSPOT
+  path: project/state/routes/BLINDSPOT.yaml
+  kind: route_state
+  status: provisional
+  default_load: false
+  scope: BLINDSPOT
+  depends_on: [SHARED_STATE, CHAR_CHENG, CHAR_LIN, CHAR_ZHOU]
+- id: ROUTE_NOBODY
+  path: project/state/routes/NOBODY.yaml
+  kind: route_state
+  status: candidate
+  default_load: false
+  scope: NOBODY
+  depends_on: [SHARED_STATE, CHAR_CHENG, CHAR_LIN, CHAR_ZHOU]
+- id: ROUTE_NULL
+  path: project/state/routes/NULL.yaml
+  kind: route_state
+  status: draft
+  default_load: false
+  scope: NULL
+  depends_on: [SHARED_STATE]
+- {id: IFACE_FLESH, path: project/state/interfaces/FLESH.yaml, kind: route_interface, status: provisional, default_load: false, scope: FLESH, depends_on: [ROUTE_FLESH, SHARED_STATE]}
+- {id: IFACE_ECHO, path: project/state/interfaces/ECHO.yaml, kind: route_interface, status: provisional, default_load: false, scope: ECHO, depends_on: [ROUTE_ECHO, SHARED_STATE]}
+- {id: IFACE_ORIGIN, path: project/state/interfaces/ORIGIN.yaml, kind: route_interface, status: provisional, default_load: false, scope: ORIGIN, depends_on: [ROUTE_ORIGIN, SHARED_STATE]}
+- {id: IFACE_BLINDSPOT, path: project/state/interfaces/BLINDSPOT.yaml, kind: route_interface, status: provisional, default_load: false, scope: BLINDSPOT, depends_on: [ROUTE_BLINDSPOT, SHARED_STATE]}
+- {id: IFACE_NOBODY, path: project/state/interfaces/NOBODY.yaml, kind: route_interface, status: provisional, default_load: false, scope: NOBODY, depends_on: [ROUTE_NOBODY, SHARED_STATE]}
+- {id: IDEAS_RAW, path: project/ideas/raw_seeds.yaml, kind: idea_pool, status: raw_seed, default_load: false, scope: project, depends_on: []}
+- {id: IDEAS_CANDIDATE, path: project/ideas/candidates.yaml, kind: idea_pool, status: candidate, default_load: false, scope: project, depends_on: []}
+- {id: IDEAS_ARCHIVED, path: project/ideas/archived.yaml, kind: idea_pool, status: archived, default_load: false, scope: project, depends_on: []}

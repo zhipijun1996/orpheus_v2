@@ -1,0 +1,13 @@
+status: archived
+default_load: false
+items:
+- id: ARCH-ZERO-TRAUMA-PRESERVE
+  reason: 人物动机失败：女儿为了保留‘被创伤塑造的父亲’而维护父亲创伤，难以共情且自洽负担过重。
+- id: ARCH-ZERO-REMOTE-PUPPET
+  reason: 匿名未来消息不足以为2036人物提供重大行动动机，角色会变成剧情棋子。
+- id: ARCH-NOBODY-2054-COPY-CENTERED
+  reason: 把NOBODY错误地做成2054数字林岚身份线，偏离‘03:17根本无未来干预’的Route功能。
+- id: ARCH-BLIND-STANDALONE
+  reason: BLIND与ANCHOR共享同一底层观测机制，已合并为BLINDSPOT母Route继续开发。
+- id: ARCH-NOTEBOOK-POLLUTION-PRIMARY
+  reason: ‘未来污染导师笔记’可作局部idea，但不足以承担BLINDSPOT整体人物动机。

@@ -1,0 +1,8 @@
+status: provisional_registry
+default_load: false
+seeds:
+- id: SEED-META-OBSERVATION-UI
+  status: raw_seed
+  scale: meta
+  raw: 'Meta层可考虑使用OBSERVATION / SOURCE: NULL之类的菜单或UI意象。'
+  notes: 仅是表现种子，不代表NULL Meta机制。

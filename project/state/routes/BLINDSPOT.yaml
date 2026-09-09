@@ -1,0 +1,36 @@
+route_id: BLINDSPOT
+status: provisional
+truth_scope: route
+promise: 未来回返无法违背已经被可靠、唯一确定的过去；尚未被未来唯一确定的历史过程可能存在多个自洽完成。
+architecture:
+  status: provisional
+  merged_from:
+  - BLIND
+  - ANCHOR
+  forks:
+  - BLIND-like ending
+  - ANCHOR-like ending
+  selected_return_structure: 两次有限跨时干预 + 一次最终完整回返
+story_engine:
+  status: developing
+  spine_candidate: 程砚与林岚先通过有限干预撞上已观测锚点，发现越努力改变前因越会收束回同一关键观测；随后找到锚点后的历史盲区并设计救援。最终分歧应由‘真正成功改变过去后产生的具体后果’推动，而非抽象伦理。
+  human_core: 程砚18年都想改变过去，因此ANCHOR式立场必须被亲历代价赚出来。
+working_truth:
+  status: candidate
+  statement: 只要关键过程没有被未来唯一确定，就可能在不违背既有锚点的情况下完成周启明生还等此前不可能的救援。
+deep_truth:
+  status: open
+  statement: 后段成功代价与BLIND/ANCHOR价值分叉仍需重新设计。
+mechanism:
+  status: solvable
+  anchor_example: 年轻程砚最后一次明确看到周启明仍在核心；精确时刻03:16:22目前只是候选时间。
+  blind_interval: 锚点后至03:17之间存在未被未来唯一确定的过程。
+  single_timeline_note: 两次有限干预一直是2036历史中的来源未知异常；2054角色只是后来成为其原因，不发生历史重写。
+active_candidates:
+- ‘再改一次就好’：每次合理修复产生新下游问题，迫使人物不断想再修一次。
+- 某次救援干预可能同时建立NULL伤害林岚的局部条件。
+closure: mechanism_solvable / story_consequence_open
+open_questions:
+- 找到一次真实成功的过去改变及其无法忽视的具体痛苦后果。
+- 让BLIND与ANCHOR两种结局都符合程砚既有人格。
+- 决定周启明生还后的现实/情绪结果是否仍需要。

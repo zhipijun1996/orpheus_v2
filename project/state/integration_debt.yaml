@@ -1,0 +1,40 @@
+status: provisional
+debts:
+- id: ID-001
+  priority: critical
+  scope:
+  - ORIGIN
+  - shared
+  statement: ORIGIN尚无成熟Story Engine；Shared Ch2不能在它成熟前过度硬化。
+  resolution_condition: ORIGIN至少形成一条通过Human Motive/Drama Gate的Story Engine，并重新跑普通Route Interface Test。
+- id: ID-002
+  priority: critical
+  scope:
+  - shared
+  - ECHO
+  - FLESH
+  - NOBODY
+  statement: NULL的共享演出必须足够强，又不能锁死唯一身份、独立身体、宿主或未来来源。
+  resolution_condition: CH2 Scene Architecture能被FLESH/ECHO/NOBODY同时接受。
+- id: ID-003
+  priority: critical
+  scope:
+  - shared
+  - NOBODY
+  statement: Shared Ch2不得出现独立证明未来来源的人/物/信息，否则NOBODY失效。
+  resolution_condition: NOBODY Anomaly Ledger对全部Shared异常给出2036本地可行解释。
+- id: ID-004
+  priority: high
+  scope:
+  - shared
+  - BLINDSPOT
+  statement: Shared层必须为周启明最后关键区间保留足够未确定空间，同时仍要有强烈事故戏。
+  resolution_condition: BLINDSPOT Scene Proof与共享Ch2 Scene Architecture同时通过。
+- id: ID-005
+  priority: high
+  scope:
+  - ECHO
+  - ORIGIN
+  - shared
+  statement: 养女/DNA候选可能同时服务ECHO与ORIGIN，但不得在Shared层过早解释成单一机制。
+  resolution_condition: ORIGIN成熟后重新审计DAUGHTER Interface。

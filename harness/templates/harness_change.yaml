@@ -1,0 +1,14 @@
+change_id:
+type: CORE | PROCESS | TEMPLATE | PROJECT_DATA
+status: CHANGE_CANDIDATE | EXPERIMENTAL | STABLE | REVERTED
+observed_failure:
+proposed_statement:
+scope:
+replaces: []
+contamination_check:
+  solution_specific: false
+  narrows_unrelated_routes: false
+  quality_test_form: true
+  absorbable_by_existing_rule: false
+validation_tasks: []
+human_approved_core: false

@@ -1,0 +1,20 @@
+route_id: ORIGIN
+status: draft
+promise: 真实父女关系驱动的黑暗Route；机制与越线行为仍开放。
+shared_inputs:
+  required:
+  - SH-001
+  - SH-006
+  must_remain_open:
+  - 养女2036参与方式
+  - DNA意义
+  - 成熟阿尔戈机制
+  - NULL身份
+route_outputs:
+  can_explain:
+  - 父女关系对2054程砚最终选择的影响（待开发）
+  leaves_unexplained:
+  - 其它Route核心机制
+collision_surface:
+- Shared层把养女写成林岚替代品会直接伤害ORIGIN。
+- 在ORIGIN Story Engine成熟前，不应耗尽所有Shared异常的解释自由。
