@@ -1,12 +1,20 @@
 # Changelog
 
+## v0.6.3
+Execution independence:
+- formal creative Sprints delegate cognition-sensitive roles to fresh subagent threads when the runtime supports them
+- independent reviewers run from frozen artifacts and do not inherit author rationale or other review conclusions
+- model diversity is preferred for at least one independent reviewer
+- parallelism is concentrated in divergent generation and read-heavy review; active State writes remain single-writer
+- audit outputs record agent/model/effort/context provenance
+- platform-specific model routing lives outside generic Harness policy
+
 ## v0.6.2
 Dimension evolution:
 - replaced the soft 3–5 target with an explicit `REFINE / SPLIT / ADD / MERGE / DELETE` decision protocol
 - made 3–6 a normal range rather than a fixed cap
 - new dimensions require cross-case recurrence and measurable decision value
 - exceeding 6 triggers consolidation review rather than automatic rejection
-
 
 ## v0.6.1
 Self-learning hardening:
@@ -17,7 +25,6 @@ Self-learning hardening:
 - added regression requirements before stable promotion
 - enforced replace/merge/delete before add
 - added context-conservation and Harness simplify triggers
-
 
 ## v0.6.0
 Architecture hardening:
