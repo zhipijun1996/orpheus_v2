@@ -2,34 +2,28 @@
 
 Purpose: let Routes develop independently while remaining composable.
 
-Each active Route maintains one compact Interface.
-
 ```yaml
 route_id:
-status: draft | current | stale
+status:
 promise:
 shared_inputs:
   required: []
-  must_remain_open: []
+shared_open_dimensions: []
+route_dimensions:
+  <dimension_id>:
+    engagement: REQUIRED | OPTIONAL
+    resolution: LOCAL_COMMITMENT_REQUIRED | FUNCTION_REQUIRED | PARTIAL_ALLOWED | MAY_REMAIN_OPEN
 story_obligations:
   shared_anchor:
   must_reinterpret: []
-shared_observations:
-  accepts: []
 route_outputs:
   can_explain: []
   leaves_unexplained: []
-route_local_truth:
-  owns: []
-exposure:
-  required: []
-collision_surface:
-  sensitive_facts: []
-depends_on: []
+collision_surface: []
 ```
 
-## Integration
-Compare Interfaces; derive common observations; preserve required-open facts; ticket incompatible needs; resolve by changing Shared/Route or escalating; harden Shared only after the Gate passes.
+`shared_open_dimensions` names unresolved dimensions only; never enumerate candidate answers. Shared openness is an integration policy, not permission to skip a Route question. Project Story Contracts and `route_dimensions` independently decide Route engagement and closure.
 
-## Rule
-The Interface states dependencies, freedoms, and Route-specific story obligations, not the full solution. Story obligations may tighten, never weaken, a Project Story Contract.
+Integration compares Interfaces, preserves Shared-open dimensions, checks required Route commitments, tickets collisions, and hardens Shared only after the Gate passes.
+
+The Interface records functions, dependencies, and open dimensions—not solution catalogs. Route obligations may tighten, never weaken, a Project Story Contract.
