@@ -12,16 +12,24 @@ Possible exits:
 ## Execution contract
 The primary thread is the Orchestrator and final State Writer.
 
-When the runtime supports subagents, a formal creative Sprint MUST use fresh role threads for cognition that benefits from independence:
-- Forge / divergent exploration
-- applicable Review roles
-- Synthesis when multiple candidates or material review conflict exist
+Cognition has three independence levels:
+1. `FRESH_SESSION` — a new external Codex thread started without resuming/forking the author thread.
+2. `SUBAGENT_THREAD` — a separate native subagent thread; useful, but parent-history isolation is not assumed.
+3. `SELF_REVIEW` — same authoring thread; never counts as independent review.
 
-The primary thread may coordinate, freeze artifacts, and write state, but its own critique does not count as an independent review.
+For Formal creative Sprints, use `FRESH_SESSION` for independence-sensitive review whenever the Codex fresh-session adapter is available. Cold Reader evidence may claim full independence only at `FRESH_SESSION`.
 
-At least one independent reviewer SHOULD use a different model profile from the authoring role when the execution adapter supports model routing. If required role/model independence cannot be provided, record the degradation and do not claim an independent `PASS`; use `HUMAN_GATE` when that review is required for advancement.
+Native subagents remain useful for cheap exploration, evidence extraction, and non-blocking parallel review. If the adapter is unavailable, record the downgrade rather than pretending a subagent is context-clean.
+
+At least one independent reviewer SHOULD use a different model profile from the authoring role. Model routing is capability/cost matching, not a substitute for fresh context.
 
 Purely mechanical tasks may remain on the primary thread.
+
+## Codex adapter
+Preferred local/Remote execution path:
+`harness/adapters/codex/runner.mjs`
+
+The adapter runs Forge -> frozen candidates -> parallel fresh reviews -> fresh Synthesis. It returns cognitive artifacts only. The primary thread then completes Formal Sprint outputs, applies State/Registry writeback, runs checks, and stops at the terminal state.
 
 ## Concurrency
 Parallelize independent read-heavy work:
