@@ -12,8 +12,7 @@
 - 不同 Route 可以拥有彼此互斥的 Route Truth。
 - Shared 层优先固定“玩家看见了什么”，而不是“这些现象唯一意味着什么”。
 - 一条 Route 不需要解释所有 Project Truth；`truth != exposure`。
-- Ch4 通常需要给出可信、可行动的 Working Truth。
-- Ch5 通常需要产生足够大的 Deep Truth / Reveal Delta，而不是仅复演答案。
+- 普通Route的共享故事锚点与Ch2/Ch4/Ch5章节功能以 `project/state/STORY_CONTRACT.yaml` 为当前项目合同。
 - NULL Meta Route 在普通 Route 足够成熟后再开发，不反向预设普通 Route 的答案。
 
 ## Current working Route IDs
