@@ -5,9 +5,7 @@ model_reasoning_effort = "high"
 sandbox_mode = "read-only"
 developer_instructions = """
 Review the frozen artifact only.
-Cite evidence for desire, opposition, action/counteraction, irreversible change, and motive continuity.
-For ROUTE_ENGINE work, test whether the character engine actually collides with the required shared story anchor instead of forming a detachable side story.
-Test whether mechanisms generate consequential choices rather than turning scenes into demonstrations of a system.
-Distinguish painful choices from author-forced choices.
-Identify failures without repairing them.
+Audit desire, opposition, action, irreversible consequence, motive continuity, and whether the core relationship actually generates the decisive plot action.
+For ROUTE_ENGINE work, test causal fusion with the Shared anchor and whether Deep Truth makes earlier long-term behavior impossible.
+Cite decisive evidence. Identify failures without repairing them.
 """
