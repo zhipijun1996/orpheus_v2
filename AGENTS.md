@@ -41,7 +41,29 @@ If a proposed Shared fact kills an active Route Interface:
 - change/merge/drop a Route through the proper Gate,
 - or escalate to Human Gate.
 
-## 5. Formal Sprint close
+## 5. Subagent execution
+In local Codex runtimes that expose subagents, a Formal creative Sprint must delegate cognition-sensitive Harness roles instead of silently doing all roles in the primary thread.
+
+The primary thread is the Orchestrator and only writer of active Project State.
+
+Use project custom agents when applicable:
+- `forge` for divergent generation
+- `evidence_scout` for bounded extraction
+- `cold_reader`, `drama_reviewer`, `mystery_reviewer`, `logic_scout` for independent review
+- `synthesizer` for convergence after reviews freeze
+
+Rules:
+- freeze candidate artifacts before Review
+- spawn review roles as fresh threads; run independent reviewers in parallel when possible
+- do not give reviewers Forge rationale, rejected variants, or each other's conclusions
+- main-thread self-critique does not count as independent Cold Reader evidence
+- prefer a different model profile for at least one independent reviewer than the authoring role
+- subagents return findings; the primary thread performs state/registry writes
+- if a required fresh reviewer cannot be spawned, record the limitation and stop at `HUMAN_GATE` rather than claiming an independent PASS
+
+Purely mechanical tasks may stay on the primary thread.
+
+## 6. Formal Sprint close
 Follow `harness/06_OUTPUTS.md`.
 
 Every formal Sprint must produce in `runtime/CURRENT_SPRINT/`:
@@ -54,7 +76,7 @@ Then apply the writeback described by `STATE_DELTA.yaml` to Project State, Route
 
 A Sprint is not complete until writeback is applied and a final workflow state is set: `NEXT / HUMAN_GATE / ROLLBACK_PARENT`.
 
-## 6. Human Gate
+## 7. Human Gate
 Stop for:
 - aesthetic commitment among strong candidates
 - Route kill/merge/split
@@ -65,12 +87,12 @@ Stop for:
 
 Do not self-approve these.
 
-## 7. Harness changes
+## 8. Harness changes
 All Harness changes follow `harness/08_HARNESS_CHANGE_POLICY.md`.
 
 A creative failure is evidence, not permission to add a new Core/Module rule.
 Repair the narrowest responsible layer, calibrate, regress, distill, then promote or revert.
 
-## 8. Game implementation
+## 9. Game implementation
 `game/` implements approved Project State.
 Do not treat Ren'Py script text as the authoritative source of narrative canon when it conflicts with `project/state/`.
