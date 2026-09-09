@@ -2,23 +2,23 @@ route_id: ECHO
 status: current
 promise: 未来人格/神经状态进入年轻宿主，不新增未来肉身。
 shared_inputs:
-  required:
-  - SH-001
-  - SH-002
-  - SH-004
-  - SH-005
-  - SH-006
-  must_remain_open:
-  - 成熟阿尔戈机制
-  - NULL宿主/身份
-  - 2054林岚机制
+  required: [SH-001, SH-002, SH-004, SH-005, SH-006]
+shared_open_dimensions:
+- mature_argo_capability
+- null_ontology
+- lin_2054_continuity
+route_dimensions:
+  route_defining_embodiment:
+    engagement: REQUIRED
+    resolution: LOCAL_COMMITMENT_REQUIRED
+story_obligations:
+  shared_anchor: CH2_0317_COMMON
+  must_reinterpret: [core_route_mysteries]
 route_outputs:
   can_explain:
   - 未来程砚为何拥有未来知识却没有新增身体
   - 人格与身体控制权冲突
-  leaves_unexplained:
-  - BLINDSPOT规则
-  - ORIGIN核心冲突
+  leaves_unexplained: [other_route_mechanisms]
 collision_surface:
 - Shared层若客观验证未来程砚独立肉身长期同时存在会破坏ECHO。
 - Shared层若锁死NULL=独立未来程砚会显著收窄ECHO。
