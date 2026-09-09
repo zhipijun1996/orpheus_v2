@@ -1,24 +1,24 @@
 route_id: ORIGIN
 status: draft
 truth_scope: route
-promise: 以2054成年养女与程砚的真实父女关系为核心，形成黑暗但人类动机直观可理解的Route。
+promise: 以程砚事故后人生中形成的真实父女关系为核心，形成黑暗但人类动机直观可理解的Route。
 story_engine:
   status: reboot_needed
   spine_candidate: null
-  human_core: 父女关系必须是目的本身，而不是DNA或林岚替代机制的包装。
+  human_core: 父女关系必须是目的本身，并通过Route定义性的时间/因果选择进入03:17主因果，而不是DNA、替代关系或旁支家庭戏的包装。
 working_truth:
   status: open
   statement: null
 deep_truth:
   status: open
   statement: null
-protected_freedoms:
-- 养女是否参与2036以及如何参与。
-- 养女与林岚DNA相似性的解释。
-- 成熟阿尔戈在本Route的能力。
-- NULL身份与女儿是否关联。
-closure: plausible
+open_dimensions:
+- daughter_temporal_role
+- biological_relation_meaning
+- mature_argo_capability
+- null_ontology
 open_questions:
-- 找到一个普通人也能理解的父女核心欲望与越线行为。
-- 让黑暗行动来自真实家庭冲突，而不是抽象时间哲学。
-- 避免养女成为解决其它Route谜团的工具人。
+- 父女关系如何在事故后的真实共同生活中形成，并为何足以驱动一次不可撤回的选择。
+- 找到父女关系、Route定义性科幻前提与03:17核心谜题彼此因果融合的Story Engine。
+- 让黑暗行动来自可理解的人类欲望，而不是抽象时间哲学或为了镜像而制造的事故。
+closure: plausible
