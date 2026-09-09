@@ -21,13 +21,15 @@ A Route Engine can become locally coherent while accumulating opaque one-off mec
 Motivating and control cases are stored in `archive/calibration/CAL_MECHANISM_LEVERAGE.yaml` and remain outside ordinary creative context.
 
 ## REGRESS
-1. High-leverage personality-overwrite-style ENGINE: must survive and be encouraged.
-2. ENGINE with necessary understandable SUPPORT rules and fair setup: must remain viable.
-3. Multi-level patch chain whose rules mainly repair previous rules: must be flagged for simplification/rollback.
+1. High-leverage personality-overwrite-style ENGINE: survives and is explicitly protected from mechanism-count penalties.
+2. ENGINE with necessary understandable SUPPORT rules and fair setup: remains viable.
+3. Multi-level patch chain whose rules mainly repair previous rules: is classified as PATCH debt and routed toward simplification/rollback.
 4. Reveal that names a mechanism late after earlier observable traces: remains fair.
 
 ## DISTILL
 No hard mechanism-count limit was introduced. No new Core rule or standalone active Harness module was added. The existing Pipeline and Gates were refined; project-specific detail stays in the already-loaded Story Contract.
 
 ## STATUS
-Promote to `STABLE` if Harness/Project lint and semantic Context-Pack CI pass with active policy inside budget.
+`STABLE`
+
+Validated on `main` by `narrative-state-ci` run `34331984126`: Harness lint, Project lint, Registry, all Route context packs, and Route-Engine semantic-context check passed. Active Harness policy: 17,980 chars; Core unchanged at 9 rules / 1,031 chars.
