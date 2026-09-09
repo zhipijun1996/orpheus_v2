@@ -1,0 +1,37 @@
+state_id: STORY_CONTRACT
+status: provisional
+scope: project
+applies_to: ordinary_routes
+
+shared_story_anchor:
+  artifact_id: SCENE_CH2
+  scene_id: CH2_0317_COMMON
+  statement: 所有普通Route都必须围绕同一个2036·03:17共享事故观测层展开；Route可以给出互斥真相，但不能另造一个与03:17无关的中心事件来替代它。
+
+chapter_architecture:
+  ch2:
+    time_anchor: '2036-03:17'
+    role: shared_mystery_experience
+    requirement: 玩家第一次经历共同谜面，但Shared层不提前给出Route级唯一解释。
+  ch4:
+    time_anchor: '2054'
+    role: working_truth
+    requirement: 从2054人物的调查或行动出发，对至少一个重要03:17既有观测形成可信、可行动的Working Truth。
+  ch5:
+    time_anchor: 2036_CAUSAL_LAYER
+    role: deep_truth
+    requirement: 进入、亲历或高强度重建03:17真实因果层，使至少一个既有观测获得新的因果或人物意义。
+    physical_future_return_required: false
+    note: Route机制允许时可由未来人物真实返回2036；不允许时可用重建、记录、宿主或其它Route-local方式进入因果层。
+
+route_engine_requirements:
+- 2054人物欲望必须最终因果连接回03:17，而不是悬空成为另一条故事。
+- Working Truth和Deep Truth必须回答Shared事故已经提出的问题，而不是只解释Route新造的谜题。
+- Route不必解释全部Shared异常；保留Route Interface要求开放的事实。
+- Route-local机制服务于人物行动与既有谜面的重新理解，不能靠术语堆叠替代故事因果。
+
+comprehensibility_test:
+  rule: 删除Route-local技术名词后，仍应能用2至3句话说明“谁想要什么、03:17为什么成为障碍、这条Route最终如何改变对03:17的理解”。
+
+failure_classification:
+  detached_route_engine: 若删除Shared Story Anchor后候选的主要人物冲突和结局几乎不受影响，则该候选与项目主故事脱离，应判FAIL或ROLLBACK_PARENT，而不是继续润色其独立故事。
