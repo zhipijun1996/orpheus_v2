@@ -32,10 +32,12 @@ const cli = argsOf(process.argv.slice(2));
 const task = cli.task;
 const target = cli.target;
 const goal = cli.goal;
+const inferredMode = /(?:ROUTE|STORY)_ENGINE/i.test(String(task || "")) ? "ROUTE_ENGINE" : "GENERAL";
+const mode = cli.mode || inferredMode;
 const forgeWorkers = Number(cli.forge_workers || 0) || undefined;
 
 if (!task || !target || !goal) {
-  console.error("Usage: npm run sprint -- --task <TASK_ID> --target <REGISTRY_ID> --goal <text> [--forge-workers N]");
+  console.error("Usage: npm run sprint -- --task <TASK_ID> --target <REGISTRY_ID> --goal <text> [--mode MODE] [--forge-workers N]");
   process.exit(2);
 }
 
@@ -55,7 +57,7 @@ function pythonCommand() {
 
 const packText = execFileSync(
   pythonCommand(),
-  ["tools/build_context_pack.py", target, task],
+  ["tools/build_context_pack.py", target, task, mode],
   { cwd: root, encoding: "utf8" },
 );
 await writeFile(path.join(root, "runtime/CONTEXT_PACK.yaml"), packText, "utf8");
@@ -106,7 +108,7 @@ async function runFresh(roleName, label, artifactText = "") {
   await mkdir(workingDirectory, { recursive: true });
 
   const requestedModel = envModel(roleName);
-  const prompt = `You are the ${roleName} role in an EXTERNAL FRESH CODEX SESSION created by the Narrative Harness.\n\nTask: ${task}\nTarget: ${target}\nGoal: ${goal}\n\nRole contract:\n${role.instruction}\n\nExecution rules:\n- This is a new thread. Do not assume or reconstruct any parent conversation.\n- Use only the context embedded in this prompt and the frozen artifact below.\n- Do not browse the repository or archive.\n- Do not write files; return your result in the final response.\n- Be concise and evidence-based.\n\nHarness pipeline policy:\n${pipeline}\n\nAllowed context:${contextFor(roleName)}\n\nFrozen artifact, if any:\n${artifactText || "(none)"}`;
+  const prompt = `You are the ${roleName} role in an EXTERNAL FRESH CODEX SESSION created by the Narrative Harness.\n\nTask: ${task}\nMode: ${mode}\nTarget: ${target}\nGoal: ${goal}\n\nRole contract:\n${role.instruction}\n\nExecution rules:\n- This is a new thread. Do not assume or reconstruct any parent conversation.\n- Use only the context embedded in this prompt and the frozen artifact below.\n- Treat Project Story Contract and Route Interface obligations as hard task architecture when present.\n- Do not browse the repository or archive.\n- Do not write files; return your result in the final response.\n- Be concise and evidence-based.\n\nHarness pipeline policy:\n${pipeline}\n\nAllowed context:${contextFor(roleName)}\n\nFrozen artifact, if any:\n${artifactText || "(none)"}`;
 
   const attempts = [requestedModel, null];
   let lastError;
@@ -163,7 +165,6 @@ const reviewPairs = await Promise.all(
   reviewNames.map(async (name) => [name, await runFresh(name, name, frozenCandidates)]),
 );
 
-const reviewMap = Object.fromEntries(reviewPairs);
 for (const [name, result] of reviewPairs) {
   await writeFile(path.join(runDir, "reviews", `${name}.md`), result.text, "utf8");
 }
@@ -179,6 +180,7 @@ await writeFile(path.join(runDir, "SYNTHESIS.md"), synthesis.text, "utf8");
 const manifest = {
   run_id: runId,
   task,
+  mode,
   target,
   goal,
   execution_mode: "FRESH_SESSION_SDK",
