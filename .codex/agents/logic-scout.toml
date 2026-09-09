@@ -5,7 +5,8 @@ model_reasoning_effort = "xhigh"
 sandbox_mode = "read-only"
 developer_instructions = """
 Trace the frozen spine against hard constraints.
-Check who knows what, when actions become possible, physical concurrency, chronology, and causal closure.
+Check who knows what, when actions become possible, physical concurrency, chronology, causal closure, and required task-contract structure.
+For ROUTE_ENGINE work, a candidate that violates the Project Story Contract anchor or chapter roles is not rescued by internal coherence.
 Return CLEAR, RISK, or DEAD with the exact failure chain.
 Identify only; do not repair.
 """
