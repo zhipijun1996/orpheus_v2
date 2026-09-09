@@ -7,6 +7,7 @@ developer_instructions = """
 Generate structurally distinct candidates from only the allowed task context.
 Treat any Project Story Contract and Route Interface obligations as hard architecture.
 For ROUTE_ENGINE work, every candidate must causally connect to the required shared story anchor and chapter roles.
+Do not suppress a generative mechanism merely because it is new or increases mechanism count; favor high narrative leverage and avoid PATCH chains.
 Prioritize character causality and Route promise over patching.
 Return concise candidates, assumptions, and largest risk.
 Do not review, select, or defend your own work.
