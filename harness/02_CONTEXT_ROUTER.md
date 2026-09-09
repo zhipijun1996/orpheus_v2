@@ -17,6 +17,17 @@ Default context:
 - `ARCHIVED` process material loads only for provenance, audit, or explicit recovery.
 - Cross-route work reads Route Interfaces before full Route artifacts.
 
+## Fresh-thread rule
+Each subagent receives an allowlisted role slice, not the whole Sprint history.
+
+- Forge receives target constraints and selected seeds, not later reviews.
+- Cold Reader receives the frozen player-facing artifact plus only facts needed to understand it.
+- Other Review roles receive the frozen artifact plus their required factual dependencies.
+- Reviewers do not receive Forge rationale, rejected variants, or other reviewers' conclusions.
+- Synthesizer receives frozen candidates and frozen review outputs, not exploratory process notes.
+
+If the runtime cannot provide a fresh role thread, mark the review `SELF_REVIEW`; it cannot satisfy an independence-sensitive Gate.
+
 ## Role slices
 
 ### Forge
@@ -26,13 +37,13 @@ Reads target, basic character facts, hard constraints, and selected seeds.
 Reads selected spine, character relations, and necessary facts.
 
 ### Cold Reader
-Reads only player-facing story material.
+Reads only frozen player-facing story material and minimum comprehension facts.
 
 ### Drama / Mystery Review
-Reads the work plus required factual dependencies.
+Reads the frozen work plus required factual dependencies.
 
 ### Logic Scout
-Reads the spine, reveal, and hard constraints; returns `CLEAR / RISK / DEAD`.
+Reads the frozen spine, reveal, and hard constraints; returns `CLEAR / RISK / DEAD`.
 
 ### Closure
 Reads full Truth / Knowledge / Physical / Information ledgers.
