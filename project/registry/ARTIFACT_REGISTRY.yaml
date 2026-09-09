@@ -3,6 +3,7 @@ entries:
 - {id: HARNESS_CORE, path: harness/00_CORE.md, kind: policy, status: stable, default_load: true, scope: harness, depends_on: []}
 - {id: PROJECT_BRIEF, path: project/PROJECT_BRIEF.md, kind: state, status: provisional, default_load: true, scope: project, depends_on: []}
 - {id: HUMAN_DECISIONS, path: project/decisions/HUMAN_DECISIONS.yaml, kind: decision_state, status: provisional, default_load: true, scope: project, depends_on: []}
+- {id: STORY_CONTRACT, path: project/state/STORY_CONTRACT.yaml, kind: story_contract, status: provisional, default_load: false, scope: project, load_for_modes: [ROUTE_ENGINE], depends_on: [SCENE_CH2, SHARED_STATE]}
 - {id: SHARED_STATE, path: project/state/shared.yaml, kind: state, status: provisional, default_load: true, scope: shared, depends_on: []}
 - {id: CHAR_CHENG, path: project/state/characters/CHENG_YAN.yaml, kind: state, status: provisional, default_load: true, scope: character, depends_on: []}
 - {id: CHAR_LIN, path: project/state/characters/LIN_LAN.yaml, kind: state, status: provisional, default_load: true, scope: character, depends_on: []}
