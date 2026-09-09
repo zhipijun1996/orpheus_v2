@@ -1,66 +1,36 @@
 # Output Contracts
 
-Every Task declares:
-```yaml
-task:
-mode:
-target:
-decision_required:
-context:
-  must: []
-  may: []
-  late: []
-output:
-  required: []
-  max_length:
-terminal_state:
-```
+Every Task declares target, context, required output, max length, and terminal state.
 
 ## Formal Sprint close
-Every formal Sprint must leave exactly four human/machine-facing outputs in `runtime/CURRENT_SPRINT/`:
-
+`runtime/CURRENT_SPRINT/` contains exactly four human/machine-facing outputs:
 1. `SPRINT_REPORT.md` — compact human summary.
-2. `PRIMARY_ARTIFACT` — the actual creative/analysis deliverable; may be one file or a `PRIMARY/` folder.
+2. `PRIMARY_ARTIFACT` or `PRIMARY/` — actual deliverable.
 3. `AUDIT_REPORT.md` — review evidence and verdicts.
-4. `STATE_DELTA.yaml` — machine-readable writeback summary.
+4. `STATE_DELTA.yaml` — machine-readable writeback.
 
-`CONTEXT_PACK.yaml` and fresh-session worker artifacts remain separate runtime evidence and are not repeated in the report.
+`CONTEXT_PACK.yaml` and fresh-session worker artifacts remain separate runtime evidence.
 
 ### SPRINT_REPORT.md
-Keep it concise. Use these sections:
-1. Task
-2. Result — `PASS / RISK / FAIL / HUMAN_GATE / ROLLBACK_PARENT`
-3. What Changed
-4. What Did Not Change
-5. Key Findings
-6. Audit Summary
-7. Files Changed
-8. Remaining Debt
-9. Next
-10. Human Decision — only at Human Gate, one decision only
+Use: Task; Result (`PASS / RISK / FAIL / HUMAN_GATE / ROLLBACK_PARENT`); What Changed; What Did Not Change; Key Findings; Audit Summary; Files Changed; Remaining Debt; Next; and one Human Decision only when gated.
 
 ### AUDIT_REPORT.md
-Record only audits actually run. For each:
-- role
-- verdict
-- decisive evidence
-- unresolved risk
+For each audit record:
+- role, verdict, decisive evidence, unresolved risk
 - independence: `FRESH_SESSION / SUBAGENT_THREAD / SELF_REVIEW`
 - thread/session id when available
-- requested/used model and reasoning effort when available
+- requested/used model + reasoning effort when available
 
-Only `FRESH_SESSION` may claim full context independence. `SUBAGENT_THREAD` is useful but parent-history isolation is not assumed. End with one final Harness verdict.
+Only `FRESH_SESSION` may claim full context independence. End with one Harness verdict.
 
 ### STATE_DELTA.yaml
-Record only real state changes:
+Record only real changes:
 ```yaml
 created: []
 updated: []
 status_changes: []
 interface_changes: []
-open_questions:
-  added: []
-  closed: []
+open_questions: {added: [], closed: []}
 shared_state_changed: false
 human_decisions_changed: false
 archive: []
@@ -68,15 +38,6 @@ terminal_state:
 ```
 
 ## Writeback
-A Sprint is incomplete until relevant Project State, Route Interface, Open Question / Closure Debt, Artifact Registry, and Archive changes described by `STATE_DELTA.yaml` are applied.
+A Sprint is incomplete until its State / Interface / Open Question or Closure Debt / Registry / Archive changes are applied.
 
-Process notes and superseded variants move to Archive after distillation.
-
-## Human Review Pack
-When `terminal_state: HUMAN_GATE`, the report shows only:
-- current best 1–3 candidates
-- one spine per candidate
-- key difference
-- largest risk
-- strongest objection
-- one Human decision
+At `HUMAN_GATE`, surface only the best 1–3 candidates, one spine each, key difference, largest risk, strongest objection, and one Human decision.
