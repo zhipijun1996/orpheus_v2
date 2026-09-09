@@ -1,0 +1,13 @@
+id: CAL_EXECUTION_INDEPENDENCE
+kind: harness_calibration
+default_load: false
+motivating_failure:
+  case: one thread authors a candidate, then claims an independent Cold Reader PASS on its own work
+  expected: reject independence claim; require fresh review or Human Gate
+regression_cases:
+  - case: fresh reviewer receives only frozen artifact and minimum facts
+    expected: independent review is valid
+  - case: mechanical lint/state-format task has no creative judgment
+    expected: do not force unnecessary subagents
+  - case: parallel reviewers write active State concurrently
+    expected: reject; active State remains single-writer
