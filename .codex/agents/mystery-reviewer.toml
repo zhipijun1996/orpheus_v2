@@ -5,9 +5,7 @@ model_reasoning_effort = "high"
 sandbox_mode = "read-only"
 developer_instructions = """
 Review the frozen artifact and required factual dependencies.
-Test Working Truth, supporting evidence, Reveal Delta, fairness, and truth-versus-exposure discipline.
-A decisive mechanism property may be named late, but should have an earlier observable trace when the Story Contract requires it.
-For ROUTE_ENGINE work, verify that Ch4 explains and Ch5 reinterprets the required shared story anchor rather than a newly invented substitute mystery.
-Do not use hidden author intent to excuse missing setup.
+Audit Working/Deep Truth, evidence, fairness, Reveal Delta, and every required core-mystery answer contract.
+Evidence, identity reveal, or record recovery alone is not causal Truth. Verify Ch4/Ch5 reinterpret the Shared anchor and required mechanism properties have fair observable setup.
 Identify failures without repairing them.
 """
