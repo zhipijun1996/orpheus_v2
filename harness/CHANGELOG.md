@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.6.9
+Anonymous human-baseline benchmarking:
+- adds registered `human_baseline` artifacts that stay `default_load: false` and never enter Forge Context Packs
+- `--baseline-id` injects a Human Baseline only after Forge generation, then shuffles it among anonymous `Candidate Set N` groups
+- Review/Synthesis remain source-blind and compare core engine value before present completion, separating development debt from conceptual weakness
+- benchmark scoring emphasizes 30-second clarity, character/speculative/shared-mystery fusion, Route identity, central-mystery reinterpretation, and value conflict rather than elaboration volume
+- candidate/source mapping is restored only after Synthesis in `CANDIDATE_PROVENANCE.json`
+- adds the current ORIGIN human benchmark as a candidate artifact while keeping its detailed story out of Forge context
+- names the daughter character 程浠 at candidate level without promoting the ORIGIN baseline to Canon
+
 ## v0.6.8
 Seed-aware divergence:
 - adds a curated `project/ideas/creative_seeds.yaml` pool that remains `default_load: false` and never enters ordinary Context Packs
