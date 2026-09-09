@@ -30,8 +30,26 @@ route_engine_requirements:
 - Route不必解释全部Shared异常；保留Route Interface要求开放的事实。
 - Route-local机制服务于人物行动与既有谜面的重新理解，不能靠术语堆叠替代故事因果。
 
+mechanism_discipline:
+  principle: 鼓励能生成剧情、人物困境、反转或既有谜面新解释的高杠杆机制；不因“新”或数量本身惩罚创意，重点审查解释性脚手架和补丁链。
+  explore: EXPLORE阶段允许大胆提出新机制，不以机制数量预先淘汰候选。
+  classes:
+    ENGINE: 能直接创造新的行动可能、人物冲突、核心反转或多处既有观测解释力；应被鼓励。
+    SUPPORT: 让ENGINE可操作所必需的边界、限制或代价；可以存在，但应尽量复用已有规则。
+    PATCH: 主要用于解释上一个机制造成的漏洞、例外或记录缺口；属于复杂度债务。
+  leverage_test:
+  - 新机制是否同时服务剧情行动、人物选择、谜题解释或场景价值中的多个维度。
+  - 若更简单的已有规则可完成同样叙事功能，则优先复用而不是新增SUPPORT/PATCH。
+  - 若一个机制需要连续新增机制才能解释其为何不出错，优先回滚并简化父机制，而不是继续补丁。
+  terminology:
+    rule: 先用普通语言解释现象与规则；只有反复使用、影响玩家判断且命名能提高精度时才引入专有术语。一次性技术名词不是价值。
+  foreshadow:
+    rule: Ch4/Ch5关键反转依赖的机制性质可以晚命名、晚解释，但在揭示前必须存在至少一个可回看的可观察痕迹；铺垫现象优先于提前讲术语。
+  synthesis_preference: 同等故事质量下，优先叙事杠杆更高、PATCH依赖更浅的方案，而不是机械选择“机制更少”的方案。
+
 comprehensibility_test:
   rule: 删除Route-local技术名词后，仍应能用2至3句话说明“谁想要什么、03:17为什么成为障碍、这条Route最终如何改变对03:17的理解”。
 
 failure_classification:
   detached_route_engine: 若删除Shared Story Anchor后候选的主要人物冲突和结局几乎不受影响，则该候选与项目主故事脱离，应判FAIL或ROLLBACK_PARENT，而不是继续润色其独立故事。
+  patch_chain: 若连续新增的规则主要用于解释前一个机制的漏洞而非创造新的故事可能，应先简化或回滚父机制；不得仅凭内部闭环把复杂度当成质量。
