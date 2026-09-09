@@ -1,20 +1,20 @@
 # Gates
 
 ## Story Gate
-**Human Motive:** understandable desire; sufficient knowledge; earned reversals; character remains an agent.
+**Human Motive:** understandable desire, sufficient knowledge, earned reversals, agency.
 
-**Drama Proof:** desire/incompatibility; protagonist action changes the situation; 2+ signature scenes; durable consequence; Logic Scout is not `DEAD`.
+**Drama Proof:** desire/incompatibility; protagonist action changes the situation; 2+ signature scenes; durable consequence; Logic Scout not `DEAD`.
 
-**Spine / Fusion:** obey the Project Story Contract and required Route dimensions. Character engine, Route-defining speculative premise, and Shared core mystery must be causally connected. `DETACHED` fusion fails; `PARTIAL` is a material risk, not an automatic rejection. Motive continuity must survive the Deep Truth.
+**Fusion:** obey task contracts. Character engine, Route-defining speculative premise, and Shared core mystery must be causally connected. `DETACHED` fails; `PARTIAL` is material risk. Deep Truth must preserve motive continuity.
 
 ## Reveal Gate
-Working Truth is credible/actionable; Deep Truth creates meaningful Reveal Delta; evidence is fair and scene-borne. Required core mysteries meet their designated answer contract by the required exposure point. Identity-only reveals or investigation methods do not substitute for causal Truth. Decisive mechanism properties have prior observable setup when required.
+Working Truth is credible/actionable; Deep Truth creates Reveal Delta; evidence is fair and scene-borne. Required mysteries meet their answer contracts by exposure deadline. Identity-only reveals or investigation methods do not substitute for causal Truth. Decisive mechanism properties require prior observable setup when specified.
 
 ## Prototype Gate
-6–12 beats form one causal story; actions/core mechanisms are plain-language legible; project comprehension tests pass; required core characters retain causal function; mechanisms are judged by leverage and PATCH dependency, not count.
+6–12 beats form one causal story; actions/mechanisms are plain-language legible; project comprehension tests pass; required core characters retain causal function; mechanism count alone is not a quality metric.
 
 ## Integration Gate
-Interfaces are current; Shared-open dimensions remain open; Route-required commitments are present; collisions are resolved/deferred/escalated; Shared additions serve cross-route function.
+Interfaces are current; Shared-open dimensions remain open; Route-required commitments exist; collisions are resolved/deferred/escalated.
 
 ## Closure Gate
 `PLAUSIBLE -> SOLVABLE -> PROVEN`
