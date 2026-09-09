@@ -1,7 +1,6 @@
-# ORIGIN Human Baseline — 程浠
+# ORIGIN Candidate — 程浠
 
-Status: `HUMAN_BASELINE / CANDIDATE`
-Authority: benchmark only; not Canon, not Route Truth, not Forge seed.
+Status: `CANDIDATE`
 
 ## One spine
 
@@ -17,7 +16,7 @@ Authority: benchmark only; not Canon, not Route Truth, not Forge seed.
 
 父女双方都从真实的爱出发，因此在时间旅行的最终目标上成为敌对双方。
 
-## Known baseline commitments
+## Known commitments
 
 - 程浠是在03:17之后的研究中出现的新生命，不是2036事故前已经存在的孩子。
 - 她具有林岚的生物学来源/基因关联，但没有林岚的记忆与人格；她是独立主体。
@@ -26,7 +25,7 @@ Authority: benchmark only; not Canon, not Route Truth, not Forge seed.
 - 程浠在ORIGIN中成为NULL，并真实执行会伤害程砚目标的行动，而不是事后被全部洗白。
 - NULL行为至少包括：阻止救周启明、开枪击伤林岚左臂/肩臂区域、破坏全救计划。
 
-## Deliberately unresolved
+## Unresolved development debt
 
 - 程浠具体在事故后何时被制造、2054时年龄以及何时成年。
 - 产生程浠的具体实验机制与最低必要规则。
@@ -36,7 +35,3 @@ Authority: benchmark only; not Canon, not Route Truth, not Forge seed.
 - 林岚在ORIGIN中的完整主动作用与她如何理解程浠。
 - NULL每一步具体动作的必要性、顺序与对事故的完整因果影响。
 - 03:17事故的完整Route-local因果链。
-
-## Benchmark rule
-
-与AI候选比较时，先比较核心Story Engine的清晰度、人物/科幻/03:17融合度、NULL重新解释力和价值冲突强度；以上未解决项属于开发债，不应仅因当前细节更少而自动判输。任何候选若要击败本Baseline，应在核心价值上明显更强，而不只是更完整或术语更多。
