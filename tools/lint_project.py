@@ -73,12 +73,24 @@ if "2054成年" in yaml.safe_dump(origin,allow_unicode=True): errors.append("ORI
 daughter=yaml.safe_load((root/"project/state/characters/DAUGHTER.yaml").read_text(encoding="utf-8"))
 if daughter.get("working_label")=="成年养女": errors.append("Daughter working label still fixes adulthood")
 if "age_at_2054" not in daughter.get("open_dimensions",[]): errors.append("Daughter age_at_2054 should remain an open dimension")
+if daughter.get("name")!="程浠": errors.append("Current daughter candidate name must be 程浠")
 
 registry=yaml.safe_load((root/"project/registry/ARTIFACT_REGISTRY.yaml").read_text(encoding="utf-8"))["entries"]
 story_entry=next((e for e in registry if e.get("id")=="STORY_CONTRACT"),None)
 if not story_entry or "ROUTE_ENGINE" not in story_entry.get("load_for_modes",[]): errors.append("STORY_CONTRACT must load for ROUTE_ENGINE mode")
 seed_entry=next((e for e in registry if e.get("id")=="IDEAS_CREATIVE_SEEDS"),None)
 if not seed_entry or seed_entry.get("default_load") is not False: errors.append("Creative Seed pool must be registered default_load:false")
+baseline_entry=next((e for e in registry if e.get("id")=="BASELINE_ORIGIN_HUMAN"),None)
+if not baseline_entry or baseline_entry.get("kind")!="human_baseline": errors.append("Missing registered ORIGIN human baseline")
+elif baseline_entry.get("default_load") is not False or baseline_entry.get("load_for_modes"):
+    errors.append("Human baseline must never auto-load into Context Packs")
+else:
+    baseline_path=root/baseline_entry.get("path","")
+    if not baseline_path.exists(): errors.append("Registered ORIGIN human baseline file is missing")
+    else:
+        baseline_text=baseline_path.read_text(encoding="utf-8")
+        for required in ["程浠","没有林岚记忆与人格","成为本Route的NULL","阻止对周启明的救援","开枪击伤林岚左臂/肩臂区域"]:
+            if required not in baseline_text: errors.append(f"ORIGIN human baseline missing commitment: {required}")
 
 seed_path=root/"project/ideas/creative_seeds.yaml"
 if not seed_path.exists(): errors.append("Missing curated Creative Seed pool")
@@ -98,6 +110,10 @@ roles=json.loads(roles_path.read_text(encoding="utf-8"))
 forge_role=roles.get("forge",{})
 if forge_role.get("route_engine_workers",0)<3: errors.append("ROUTE_ENGINE Forge fanout must preserve blind plus seeded diversity")
 if forge_role.get("candidates_per_worker",0)<2: errors.append("Each Forge worker should contribute multiple candidates")
+
+runner=(root/"harness/adapters/codex/runner.mjs").read_text(encoding="utf-8")
+for marker in ["baseline_id","human_baseline","ANONYMOUS_CORE_ENGINE_BENCHMARK","CANDIDATE_PROVENANCE.json"]:
+    if marker not in runner: errors.append(f"Fresh-session runner missing human-baseline invariant: {marker}")
 
 for p in (root/"harness").rglob("*"):
     if not p.is_file() or p.name=="CHANGELOG.md": continue
