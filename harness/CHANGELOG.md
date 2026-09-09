@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.6.6
+Mechanism leverage discipline:
+- protects generative mechanism novelty during EXPLORE instead of treating mechanism count as a quality penalty
+- classifies mechanism-heavy work as `ENGINE / SUPPORT / PATCH`; strong ENGINE ideas are encouraged, while PATCH chains are complexity debt
+- adds plain-language legibility and observable-setup checks without requiring terminology to appear before the reveal
+- Synthesis prefers higher narrative leverage and shallower PATCH dependency at comparable story quality, not mechanically fewer mechanisms
+- fresh-session and native reviewer roles now distinguish useful mechanism invention from jargon/scaffolding overload
+- adds calibration coverage proving a high-leverage new mechanism must survive the new discipline
+
 ## v0.6.5
 Story-spine retention:
 - adds task-semantic context routing through Registry `load_for_modes` instead of relying only on target dependencies
