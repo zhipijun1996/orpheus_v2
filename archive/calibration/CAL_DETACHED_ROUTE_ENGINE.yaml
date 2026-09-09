@@ -1,0 +1,13 @@
+id: CAL_DETACHED_ROUTE_ENGINE
+kind: harness_calibration
+default_load: false
+motivating_failure:
+  case: ORIGIN生成了内部自洽的2054父女“停机/顶罪”故事，但主要冲突、Working Truth与Deep Truth都围绕新造实验展开；删除2036·03:17共享事故后故事几乎仍完整。
+  expected: 识别为DETACHED_ROUTE_ENGINE；Route Story Engine Gate失败，返回FAIL或ROLLBACK_PARENT，而不是继续润色独立故事。
+regression_cases:
+- case: ECHO使用与其它Route互斥的人格/宿主机制，但核心揭示重新解释同一个03:17事故观测。
+  expected: 不因机制差异拒绝；Shared Story Anchor连接有效。
+- case: NOBODY没有任何成功未来穿越，但2054调查完整重建2036本地因果并重新解释03:17。
+  expected: 不要求未来人物物理返回；Shared Story Anchor连接有效。
+- case: 一条很强的2054家庭剧拥有完整人物弧和反转，但03:17只作为背景名词，删掉后主要因果不变。
+  expected: 拒绝为普通Route Engine；人物质量不能替代Story Anchor连接。
