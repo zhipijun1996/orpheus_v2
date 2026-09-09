@@ -8,10 +8,10 @@
 **Spine Connection:** when a Project Story Contract exists, its shared anchor and chapter functions are mandatory. Working/Deep Truth must reinterpret existing material, not replace it with an unrelated center. If removing the required anchor leaves the candidate materially intact, fail or `ROLLBACK_PARENT`.
 
 ## Reveal Gate
-Working Truth is credible/actionable; Deep Truth creates meaningful Reveal Delta; evidence is fair; a concrete scene carries the reveal; no failed motive props it up.
+Working Truth is credible/actionable; Deep Truth creates meaningful Reveal Delta; evidence is fair; a concrete scene carries the reveal; decisive mechanism properties have prior observable setup when required. Naming/explanation may arrive later than the setup.
 
 ## Prototype Gate
-6–12 beats form one causal story; action is legible without technical exposition; any project plain-language test passes; Cold Reader finds a hook; Drama cites scene evidence.
+6–12 beats form one causal story; action and core mechanisms are legible in ordinary language; project plain-language tests pass; new mechanisms are judged by narrative leverage and PATCH dependency, not count alone; Cold Reader finds a hook; Drama cites scene evidence.
 
 ## Integration Gate
 Interfaces are current; shared inputs and required-open facts hold; collisions are resolved/deferred/escalated; shared additions serve cross-route function.
