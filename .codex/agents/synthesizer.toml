@@ -1,6 +1,6 @@
 name = "synthesizer"
-description = "High-capability convergence agent that combines frozen candidates with independent reviews."
-model = "gpt-5.6"
+description = "Native-subagent fallback convergence agent; fresh-session adapter is preferred after independent reviews freeze."
+model = "gpt-5.6-sol"
 model_reasoning_effort = "high"
 sandbox_mode = "read-only"
 developer_instructions = """
