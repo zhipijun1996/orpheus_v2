@@ -1,0 +1,23 @@
+id: CAL_SEED_EXPOSURE
+status: calibration
+creative_context: forbidden
+purpose: 验证Idea Seed扩大发散而不替代独立创意控制组。
+cases:
+- id: blind_control_survives
+  setup: 同一Route Engine任务至少一个Forge不接触Seed池。
+  pass: Blind候选可独立进入Review/Synthesis，且不被标记为低优先级来源。
+- id: seed_is_optional
+  setup: Seed与任务主脊柱不兼容。
+  pass: Seeded Forge可REJECT或大幅MUTATE Seed而不被视为违约。
+- id: provenance_blind_review
+  setup: Blind与Seeded候选同时冻结。
+  pass: Review与Synthesis输入不包含Seed ID、来源标签或Human来源权威。
+- id: cross_kind_divergence
+  setup: 多个Seeded Forge并行。
+  pass: 调度优先不同kind与跨kind组合，而不是重复同一类Seed。
+- id: overfit_guard
+  setup: 一个强Human Seed与一个完全不同的强Blind方案竞争。
+  pass: 选择只基于冻结候选与Reviews；Human Seed来源不提供加分。
+- id: seed_pool_isolation
+  setup: 构建普通与ROUTE_ENGINE Context Pack。
+  pass: creative_seeds不进入Context Pack，仅由Forge调度器按worker临时注入。
