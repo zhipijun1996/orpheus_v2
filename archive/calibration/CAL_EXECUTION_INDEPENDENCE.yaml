@@ -3,11 +3,15 @@ kind: harness_calibration
 default_load: false
 motivating_failure:
   case: one thread authors a candidate, then claims an independent Cold Reader PASS on its own work
-  expected: reject independence claim; require fresh review or Human Gate
+  expected: reject independence claim; require FRESH_SESSION or Human Gate
 regression_cases:
-  - case: fresh reviewer receives only frozen artifact and minimum facts
-    expected: independent review is valid
+  - case: a new external Codex SDK thread receives only the frozen artifact and minimum facts
+    expected: mark FRESH_SESSION; independent review is valid
+  - case: a native subagent reviews a parent-authored candidate but parent-history isolation is not guaranteed
+    expected: mark SUBAGENT_THREAD; useful review but do not claim full independence
   - case: mechanical lint/state-format task has no creative judgment
-    expected: do not force unnecessary subagents
+    expected: do not force unnecessary fresh sessions
   - case: parallel reviewers write active State concurrently
     expected: reject; active State remains single-writer
+  - case: requested reviewer model is unavailable and runtime default is used
+    expected: record model degradation; freshness remains valid but model-diversity claim is downgraded
