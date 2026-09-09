@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.6.8
+Seed-aware divergence:
+- adds a curated `project/ideas/creative_seeds.yaml` pool that remains `default_load: false` and never enters ordinary Context Packs
+- keeps one permanent BLIND Forge control while Route Engine fanout can expose other fresh workers to optional single or cross-kind Seeds
+- Seeds are non-authoritative provocations: workers may use, mutate, fuse, invert, or reject them; explicit Seed IDs can pin a test without changing Project State
+- default ROUTE_ENGINE fanout becomes 4 Forge sessions × 2 candidates, normally yielding 8 raw candidates before Review
+- Seed provenance is stripped from frozen candidate/reviewer/synthesis inputs and restored only for the primary Orchestrator after convergence
+- Meta Seeds stay out of ordinary Routes by default; adversarial probes are addressable explicitly rather than randomly injected
+- CI/lint verifies the Seed pool is isolated, diverse, non-default, and paired with a blind control
+
 ## v0.6.7
 Route fusion and mystery closure:
 - separates `Story Engine / Route Truth / Evidence`; evidence recovery cannot substitute for causal Deep Truth
