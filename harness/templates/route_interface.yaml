@@ -3,7 +3,8 @@ status: draft
 promise:
 shared_inputs:
   required: []
-  must_remain_open: []
+shared_open_dimensions: []
+route_dimensions: {}
 story_obligations:
   shared_anchor:
   must_reinterpret: []
