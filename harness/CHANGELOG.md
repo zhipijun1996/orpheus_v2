@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.6.7
+Route fusion and mystery closure:
+- separates `Story Engine / Route Truth / Evidence`; evidence recovery cannot substitute for causal Deep Truth
+- requires ordinary Routes to close designated core mysteries locally while Shared answers remain open across Routes
+- gives NULL a full answer contract covering ontology, agency, actions, motive, objective, causal impact, and apparent contradiction; identity-only reveals are insufficient
+- adds `STRONG / PARTIAL / DETACHED` Route Engine fusion diagnostics across character causality, Route-defining speculative premise, and Shared core mystery; only DETACHED is a hard failure
+- replaces option-like `must_remain_open` lists with dimension-only `shared_open_dimensions` plus explicit `route_dimensions`, separating Shared openness from Route engagement
+- removes a fixed adult-at-2054 daughter prior from active Project State without promoting the human seed into Forge context
+- adds core-cast causal-function checks and motive-continuity review without requiring every Route to close every distant outcome
+- adds quarantined calibration for evidence-heavy but detached Route Engines and anti-overfit controls
+
 ## v0.6.6
 Mechanism leverage discipline:
 - protects generative mechanism novelty during EXPLORE instead of treating mechanism count as a quality penalty
