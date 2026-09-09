@@ -42,9 +42,10 @@ const fixedSeedIds = String(cli.seed_ids || "")
   .map((s) => s.trim())
   .filter(Boolean);
 const includeMetaSeeds = Boolean(cli.include_meta_seeds) || target === "ROUTE_NULL";
+const baselineId = String(cli.baseline_id || "").trim();
 
 if (!task || !target || !goal) {
-  console.error("Usage: npm run sprint -- --task <TASK_ID> --target <REGISTRY_ID> --goal <text> [--mode MODE] [--forge-workers N] [--seed-policy controlled|random|off] [--seed-ids ID1,ID2]");
+  console.error("Usage: npm run sprint -- --task <TASK_ID> --target <REGISTRY_ID> --goal <text> [--mode MODE] [--forge-workers N] [--seed-policy controlled|random|off] [--seed-ids ID1,ID2] [--baseline-id REGISTRY_ID]");
   process.exit(2);
 }
 
@@ -78,6 +79,26 @@ for (const entry of pack.files || []) {
     path: entry.path,
     text: await readFile(abs, "utf8"),
   });
+}
+
+let humanBaseline = null;
+if (baselineId) {
+  const registryPath = path.join(root, "project/registry/ARTIFACT_REGISTRY.yaml");
+  const registry = parseYaml(await readFile(registryPath, "utf8"));
+  const entry = (registry.entries || []).find((e) => e.id === baselineId);
+  if (!entry) throw new Error(`Unknown baseline registry id: ${baselineId}`);
+  if (entry.kind !== "human_baseline") throw new Error(`Baseline id must reference kind=human_baseline: ${baselineId}`);
+  if (entry.default_load || (entry.load_for_modes || []).length) {
+    throw new Error(`Human baseline must stay out of automatic Context Packs: ${baselineId}`);
+  }
+  if (sourceFiles.some((f) => f.id === baselineId)) {
+    throw new Error(`Human baseline leaked into Forge Context Pack: ${baselineId}`);
+  }
+  humanBaseline = {
+    id: baselineId,
+    path: entry.path,
+    text: await readFile(path.join(root, entry.path), "utf8"),
+  };
 }
 
 function matches(id, pattern) {
@@ -118,7 +139,7 @@ const adversarialSeeds = (seedPool.adversarial_probes || []).map((s) => ({
 const seedById = new Map([...activeSeeds, ...adversarialSeeds].map((s) => [s.id, s]));
 
 const defaultSeedPolicy = mode === "ROUTE_ENGINE" ? (roles.forge.seed_policy || "controlled") : "off";
-let seedPolicy = fixedSeedIds.length ? "fixed" : (cliSeedPolicy || defaultSeedPolicy);
+const seedPolicy = fixedSeedIds.length ? "fixed" : (cliSeedPolicy || defaultSeedPolicy);
 if (!new Set(["controlled", "random", "off", "fixed"]).has(seedPolicy)) {
   throw new Error(`Unknown seed policy: ${seedPolicy}`);
 }
@@ -141,8 +162,8 @@ function shuffled(items) {
   return out;
 }
 
-function controlledOrder(items, key) {
-  return [...items].sort((a, b) => hashInt(`${key}:${a.id}`) - hashInt(`${key}:${b.id}`));
+function controlledOrder(items, key, idFn = (x) => x.id) {
+  return [...items].sort((a, b) => hashInt(`${key}:${idFn(a)}`) - hashInt(`${key}:${idFn(b)}`));
 }
 
 function normalEligibleSeeds() {
@@ -316,14 +337,47 @@ const seedProvenance = {
 };
 await writeFile(path.join(runDir, "SEED_PROVENANCE.json"), JSON.stringify(seedProvenance, null, 2), "utf8");
 
-const frozenCandidates = forgeResults
-  .map((r, i) => `# Forge ${i + 1}\n\n${r.text}`)
+const candidateSources = forgeResults.map((r, i) => ({
+  source_type: "FORGE",
+  source_key: `forge_${i + 1}`,
+  text: r.text,
+  forge_index: i,
+}));
+if (humanBaseline) {
+  candidateSources.push({
+    source_type: "HUMAN_BASELINE",
+    source_key: humanBaseline.id,
+    text: humanBaseline.text,
+    forge_index: null,
+  });
+}
+const anonymousCandidateSets = controlledOrder(candidateSources, `${runId}:anonymous`, (x) => x.source_key);
+const candidateProvenance = {
+  run_id: runId,
+  comparison_mode: humanBaseline ? "ANONYMOUS_CORE_ENGINE_BENCHMARK" : "STANDARD",
+  reviewer_provenance_hidden: true,
+  baseline_id: humanBaseline?.id || null,
+  assignments: anonymousCandidateSets.map((item, i) => ({
+    candidate_set: i + 1,
+    source_type: item.source_type,
+    source_key: item.source_key,
+    seed_exposure: item.forge_index === null ? null : forgeProfiles[item.forge_index].exposure,
+    seed_ids: item.forge_index === null ? [] : forgeProfiles[item.forge_index].seeds.map((s) => s.id),
+  })),
+};
+
+const frozenCandidates = anonymousCandidateSets
+  .map((item, i) => `# Candidate Set ${i + 1}\n\n${item.text}`)
   .join("\n\n---\n\n");
 await writeFile(path.join(runDir, "FROZEN_CANDIDATES.md"), frozenCandidates, "utf8");
 
+const benchmarkInstructions = humanBaseline
+  ? "Anonymous core-engine benchmark mode is active. Candidate sets may differ greatly in development depth. Do not infer which set is human-authored or AI-authored. First compare CORE ENGINE VALUE: 30-second story clarity, character/speculative/shared-mystery causal fusion, Route identity, NULL/central-mystery reinterpretation, and the strength of the human value conflict. Separate core weakness from development debt. Missing implementation details may be marked as debt unless they already contradict hard constraints. Do not reward a candidate merely for having more beats, mechanisms, jargon, or completed fields; judge which core concept is most worth developing."
+  : "";
+
 const reviewNames = ["cold_reader", "drama_reviewer", "mystery_reviewer", "logic_scout"];
 const reviewPairs = await Promise.all(
-  reviewNames.map(async (name) => [name, await runFresh(name, name, frozenCandidates)]),
+  reviewNames.map(async (name) => [name, await runFresh(name, name, frozenCandidates, benchmarkInstructions)]),
 );
 
 for (const [name, result] of reviewPairs) {
@@ -335,8 +389,12 @@ const frozenReviews = reviewPairs
   .join("\n\n---\n\n");
 
 const synthesisInput = `# Frozen candidates\n\n${frozenCandidates}\n\n# Frozen independent reviews\n\n${frozenReviews}`;
-const synthesis = await runFresh("synthesizer", "synthesizer", synthesisInput);
+const synthesisInstructions = humanBaseline
+  ? `${benchmarkInstructions}\nSelect the core concept worth further development before considering present completion. If no AI-authored candidate clearly exceeds the anonymous baseline in core value, it is valid to retain the baseline rather than reward elaboration volume.`
+  : "";
+const synthesis = await runFresh("synthesizer", "synthesizer", synthesisInput, synthesisInstructions);
 await writeFile(path.join(runDir, "SYNTHESIS.md"), synthesis.text, "utf8");
+await writeFile(path.join(runDir, "CANDIDATE_PROVENANCE.json"), JSON.stringify(candidateProvenance, null, 2), "utf8");
 
 const manifest = {
   run_id: runId,
@@ -345,16 +403,19 @@ const manifest = {
   target,
   goal,
   execution_mode: "FRESH_SESSION_SDK",
+  comparison_mode: candidateProvenance.comparison_mode,
+  baseline_id: humanBaseline?.id || null,
   context_pack: "runtime/CONTEXT_PACK.yaml",
   seed_policy: seedPolicy,
   seed_provenance: `runtime/FRESH_SESSIONS/${runId}/SEED_PROVENANCE.json`,
+  candidate_provenance: `runtime/FRESH_SESSIONS/${runId}/CANDIDATE_PROVENANCE.json`,
   sessions,
   artifacts: {
     candidates: `runtime/FRESH_SESSIONS/${runId}/FROZEN_CANDIDATES.md`,
     reviews: reviewNames.map((n) => `runtime/FRESH_SESSIONS/${runId}/reviews/${n}.md`),
     synthesis: `runtime/FRESH_SESSIONS/${runId}/SYNTHESIS.md`,
   },
-  note: "Cognitive execution only. Seed provenance is intentionally withheld from Review/Synthesis and restored for the primary Orchestrator after convergence. The primary Orchestrator still owns Formal Sprint outputs and State writeback.",
+  note: "Cognitive execution only. Seed and candidate provenance are withheld from Review/Synthesis and restored for the primary Orchestrator after convergence. Human baselines never enter Forge Context Packs. The primary Orchestrator still owns Formal Sprint outputs and State writeback.",
 };
 await writeFile(path.join(runDir, "MANIFEST.json"), JSON.stringify(manifest, null, 2), "utf8");
 await writeFile(path.join(root, "runtime/FRESH_SESSIONS/LATEST"), `${runId}\n`, "utf8");
@@ -365,7 +426,10 @@ console.log(JSON.stringify({
   run_dir: `runtime/FRESH_SESSIONS/${runId}`,
   forge_workers: workerCount,
   seed_policy: seedPolicy,
+  comparison_mode: candidateProvenance.comparison_mode,
+  baseline_id: humanBaseline?.id || null,
   synthesis: manifest.artifacts.synthesis,
   seed_provenance: manifest.seed_provenance,
+  candidate_provenance: manifest.candidate_provenance,
   independent_reviews: reviewNames,
 }, null, 2));
