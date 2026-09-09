@@ -26,6 +26,38 @@ The adapter generates the Context Pack, runs fresh Forge sessions, freezes candi
 
 It does **not** mutate Project State. The primary Orchestrator consumes the synthesis/audits, completes the four Formal Sprint outputs, applies `STATE_DELTA.yaml`, runs checks, and stops at the Harness terminal state.
 
+## Seed-aware Forge fanout
+
+For `ROUTE_ENGINE`, the default Forge fanout is 4 fresh sessions, each returning 2 candidates (normally 8 raw candidates total):
+
+1. one permanent **BLIND** control with no Idea Seed exposure;
+2. one worker with one optional Seed;
+3. one worker with a different-kind optional Seed;
+4. one worker with two cross-kind optional Seeds.
+
+Seeds come from `project/ideas/creative_seeds.yaml`, which is `default_load: false` and is never part of the ordinary Context Pack. Seeded workers may use, mutate, fuse, invert, or reject their Seeds. Reviewers and the Synthesizer receive only frozen candidate text; Seed provenance is withheld until after convergence and written separately to `SEED_PROVENANCE.json`.
+
+Controls:
+
+```bash
+# cheaper run; still keeps Forge 1 blind
+--forge-workers 2
+
+# no Seed exposure at all
+--seed-policy off
+
+# controlled cross-kind scheduling (default for ROUTE_ENGINE)
+--seed-policy controlled
+
+# stochastic Seed scheduling
+--seed-policy random
+
+# restrict Seeded workers to specific Seeds; adversarial probes can be addressed only this way
+--seed-ids CAUSE-06,REL-04
+```
+
+Meta Seeds are excluded from ordinary Route runs by default. `ROUTE_NULL` enables them automatically; `--include-meta-seeds` can opt in elsewhere.
+
 ## Model routing
 
 Defaults live in `roles.json`. Override a role without editing policy, for example:
