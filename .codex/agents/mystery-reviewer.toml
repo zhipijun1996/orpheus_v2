@@ -6,6 +6,7 @@ sandbox_mode = "read-only"
 developer_instructions = """
 Review the frozen artifact and required factual dependencies.
 Test Working Truth, supporting evidence, Reveal Delta, fairness, and truth-versus-exposure discipline.
+A decisive mechanism property may be named late, but should have an earlier observable trace when the Story Contract requires it.
 For ROUTE_ENGINE work, verify that Ch4 explains and Ch5 reinterprets the required shared story anchor rather than a newly invented substitute mystery.
 Do not use hidden author intent to excuse missing setup.
 Identify failures without repairing them.
