@@ -1,5 +1,5 @@
 id: DAUGHTER
-name: null
+name: 程浠
 working_label: 养女
 status: candidate
 role: 程砚在03:17事故后的人生中形成的真实女儿关系
@@ -7,7 +7,6 @@ candidate_facts:
 - 她与程砚形成真实父女关系，程砚不把她仅视作林岚替代品。
 - 她与林岚具有相同/近似核DNA是高价值候选，但尚未提升为Shared硬事实。
 open_dimensions:
-- formal_name
 - entry_timing_in_post_2036_life
 - age_at_2054
 - route_exposure
