@@ -16,8 +16,11 @@ npm install --prefix harness/adapters/codex
 npm --prefix harness/adapters/codex run sprint -- \
   --task <TASK_ID> \
   --target <REGISTRY_ID> \
+  --mode <TASK_MODE> \
   --goal "<goal>"
 ```
+
+`--mode` controls task-semantic Context Pack dependencies. Route Story Engine work uses `ROUTE_ENGINE`; matching Registry artifacts such as the Project Story Contract and its shared anchor are loaded automatically. If omitted, Route/Story Engine task IDs are inferred as `ROUTE_ENGINE`, otherwise `GENERAL`.
 
 The adapter generates the Context Pack, runs fresh Forge sessions, freezes candidates, runs fresh Review sessions in parallel, then runs a fresh Synthesizer session. Results and thread metadata go to `runtime/FRESH_SESSIONS/<run_id>/`.
 
