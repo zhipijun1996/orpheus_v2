@@ -34,3 +34,4 @@ jobs:
           grep -q "id: SCENE_CH2" /tmp/origin_engine_pack.yaml
           grep -q "mode: ROUTE_ENGINE" /tmp/origin_engine_pack.yaml
           ! grep -q "id: IDEAS_CREATIVE_SEEDS" /tmp/origin_engine_pack.yaml
+          ! grep -q "id: BASELINE_ORIGIN_HUMAN" /tmp/origin_engine_pack.yaml
