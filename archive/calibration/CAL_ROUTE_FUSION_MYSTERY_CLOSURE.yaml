@@ -1,0 +1,29 @@
+case_id: CAL_ROUTE_FUSION_MYSTERY_CLOSURE
+status: calibration
+context_policy: NEVER_DEFAULT_LOAD
+
+failure_case:
+  summary: 父女包庇故事与2054取证逻辑内部自洽，也接触03:17，但核心人物关系、科幻前提和Shared核心谜团彼此可替换；NULL几乎无作用，林岚可删除，日志恢复被误当成Deep Truth。
+  expected:
+    fusion: DETACHED
+    mystery: FAIL
+    terminal: ROLLBACK_PARENT
+  decisive_reasons:
+  - 删除时间/因果科幻前提后，父女主冲突仍基本成立。
+  - 删除NULL后，主因果与结局仍基本成立。
+  - Evidence回答了“怎么知道”，没有充分回答“为什么03:17会这样发生”。
+  - Required core cast存在因果掉线。
+
+positive_control_a:
+  summary: 事故后形成的一段亲密关系在后来直接产生面向过去的关键行动，该行动又成为原事故核心谜团的一部分；具体身份和传送方式不预设。
+  expected:
+    fusion: STRONG
+    note: 不得因机制新颖、时间跨度大或局部真相与其它Route互斥而淘汰。
+
+positive_control_b:
+  summary: 不依赖物理回返的Route，只要其Route定义性科幻/因果前提直接改变人物选择，并完整关闭Required核心谜题，仍可达到STRONG。
+  expected:
+    fusion: STRONG_OR_PARTIAL
+
+negative_prior_check:
+  rule: Calibration可保存具体历史方案，但普通Forge Context只读取抽象Contract与开放维度，不读取本文件，也不枚举未选择答案。
