@@ -4,6 +4,7 @@ kind:
 status: candidate
 default_load: false
 scope:
+load_for_modes: []
 supersedes: []
 superseded_by: []
 source: []
