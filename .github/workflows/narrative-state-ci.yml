@@ -27,5 +27,9 @@ jobs:
       - run: python tools/build_context_pack.py ROUTE_BLINDSPOT CI_BLINDSPOT
       - run: python tools/build_context_pack.py ROUTE_NOBODY CI_NOBODY
       - run: python tools/build_context_pack.py ROUTE_NULL CI_NULL
-      - run: python tools/build_context_pack.py ROUTE_ORIGIN CI_ORIGIN_ENGINE ROUTE_ENGINE > /tmp/origin_engine_pack.yaml
-      - run: grep -q 'id: STORY_CONTRACT' /tmp/origin_engine_pack.yaml && grep -q 'id: SCENE_CH2' /tmp/origin_engine_pack.yaml && grep -q 'mode: ROUTE_ENGINE' /tmp/origin_engine_pack.yaml
+      - name: Verify Route Engine semantic context
+        run: |
+          python tools/build_context_pack.py ROUTE_ORIGIN CI_ORIGIN_ENGINE ROUTE_ENGINE > /tmp/origin_engine_pack.yaml
+          grep -q "id: STORY_CONTRACT" /tmp/origin_engine_pack.yaml
+          grep -q "id: SCENE_CH2" /tmp/origin_engine_pack.yaml
+          grep -q "mode: ROUTE_ENGINE" /tmp/origin_engine_pack.yaml
