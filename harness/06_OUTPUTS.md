@@ -24,7 +24,7 @@ Every formal Sprint must leave exactly four human/machine-facing outputs in `run
 3. `AUDIT_REPORT.md` — review evidence and verdicts.
 4. `STATE_DELTA.yaml` — machine-readable writeback summary.
 
-`CONTEXT_PACK.yaml` remains separate runtime evidence and is not repeated in the report.
+`CONTEXT_PACK.yaml` and fresh-session worker artifacts remain separate runtime evidence and are not repeated in the report.
 
 ### SPRINT_REPORT.md
 Keep it concise. Use these sections:
@@ -41,22 +41,15 @@ Keep it concise. Use these sections:
 
 ### AUDIT_REPORT.md
 Record only audits actually run. For each:
+- role
 - verdict
 - decisive evidence
 - unresolved risk
+- independence: `FRESH_SESSION / SUBAGENT_THREAD / SELF_REVIEW`
+- thread/session id when available
+- requested/used model and reasoning effort when available
 
-Also record compact execution provenance for cognition-sensitive roles:
-```yaml
-role:
-agent:
-model:
-reasoning_effort:
-context_mode: FRESH_ALLOWLIST | INHERITED | SELF_REVIEW
-independent: true | false
-```
-
-`Cold Reader: PASS` is independence-qualified only when `context_mode: FRESH_ALLOWLIST` and `independent: true`.
-End with one final Harness verdict.
+Only `FRESH_SESSION` may claim full context independence. `SUBAGENT_THREAD` is useful but parent-history isolation is not assumed. End with one final Harness verdict.
 
 ### STATE_DELTA.yaml
 Record only real state changes:
