@@ -42,14 +42,17 @@ If a proposed Shared fact kills an active Route Interface:
 - or escalate to Human Gate.
 
 ## 5. Formal Sprint close
-A formal Sprint must produce:
-- contracted primary artifact
-- Project State delta
-- Route Interface delta if assumptions changed
-- Open Question / Closure Debt delta if relevant
-- Artifact Registry update
-- process artifact moved to `archive/sprints/` after distillation
-- final workflow state (`NEXT / HUMAN_GATE / ROLLBACK_PARENT`)
+Follow `harness/06_OUTPUTS.md`.
+
+Every formal Sprint must produce in `runtime/CURRENT_SPRINT/`:
+- `SPRINT_REPORT.md`
+- `PRIMARY_ARTIFACT` or `PRIMARY/`
+- `AUDIT_REPORT.md`
+- `STATE_DELTA.yaml`
+
+Then apply the writeback described by `STATE_DELTA.yaml` to Project State, Route Interface, Open Questions / Closure Debt, Artifact Registry, and Archive as relevant.
+
+A Sprint is not complete until writeback is applied and a final workflow state is set: `NEXT / HUMAN_GATE / ROLLBACK_PARENT`.
 
 ## 6. Human Gate
 Stop for:
