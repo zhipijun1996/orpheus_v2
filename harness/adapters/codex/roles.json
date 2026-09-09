@@ -4,7 +4,7 @@
     "reasoning_effort": "high",
     "workers": 2,
     "context_ids": ["*"],
-    "instruction": "Generate structurally distinct candidates. Do not review or defend them. Return concise candidate spines, assumptions, and largest risks."
+    "instruction": "Generate structurally distinct candidates. Treat any Project Story Contract and Route Interface obligations as hard architecture. For ROUTE_ENGINE work, every candidate must causally connect to the required shared story anchor and chapter roles. Do not review or defend candidates. Return concise spines, assumptions, and largest risks."
   },
   "cold_reader": {
     "model": "gpt-5.6-terra",
@@ -15,25 +15,25 @@
   "drama_reviewer": {
     "model": "gpt-5.6-terra",
     "reasoning_effort": "high",
-    "context_ids": ["PROJECT_BRIEF", "SHARED_STATE", "CHAR_*", "ROUTE_*"],
-    "instruction": "Audit desire, opposition, action/counteraction, irreversible change, and continuity of motive. Cite decisive evidence. Do not repair."
+    "context_ids": ["PROJECT_BRIEF", "STORY_CONTRACT", "SCENE_*", "SHARED_STATE", "CHAR_*", "ROUTE_*"],
+    "instruction": "Audit desire, opposition, action/counteraction, irreversible change, and continuity of motive. For ROUTE_ENGINE work, test whether the character engine actually collides with the shared story anchor rather than forming a detachable side story. Cite decisive evidence. Do not repair."
   },
   "mystery_reviewer": {
     "model": "gpt-5.6-sol",
     "reasoning_effort": "high",
-    "context_ids": ["PROJECT_BRIEF", "SHARED_STATE", "ROUTE_*", "IFACE_*"],
-    "instruction": "Audit Working Truth, evidence, Reveal Delta, fairness, and whether the reveal changes the story rather than merely explaining it. Do not repair."
+    "context_ids": ["PROJECT_BRIEF", "STORY_CONTRACT", "SCENE_*", "SHARED_STATE", "ROUTE_*", "IFACE_*"],
+    "instruction": "Audit Working Truth, evidence, Reveal Delta, fairness, and truth-versus-exposure discipline. For ROUTE_ENGINE work, verify that Ch4 explains and Ch5 reinterprets the required shared story anchor instead of a newly invented substitute mystery. Do not repair."
   },
   "logic_scout": {
     "model": "gpt-5.6-sol",
     "reasoning_effort": "xhigh",
-    "context_ids": ["HUMAN_DECISIONS", "SHARED_STATE", "CHAR_*", "ROUTE_*", "IFACE_*"],
-    "instruction": "Audit causal, knowledge, physical, and information consistency. Return CLEAR, RISK, or DEAD with only decisive blockers. Do not repair."
+    "context_ids": ["HUMAN_DECISIONS", "STORY_CONTRACT", "SCENE_*", "SHARED_STATE", "CHAR_*", "ROUTE_*", "IFACE_*"],
+    "instruction": "Audit causal, knowledge, physical, information, and hard task-contract consistency. Return CLEAR, RISK, or DEAD with only decisive blockers. A candidate that violates a required Story Contract anchor or chapter role is not rescued by internal coherence. Do not repair."
   },
   "synthesizer": {
     "model": "gpt-5.6-sol",
     "reasoning_effort": "high",
     "context_ids": ["*"],
-    "instruction": "Converge from frozen candidates and frozen independent reviews. Use SELECT, FUSE, FORK, DROP, or ROLLBACK_PARENT. Do not invent facts solely to neutralize reviewer objections."
+    "instruction": "Converge from frozen candidates and frozen independent reviews. Enforce Project Story Contract and Route Interface obligations before ranking quality. Use SELECT, FUSE, FORK, DROP, or ROLLBACK_PARENT. Do not invent facts solely to neutralize reviewer objections."
   }
 }
