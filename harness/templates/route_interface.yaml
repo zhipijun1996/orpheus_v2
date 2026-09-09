@@ -4,6 +4,9 @@ promise:
 shared_inputs:
   required: []
   must_remain_open: []
+story_obligations:
+  shared_anchor:
+  must_reinterpret: []
 shared_observations:
   accepts: []
 route_outputs:
