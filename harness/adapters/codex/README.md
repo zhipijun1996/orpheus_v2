@@ -63,7 +63,7 @@ Meta Seeds are excluded from ordinary Route runs by default. `ROUTE_NULL` enable
 A registered `kind: human_baseline` artifact can be added **after Forge generation** for an anonymous core-engine comparison:
 
 ```bash
---baseline-id BASELINE_ORIGIN_HUMAN
+--baseline-id BASELINE_ROUTE_HUMAN
 ```
 
 The baseline is never loaded into the Context Pack and is never shown to Forge. After Forge finishes, its text is mixed with the Forge candidate sets under anonymous `Candidate Set N` labels. Reviewers and Synthesis are told only that candidate sets may differ in development depth; they are not told which set is human-authored, blind, or Seed-exposed.
