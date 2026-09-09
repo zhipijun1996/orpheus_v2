@@ -33,3 +33,4 @@ jobs:
           grep -q "id: STORY_CONTRACT" /tmp/origin_engine_pack.yaml
           grep -q "id: SCENE_CH2" /tmp/origin_engine_pack.yaml
           grep -q "mode: ROUTE_ENGINE" /tmp/origin_engine_pack.yaml
+          ! grep -q "id: IDEAS_CREATIVE_SEEDS" /tmp/origin_engine_pack.yaml
