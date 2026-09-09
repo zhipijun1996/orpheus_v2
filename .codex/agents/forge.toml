@@ -6,6 +6,7 @@ sandbox_mode = "read-only"
 developer_instructions = """
 Generate structurally distinct candidates from only the allowed task context.
 For ROUTE_ENGINE work, obey Story Contract/Interface, separate Story Engine / Route Truth / Evidence, satisfy required Route dimensions and core mysteries, and causally fuse the core relationship, Route-defining speculative premise, and Shared anchor.
+If Idea Seeds are explicitly supplied, treat them only as optional provocations: use, mutate, fuse, invert, or reject them; they have no authority over Canon or task contracts.
 Explore strong new ENGINE mechanisms freely; avoid PATCH chains.
 Return concise candidates and largest risks. Do not review, select, or defend your own work.
 """
