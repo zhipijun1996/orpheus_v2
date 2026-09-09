@@ -1,0 +1,116 @@
+version: 1
+status: candidate
+default_load: false
+purpose: 可选创意诱因池；仅由Seeded Forge临时注入，Blind Forge与普通Context Pack不读取。
+
+policy:
+  seed_authority: NONE
+  blind_worker_required: true
+  reviewer_provenance_hidden: true
+  allowed_seed_actions: [USE, MUTATE, FUSE, INVERT, REJECT]
+  note: Seed只提供先验，不代表Canon、Route Truth、偏好答案或限制。
+
+open_dimensions:
+  NULL: [temporal_provenance, ontology, agency_structure, identity_continuity]
+  ZHOU: [final_state, hidden_knowledge, final_objective, relation_to_null]
+  LIN: [post_0317_continuity, biological_relation, personality_relation, hidden_agency]
+  CHENG_2054: [post_intervention_state, identity_continuity, temporal_role, reliability_of_18_year_belief]
+  DAUGHTER: [origin, biological_relation, personality_relation, temporal_role, relation_to_cheng]
+  TIME: [transferable_payload, mutability_of_history, memory_persistence, causality_control, travel_vs_reconstruction]
+  RECORD: [source_reliability, identity_attribution, reconstruction_layer, observer_error]
+  PERSONHOOD: [copy_continuity, body_personality_relation, synchronization, drift]
+
+active_seeds:
+- {id: NULL-01, kind: REVEAL, scope: ordinary_route, status: ACTIVE, statement: "NULL不是稳定单一主体，而是多个主体在不同阶段共同形成的可连续识别身份。"}
+- {id: NULL-02, kind: REVEAL, scope: ordinary_route, status: ACTIVE, statement: "NULL首先是一种角色、权限或系统位置，人物只是暂时占据它。"}
+- {id: NULL-03, kind: MECHANISM, scope: ordinary_route, status: ACTIVE, statement: "NULL的完整行为只有把一个真实人物与非人系统视为共同主体时才能解释。"}
+- {id: NULL-04, kind: CAUSAL, scope: ordinary_route, status: ACTIVE, statement: "最初某人创造了一套行动模式，后来其他人重复执行，使NULL看起来像跨时间连续人物。"}
+- {id: NULL-05, kind: RECORD, scope: ordinary_route, status: ACTIVE, statement: "NULL的连续人格可能是记录或重建系统把多个不完整事件错误聚合后的产物。"}
+- {id: NULL-06, kind: CAUSAL, scope: ordinary_route, status: ACTIVE, statement: "NULL的全部行为可构成一个计划，但没有任何单一执行者完整知道这个计划。"}
+- {id: NULL-07, kind: PERSONHOOD, scope: ordinary_route, status: ACTIVE, statement: "NULL保持某种连续性，但承担它的身体或主体不断改变。"}
+- {id: NULL-08, kind: REVEAL, scope: ordinary_route, status: ACTIVE, statement: "NULL可能是历史模型中始终无法归属于任何已知因果主体的剩余项。"}
+
+- {id: ZHOU-01, kind: REVEAL, scope: ordinary_route, status: ACTIVE, statement: "导师死亡不只是事实，也可能是某个角色主动需要别人相信的事实。"}
+- {id: ZHOU-02, kind: CAUSAL, scope: ordinary_route, status: ACTIVE, statement: "周启明最后看似在解决事故，实际上还在完成一个只有事后才看得懂的第二目标。"}
+- {id: ZHOU-03, kind: CHARACTER, scope: ordinary_route, status: ACTIVE, statement: "周启明真正保护的人或未来，并不是玩家最初认为的对象。"}
+- {id: ZHOU-04, kind: CAUSAL, scope: ordinary_route, status: ACTIVE, statement: "程砚十八年的追查本身可能正是周启明需要发生的事情。"}
+- {id: ZHOU-05, kind: REVEAL, scope: ordinary_route, status: ACTIVE, statement: "导师是幕后黑手可以是一套证据基本真实、但因果解释被有意制造错误的叙事。"}
+- {id: ZHOU-06, kind: REVEAL, scope: ordinary_route, status: ACTIVE, statement: "周启明可能深度参与NULL行为链，但把他等同于完整NULL反而会遮蔽真正结构。"}
+
+- {id: LIN-01, kind: CAUSAL, scope: ordinary_route, status: ACTIVE, statement: "林岚在2036之前就主动为自己在未来以某种形式继续存在做过准备。"}
+- {id: LIN-02, kind: REVEAL, scope: ordinary_route, status: ACTIVE, statement: "玩家以为未来的人来源于林岚，但真正的来源因果方向可能相反。"}
+- {id: LIN-03, kind: MECHANISM, scope: ordinary_route, status: ACTIVE, statement: "林岚与未来某人的相似并非复制关系，而可能共同来源于第三个模板。"}
+- {id: LIN-04, kind: PERSONHOOD, scope: ordinary_route, status: ACTIVE, statement: "两个人的生物学关系与人格来源关系可以指向完全不同的答案。"}
+- {id: LIN-05, kind: CHARACTER, scope: ordinary_route, status: ACTIVE, statement: "林岚真正试图阻止的对象，可能是另一个时间阶段或另一连续形式的自己。"}
+- {id: LIN-06, kind: CAUSAL, scope: ordinary_route, status: ACTIVE, statement: "林岚的消失本身可能是她主动制造的重要行动，而不是事故后果。"}
+- {id: LIN-07, kind: CHARACTER, scope: ordinary_route, status: ACTIVE, statement: "林岚知道程砚会因她持续追查，并把这种执念纳入自己的计划。"}
+
+- {id: CHENG-01, kind: CAUSAL, scope: ordinary_route, status: ACTIVE, statement: "程砚后来才发现，自己已经是某个2036异常的原因。"}
+- {id: CHENG-02, kind: CAUSAL, scope: ordinary_route, status: ACTIVE, statement: "程砚以为自己是因果链设计者，实际上只是另一个更大结构中的中间节点。"}
+- {id: CHENG-03, kind: PERSONHOOD, scope: ordinary_route, status: ACTIVE, statement: "2054程砚自认是2036程砚，并不必然等于主体连续性真的成立。"}
+- {id: CHENG-04, kind: PERSONHOOD, scope: ordinary_route, status: ACTIVE, statement: "多个主体都可能拥有足够理由认为自己才是程砚的合法连续者。"}
+- {id: CHENG-05, kind: CHARACTER, scope: ordinary_route, status: ACTIVE, statement: "程砚最终拥有实现十八年目标的能力，却主动决定不用。"}
+
+- {id: DAUGHTER-01, kind: CHARACTER, scope: ordinary_route, status: ACTIVE, statement: "父女关系先在人生中真实成立，她的生物学或技术来源之后才被发现。"}
+- {id: DAUGHTER-02, kind: REVEAL, scope: ordinary_route, status: ACTIVE, statement: "她真正的生命史可能比程砚以为的父女关系起点更早。"}
+- {id: DAUGHTER-03, kind: PERSONHOOD, scope: ordinary_route, status: ACTIVE, statement: "她可以来源于另一个人格或生物模板，但已经成为不能被来源定义的独立主体。"}
+- {id: DAUGHTER-04, kind: CHARACTER, scope: ordinary_route, status: ACTIVE, statement: "她主动拒绝让自己的身份继续由我究竟来自谁决定。"}
+- {id: DAUGHTER-05, kind: CAUSAL, scope: ordinary_route, status: ACTIVE, statement: "她与程砚真实形成的父女关系，后来直接产生一个作用于03:17的关键行动。"}
+- {id: DAUGHTER-06, kind: CAUSAL, scope: ordinary_route, status: ACTIVE, statement: "程砚某次成功修复过去，将使他后来最重要的一段关系无法存在。"}
+- {id: DAUGHTER-07, kind: CHARACTER, scope: ordinary_route, status: ACTIVE, statement: "阻止修复过去可以不是维护悲剧，而是承认悲剧之后真实存在的人生也具有不可抹除的价值。"}
+
+- {id: TIME-01, kind: MECHANISM, scope: ordinary_route, status: ACTIVE, statement: "时间介入只能作用于尚未被可靠唯一确定的历史过程。"}
+- {id: TIME-02, kind: MECHANISM, scope: ordinary_route, status: ACTIVE, statement: "阿尔戈能够制造新的原因，却不能直接指定这些原因最终导致什么。"}
+- {id: TIME-03, kind: MECHANISM, scope: ordinary_route, status: ACTIVE, statement: "阿尔戈可以约束某个结果发生，却无法决定抵达结果的具体过程。"}
+- {id: TIME-04, kind: MECHANISM, scope: ordinary_route, status: ACTIVE, statement: "时间技术真正改变的可能是人的认知与决策，而不是物理事实。"}
+- {id: TIME-05, kind: RECORD, scope: ordinary_route, status: ACTIVE, statement: "时间介入首先改变记录与可知历史，而不必等同于改变客观事件。"}
+- {id: TIME-06, kind: MECHANISM, scope: ordinary_route, status: ACTIVE, statement: "人物认为自己进入了过去，但实际发生的可能是一种足以产生行动后果的重建过程。"}
+- {id: TIME-07, kind: REVEAL, scope: ordinary_route, status: ACTIVE, statement: "阿尔戈曾成功过，只是所有成功案例都因表现方式而被归类成事故或异常。"}
+- {id: TIME-08, kind: REVEAL, scope: ordinary_route, status: ACTIVE, statement: "最大反转不一定是时间机器如何工作，而可能是所有人物从一开始就误解了它究竟在做什么。"}
+
+- {id: REC-01, kind: RECORD, scope: ordinary_route, status: ACTIVE, statement: "记录本身可以真实，但人物把动作归到了错误主体身上。"}
+- {id: REC-02, kind: RECORD, scope: ordinary_route, status: ACTIVE, statement: "被所有人视为原始证据的东西其实已经经过系统自动修复或补全。"}
+- {id: REC-03, kind: RECORD, scope: ordinary_route, status: ACTIVE, statement: "十八年来最重要的历史结论建立在一个从未重新验证的二手来源上。"}
+- {id: REC-04, kind: RECORD, scope: ordinary_route, status: ACTIVE, statement: "某人的记忆准确无误，但他十八年来对这段记忆的解释一直错。"}
+- {id: REC-05, kind: META, scope: meta, status: ACTIVE, normal_exposure: false, statement: "玩家看到的2036可能不是客观历史本身，而是未来系统实时组织出来的历史表示。"}
+
+- {id: SELF-01, kind: PERSONHOOD, scope: ordinary_route, status: ACTIVE, statement: "两个具有主体资格的人格共享一个身体，真正问题不是谁是真人，而是谁拥有行动权。"}
+- {id: SELF-02, kind: PERSONHOOD, scope: ordinary_route, status: ACTIVE, statement: "同一人格状态同时存在于两个身体后，很快产生两个都合理但互不相同的自己。"}
+- {id: SELF-03, kind: PERSONHOOD, scope: ordinary_route, status: ACTIVE, statement: "完整复制记忆和人格结构，并不自动产生主体连续性。"}
+- {id: SELF-04, kind: PERSONHOOD, scope: ordinary_route, status: ACTIVE, statement: "同一人格进入不同身体后会形成不同欲望，因此人格不能完全脱离身体定义。"}
+- {id: SELF-05, kind: PERSONHOOD, scope: ordinary_route, status: ACTIVE, statement: "人格复制中的微小漂移经过多代后，会形成无法简单归为原版或副本的新主体。"}
+- {id: SELF-06, kind: PERSONHOOD, scope: ordinary_route, status: ACTIVE, statement: "复制人格可能不是一次事件，而是两个主体长期同步、分化与共同演化的过程。"}
+
+- {id: CAUSE-01, kind: CAUSAL, scope: ordinary_route, status: ACTIVE, statement: "所有人都在试图阻止同一场悲剧，而这些合理行动共同构成了悲剧。"}
+- {id: CAUSE-02, kind: CAUSAL, scope: ordinary_route, status: ACTIVE, statement: "没有单一幕后黑手；每个人只隐瞒一小部分真相，叠加后才制造灾难。"}
+- {id: CAUSE-03, kind: CAUSAL, scope: ordinary_route, status: ACTIVE, statement: "一个角色为了避免成为某个恐惧身份，恰恰因此完成了成为它的条件。"}
+- {id: CAUSE-04, kind: CAUSAL, scope: ordinary_route, status: ACTIVE, statement: "某次真正成功的救援会让后来一段至关重要的人际关系从未形成。"}
+- {id: CAUSE-05, kind: CAUSAL, scope: ordinary_route, status: ACTIVE, statement: "一次被所有人物认定为失败的行动，实际上保存了后来最重要的人。"}
+- {id: CAUSE-06, kind: CAUSAL, scope: ordinary_route, status: ACTIVE, statement: "03:17并不只是因果终点；事故后的某个选择后来反过来成为03:17的一部分原因。"}
+- {id: CAUSE-07, kind: REVEAL, scope: ordinary_route, status: ACTIVE, statement: "每个人掌握的局部事实都是真的，但把它们拼成一个单一故事后却得到错误结论。"}
+
+- {id: REL-01, kind: CHARACTER, scope: ordinary_route, status: ACTIVE, statement: "程砚所谓救林岚的欲望中，爱情与罪责并不是同一件事。"}
+- {id: REL-02, kind: CHARACTER, scope: ordinary_route, status: ACTIVE, statement: "被救的人并不认为恢复原状就是对自己最好的结果。"}
+- {id: REL-03, kind: CHARACTER, scope: ordinary_route, status: ACTIVE, statement: "程砚真心爱一个后来的人，却仍可能无意识地把她当作失去之人的延续。"}
+- {id: REL-04, kind: CHARACTER, scope: ordinary_route, status: ACTIVE, statement: "两个人真正相爱，因此才会在最重要的目标上成为彼此最坚决的敌人。"}
+- {id: REL-05, kind: CHARACTER, scope: ordinary_route, status: ACTIVE, statement: "核心冲突不是谁更爱某个人，而是谁有权替她决定哪一种人生值得存在。"}
+
+- {id: META-01, kind: META, scope: meta, status: ACTIVE, normal_exposure: false, statement: "多条Route都能完整解释同一组观测，但这些解释彼此不能同时成立。"}
+- {id: META-02, kind: META, scope: meta, status: ACTIVE, normal_exposure: false, statement: "玩家选择某种历史解释的行为，本身可能成为系统下一步行动的一部分。"}
+- {id: META-03, kind: META, scope: meta, status: ACTIVE, normal_exposure: false, statement: "玩家不是旁观读者，而是在使用某种系统替人物完成事故重建。"}
+- {id: META-04, kind: META, scope: meta, status: ACTIVE, normal_exposure: false, statement: "NULL可能对应所有完整解释模型都无法吸收的那部分残余。"}
+- {id: META-05, kind: META, scope: meta, status: ACTIVE, normal_exposure: false, statement: "最终真正无源的未必是人物，而可能是一条信息、算法、名称或决定。"}
+
+adversarial_probes:
+- {id: ANTI-01, statement: "假设当前最显眼的身份问题本身问错了。"}
+- {id: ANTI-02, statement: "假设当前所有候选机制都只是人物对真实机制的错误模型。"}
+- {id: ANTI-03, statement: "尝试把一个看似人物问题重写成系统或制度问题。"}
+- {id: ANTI-04, statement: "尝试把一个看似系统问题重写成人物关系问题。"}
+- {id: ANTI-05, statement: "检查两个看似互斥的Seed是否可能作用于不同真相层，因此同时成立。"}
+- {id: ANTI-06, statement: "尝试提出一个不依赖当前Seed池任何主要答案、但仍满足全部Story Contract的候选。"}
+
+embodied_seeds:
+- {id: EMB-ECHO-OVERWRITE, status: EMBODIED, exposure_weight: 0, statement: "未来人格或神经状态进入年轻宿主。"}
+- {id: EMB-FLESH-BODY, status: EMBODIED, exposure_weight: 0, statement: "独立未来肉身参与2036。"}
+- {id: EMB-BLINDSPOT-UNDERDETERMINED, status: EMBODIED, exposure_weight: 0, statement: "未被可靠唯一确定的历史过程允许有限介入。"}
+- {id: EMB-NOBODY-MULTI-NULL, status: EMBODIED, exposure_weight: 0, statement: "多个2036本地执行者或系统被归并成一个NULL表象。"}
