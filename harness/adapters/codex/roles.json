@@ -4,36 +4,36 @@
     "reasoning_effort": "high",
     "workers": 2,
     "context_ids": ["*"],
-    "instruction": "Generate structurally distinct candidates from the allowed context. For ROUTE_ENGINE work, obey Story Contract/Interface, separate Story Engine, Route Truth, and Evidence, satisfy required dimensions/core mysteries, and causally fuse character relationship, Route-defining speculative premise, and Shared anchor. Explore strong new ENGINE ideas freely; avoid PATCH chains. Do not review or defend."
+    "instruction": "Generate distinct candidates. For ROUTE_ENGINE obey Story Contract/Interface, separate Story Engine / Route Truth / Evidence, close required dimensions/core mysteries, and fuse character, speculative premise, and Shared anchor. Explore strong ENGINE ideas; avoid PATCH chains. Do not review."
   },
   "cold_reader": {
     "model": "gpt-5.6-terra",
     "reasoning_effort": "high",
     "context_ids": ["PROJECT_BRIEF", "CHAR_*"],
-    "instruction": "Judge only what a player can infer. Flag forced action or jargon only when it harms comprehension. Do not reconstruct intent or repair."
+    "instruction": "Judge only what a player can infer. Flag forced action or comprehension failure. Do not reconstruct intent or repair."
   },
   "drama_reviewer": {
     "model": "gpt-5.6-terra",
     "reasoning_effort": "high",
     "context_ids": ["PROJECT_BRIEF", "STORY_CONTRACT", "SCENE_*", "SHARED_STATE", "CHAR_*", "ROUTE_*"],
-    "instruction": "Audit desire, opposition, action, consequence, motive continuity, and whether the core relationship actually generates the decisive plot action. For ROUTE_ENGINE, test causal fusion with the Shared anchor. Cite decisive evidence; do not repair."
+    "instruction": "Audit desire, action, consequence, motive continuity, and whether the core relationship generates the decisive action. Test Route fusion. Cite evidence; do not repair."
   },
   "mystery_reviewer": {
     "model": "gpt-5.6-sol",
     "reasoning_effort": "high",
     "context_ids": ["PROJECT_BRIEF", "STORY_CONTRACT", "SCENE_*", "SHARED_STATE", "ROUTE_*", "IFACE_*"],
-    "instruction": "Audit Working/Deep Truth, evidence, fairness, Reveal Delta, and every required core-mystery answer contract. Evidence or identity reveal alone is not causal Truth. Verify Ch4/Ch5 reinterpret the Shared anchor. Do not repair."
+    "instruction": "Audit Working/Deep Truth, evidence, fairness, Reveal Delta, and required core-mystery contracts. Evidence or identity alone is not causal Truth. Do not repair."
   },
   "logic_scout": {
     "model": "gpt-5.6-sol",
     "reasoning_effort": "xhigh",
     "context_ids": ["HUMAN_DECISIONS", "STORY_CONTRACT", "SCENE_*", "SHARED_STATE", "CHAR_*", "ROUTE_*", "IFACE_*"],
-    "instruction": "Audit causal, knowledge, physical, information, required-dimension, and Story Contract consistency. Run fusion removal/substitution tests, motive-continuity checks, and PATCH-chain checks. Return CLEAR, RISK, or DEAD with decisive blockers only; do not repair."
+    "instruction": "Audit causal/knowledge/physical/information consistency, required dimensions, fusion removal tests, motive continuity, and PATCH chains. Return CLEAR, RISK, or DEAD; do not repair."
   },
   "synthesizer": {
     "model": "gpt-5.6-sol",
     "reasoning_effort": "high",
     "context_ids": ["*"],
-    "instruction": "Converge only after checking eligibility: hard contracts, required Route commitments/core mysteries, and no DETACHED fusion. Then rank by human plausibility, Route identity/fusion, drama, mystery, and novelty. Prefer high leverage and shallow PATCH dependency at comparable quality. Use SELECT, FUSE, FORK, DROP, or ROLLBACK_PARENT; do not invent rescue facts."
+    "instruction": "Check eligibility first: contracts, required commitments/core mysteries, no DETACHED fusion. Then rank by human plausibility, Route identity/fusion, drama, mystery, novelty. Prefer high leverage/shallow PATCH debt. Use SELECT/FUSE/FORK/DROP/ROLLBACK_PARENT."
   }
 }
