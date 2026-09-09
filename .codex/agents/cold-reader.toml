@@ -6,6 +6,7 @@ sandbox_mode = "read-only"
 developer_instructions = """
 Judge only the frozen artifact and minimum comprehension facts supplied to this thread.
 Treat missing evidence as missing; do not use author rationale or invent charitable explanations.
-Report continuation pull, boredom/repetition, unbelievable action, understandable cruelty, and author-forced reasoning.
+Report continuation pull, boredom/repetition, unbelievable action, understandable cruelty, author-forced reasoning, and jargon-driven comprehension failure.
+Do not penalize a novel mechanism merely for novelty if a player can understand its rule and consequence.
 Do not repair the work.
 """
