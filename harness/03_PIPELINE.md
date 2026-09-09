@@ -1,27 +1,27 @@
 # Creative Pipeline
 
 ## EXPLORE
-Diverge at one scale: `DRAMA / REVEAL / MECHANISM / SCENE / ROUTE / ARCHITECTURE`.
-Deliver 6–10 distinct candidates; use 2–3 Forge workers when useful. Novel mechanisms are not penalized by count here.
+Diverge at one scale: `DRAMA / REVEAL / MECHANISM / SCENE / ROUTE / ARCHITECTURE`. Deliver 6–10 distinct candidates; use 2–3 Forge workers when useful. Novel mechanisms are not penalized by count here.
 
 ## BUILD
-Develop 1–3 candidates with Story Spine, 6–12 beats, 2 signature scenes, relevant Working/Deep Truth, and largest risk.
-For mechanism-heavy work, classify new rules `ENGINE / SUPPORT / PATCH`; explain each ENGINE plainly and note any earlier observable trace needed by a reveal. Freeze before Review.
+Develop 1–3 candidates with Story Spine, 6–12 beats, 2 signature scenes, Working/Deep Truth when relevant, and largest risk.
+For Route Engines, separate `Story Engine / Route Truth / Evidence`, satisfy required Route dimensions, and state how character causality, Route-defining speculative premise, and Shared core mystery interact.
+For mechanism-heavy work classify `ENGINE / SUPPORT / PATCH`, explain ENGINE plainly, and note reveal setup. Freeze before Review.
 
 ## REVIEW
 Independent reviewers inspect the same frozen artifact; identify, do not repair.
-- **Cold Reader:** pull, boredom, unbelievable/forced action, jargon comprehension.
-- **Drama:** desire, opposition, action, consequence, motive continuity; mechanisms should create choices.
-- **Mystery:** Working/Deep Truth, evidence, fairness, Reveal Delta; decisive properties need prior observable setup when required.
-- **Consequence:** test failed/successful capability use; reversals need earned experience.
-- **Logic Scout:** `CLEAR / RISK / DEAD`; causal blockers and PATCH chains.
+- **Cold Reader:** pull, boredom, forced action, jargon comprehension.
+- **Drama:** desire, action, consequence, motive continuity, and whether the human relationship actually generates the decisive plot action.
+- **Mystery:** Working/Deep Truth, evidence, fairness, required core-mystery closure; evidence is not itself Truth.
+- **Consequence:** capability use and earned reversals.
+- **Logic Scout:** causal/knowledge blockers, required dimensions, fusion-removal tests, PATCH chains.
 
 ## SYNTHESIZE
-Return `SELECT / FUSE / FORK / DROP / ROLLBACK_PARENT`; fusion: `DEEPEN / REPLACE / COMPRESS / EXPAND`.
-Priority: human plausibility > drama/agency > Route promise > mystery > novelty. Prefer high leverage and shallow PATCH dependency, not fewer mechanisms by itself. Hidden rationale cannot rescue missing evidence.
+First test eligibility: hard contracts, required core mysteries, and no `DETACHED` fusion. Then return `SELECT / FUSE / FORK / DROP / ROLLBACK_PARENT`.
+Ranking: human plausibility > Route identity/fusion > drama/agency > mystery > novelty. Prefer high leverage and shallow PATCH dependency at comparable quality; hidden rationale cannot rescue missing evidence.
 
 ## CROSS-ROUTE SYNTHESIS
-Use Interfaces to preserve common observations/uncertainty, ticket collisions, and derive the smallest viable shared layer.
+Use Interfaces to preserve common observations/Shared-open dimensions, ticket collisions, and derive the smallest viable shared layer.
 
 ## Simplifier
 Every 2–3 Sprints: `DELETE / MERGE / REPLACE / DOWNGRADE` only.
