@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.6.4
+Fresh-session execution:
+- distinguishes `FRESH_SESSION`, `SUBAGENT_THREAD`, and `SELF_REVIEW` instead of treating native subagents as guaranteed context-isolated reviewers
+- Cold Reader full-independence claims now require a new external Codex thread
+- adds a compact Codex SDK adapter that automatically runs fresh Forge, parallel Review, and fresh Synthesis sessions
+- model/reasoning profiles are role-routed and overridable without changing Harness policy
+- fresh workers are read-only, network-disabled, and receive embedded allowlisted context; active State remains single-writer
+- worker artifacts stay outside the four Formal Sprint outputs and are consumed by the primary Orchestrator
+
 ## v0.6.3
 Execution independence:
 - formal creative Sprints delegate cognition-sensitive roles to fresh subagent threads when the runtime supports them
