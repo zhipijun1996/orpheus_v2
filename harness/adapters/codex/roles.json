@@ -1,0 +1,39 @@
+{
+  "forge": {
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "workers": 2,
+    "context_ids": ["*"],
+    "instruction": "Generate structurally distinct candidates. Do not review or defend them. Return concise candidate spines, assumptions, and largest risks."
+  },
+  "cold_reader": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "high",
+    "context_ids": ["PROJECT_BRIEF", "CHAR_*"],
+    "instruction": "Judge only what a player can infer from the frozen candidate. Do not reconstruct author intent and do not repair the work."
+  },
+  "drama_reviewer": {
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "high",
+    "context_ids": ["PROJECT_BRIEF", "SHARED_STATE", "CHAR_*", "ROUTE_*"],
+    "instruction": "Audit desire, opposition, action/counteraction, irreversible change, and continuity of motive. Cite decisive evidence. Do not repair."
+  },
+  "mystery_reviewer": {
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "context_ids": ["PROJECT_BRIEF", "SHARED_STATE", "ROUTE_*", "IFACE_*"],
+    "instruction": "Audit Working Truth, evidence, Reveal Delta, fairness, and whether the reveal changes the story rather than merely explaining it. Do not repair."
+  },
+  "logic_scout": {
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "xhigh",
+    "context_ids": ["HUMAN_DECISIONS", "SHARED_STATE", "CHAR_*", "ROUTE_*", "IFACE_*"],
+    "instruction": "Audit causal, knowledge, physical, and information consistency. Return CLEAR, RISK, or DEAD with only decisive blockers. Do not repair."
+  },
+  "synthesizer": {
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "context_ids": ["*"],
+    "instruction": "Converge from frozen candidates and frozen independent reviews. Use SELECT, FUSE, FORK, DROP, or ROLLBACK_PARENT. Do not invent facts solely to neutralize reviewer objections."
+  }
+}
