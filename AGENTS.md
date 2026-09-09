@@ -11,6 +11,8 @@ For an ordinary creative task, start with:
 
 Use `tools/build_context_pack.py` rather than choosing historical files by filename.
 
+Task mode is part of context routing. A Route Story Engine task must use `mode: ROUTE_ENGINE`; its generated Context Pack must include the active Project Story Contract and the shared story-anchor scene. If either is missing, stop and fix routing rather than generating from prompt memory.
+
 ## 2. Authority
 - `LOCKED`: Human commitment; ordinary agents cannot mutate it.
 - `PROVISIONAL`: current working direction; material challenges escalate to Human Gate.
