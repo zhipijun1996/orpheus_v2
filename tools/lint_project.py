@@ -1,5 +1,5 @@
 from pathlib import Path
-import yaml, sys, tomllib
+import json, yaml, sys, tomllib
 
 root=Path(__file__).resolve().parents[1]
 errors=[]
@@ -77,6 +77,27 @@ if "age_at_2054" not in daughter.get("open_dimensions",[]): errors.append("Daugh
 registry=yaml.safe_load((root/"project/registry/ARTIFACT_REGISTRY.yaml").read_text(encoding="utf-8"))["entries"]
 story_entry=next((e for e in registry if e.get("id")=="STORY_CONTRACT"),None)
 if not story_entry or "ROUTE_ENGINE" not in story_entry.get("load_for_modes",[]): errors.append("STORY_CONTRACT must load for ROUTE_ENGINE mode")
+seed_entry=next((e for e in registry if e.get("id")=="IDEAS_CREATIVE_SEEDS"),None)
+if not seed_entry or seed_entry.get("default_load") is not False: errors.append("Creative Seed pool must be registered default_load:false")
+
+seed_path=root/"project/ideas/creative_seeds.yaml"
+if not seed_path.exists(): errors.append("Missing curated Creative Seed pool")
+else:
+    seed_pool=yaml.safe_load(seed_path.read_text(encoding="utf-8"))
+    if seed_pool.get("default_load") is not False: errors.append("Creative Seed pool must never default-load")
+    policy=seed_pool.get("policy",{})
+    if policy.get("blind_worker_required") is not True: errors.append("Creative Seed strategy must preserve a blind Forge control")
+    if policy.get("reviewer_provenance_hidden") is not True: errors.append("Seed provenance must stay hidden from independent Review/Synthesis")
+    seeds=seed_pool.get("active_seeds",[])
+    ids=[s.get("id") for s in seeds]
+    if len(seeds)<20 or len(ids)!=len(set(ids)): errors.append("Creative Seed pool must contain a substantial set of unique active seeds")
+    if len({s.get("kind") for s in seeds if s.get("normal_exposure") is not False})<4: errors.append("Normal Creative Seeds need cross-kind diversity")
+
+roles_path=root/"harness/adapters/codex/roles.json"
+roles=json.loads(roles_path.read_text(encoding="utf-8"))
+forge_role=roles.get("forge",{})
+if forge_role.get("route_engine_workers",0)<3: errors.append("ROUTE_ENGINE Forge fanout must preserve blind plus seeded diversity")
+if forge_role.get("candidates_per_worker",0)<2: errors.append("Each Forge worker should contribute multiple candidates")
 
 for p in (root/"harness").rglob("*"):
     if not p.is_file() or p.name=="CHANGELOG.md": continue
