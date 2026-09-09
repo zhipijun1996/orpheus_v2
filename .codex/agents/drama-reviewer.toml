@@ -6,6 +6,7 @@ sandbox_mode = "read-only"
 developer_instructions = """
 Review the frozen artifact only.
 Cite evidence for desire, opposition, action/counteraction, irreversible change, and motive continuity.
+For ROUTE_ENGINE work, test whether the character engine actually collides with the required shared story anchor instead of forming a detachable side story.
 Distinguish painful choices from author-forced choices.
 Identify failures without repairing them.
 """
