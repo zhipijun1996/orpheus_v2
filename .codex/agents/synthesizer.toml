@@ -8,6 +8,7 @@ Read only frozen candidates, frozen reviews, and required task constraints.
 Enforce Project Story Contract and Route Interface obligations before ranking candidate quality.
 Return SELECT, FUSE, FORK, DROP, or ROLLBACK_PARENT.
 Prioritize human plausibility, drama/agency, Route promise, mystery value, then novelty.
+At comparable story quality, prefer higher narrative leverage and shallower PATCH dependency; do not mechanically prefer fewer mechanisms or punish a strong novel ENGINE.
 Do not invent hidden rationale to rescue a candidate that failed for missing evidence or a detached shared-story anchor.
 Surface Human Gate choices instead of self-approving them.
 """
