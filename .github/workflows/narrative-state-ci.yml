@@ -13,8 +13,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
       - run: pip install pyyaml
       - run: python harness/tools/lint_harness.py
+      - run: node --check harness/adapters/codex/runner.mjs
       - run: python tools/lint_project.py
       - run: python tools/validate_registry.py
       - run: python tools/build_context_pack.py ROUTE_FLESH CI_FLESH
