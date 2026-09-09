@@ -16,12 +16,19 @@ for phrase in ["未来程砚作为独立身体回到2036","成熟阿尔戈传递
     if phrase in shared_text: errors.append(f"Route-local truth leaked into shared state: {phrase}")
 for phrase in ["未来人已确认","未来制造物已确认","客观证明来自未来","未来访客已确认"]:
     if phrase in shared_text: errors.append(f"NOBODY-killing future-origin assertion in shared state: {phrase}")
+if "must_remain_open" in shared: errors.append("Shared state must use positive commitments; omit answer-menu must_remain_open lists")
 for old in ["BODY","ZERO","OBSERVATION","NO_SOURCE"]:
     if (root/f"project/state/routes/{old}.yaml").exists(): errors.append(f"Legacy active route file exists: {old}.yaml")
 
 ch2=yaml.safe_load((root/"project/state/scenes/CH2.yaml").read_text(encoding="utf-8"))
-unknown=" ".join(ch2["character_knowledge"]["does_not_know"])
-if "未来是否成功发展出成熟阿尔戈" not in unknown: errors.append("CH2 missing future-success knowledge boundary")
+if not isinstance(ch2.get("fixed_observations"),list) or not ch2.get("fixed_observations"):
+    errors.append("CH2 must expose a compact fixed_observations list")
+if not isinstance(ch2.get("route_obligations"),list) or not ch2.get("route_obligations"):
+    errors.append("CH2 must expose route_obligations")
+if not ch2.get("shared_rule") or not ch2.get("shared_delta"):
+    errors.append("CH2 must define positive Shared scope and a Shared Delta path")
+for legacy in ["preserve_open","route_hooks","character_knowledge"]:
+    if legacy in ch2: errors.append(f"CH2 creator contract should not carry answer menus or negative priors: {legacy}")
 
 contract_path=root/"project/state/STORY_CONTRACT.yaml"
 if not contract_path.exists(): errors.append("Missing Project Story Contract")
@@ -31,13 +38,12 @@ else:
     chapters=contract.get("chapter_architecture",{})
     if str(chapters.get("ch4",{}).get("time_anchor"))!="2054": errors.append("Story Contract Ch4 must anchor to 2054")
     if chapters.get("ch5",{}).get("time_anchor")!="2036_CAUSAL_LAYER": errors.append("Story Contract Ch5 must enter the 2036 causal layer")
-    if chapters.get("ch5",{}).get("physical_future_return_required") is not False: errors.append("Story Contract must not require physical future return in every Route")
 
     core=contract.get("core_route_mysteries",{})
     required_core={"accident_causality","null_mystery","zhou_0317_role","lin_0317_role"}
     if not required_core.issubset(core): errors.append("Story Contract missing required core mystery dimensions")
     null=core.get("null_mystery",{})
-    if null.get("route_engagement")!="REQUIRED" or null.get("route_resolution")!="LOCAL_COMMITMENT_REQUIRED": errors.append("NULL mystery must stay Shared-open but close locally in every ordinary Route")
+    if null.get("route_engagement")!="REQUIRED" or null.get("route_resolution")!="LOCAL_COMMITMENT_REQUIRED": errors.append("NULL mystery must close locally in every ordinary Route")
     required_null={"ontology","agency","actions","motive","objective","causal_impact","apparent_contradiction"}
     if not required_null.issubset(set(null.get("required_answers",[]))): errors.append("NULL mystery answer contract incomplete")
     if null.get("identity_only_resolution")!="insufficient": errors.append("NULL identity-only reveal must be insufficient")
