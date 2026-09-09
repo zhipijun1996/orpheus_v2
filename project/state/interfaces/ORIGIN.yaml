@@ -10,6 +10,10 @@ shared_inputs:
   - DNA意义
   - 成熟阿尔戈机制
   - NULL身份
+story_obligations:
+  shared_anchor: CH2_0317_COMMON
+  must_reinterpret:
+  - 至少一个03:17核心Shared观测必须进入本Route主因果链，并在Ch4形成Working Truth、在Ch5获得新的因果或人物意义。
 route_outputs:
   can_explain:
   - 父女关系对2054程砚最终选择的影响（待开发）
