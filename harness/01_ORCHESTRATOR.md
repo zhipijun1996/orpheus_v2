@@ -9,6 +9,29 @@ Possible exits:
 - `HUMAN_GATE`
 - `ROLLBACK_PARENT`
 
+## Execution contract
+The primary thread is the Orchestrator and final State Writer.
+
+When the runtime supports subagents, a formal creative Sprint MUST use fresh role threads for cognition that benefits from independence:
+- Forge / divergent exploration
+- applicable Review roles
+- Synthesis when multiple candidates or material review conflict exist
+
+The primary thread may coordinate, freeze artifacts, and write state, but its own critique does not count as an independent review.
+
+At least one independent reviewer SHOULD use a different model profile from the authoring role when the execution adapter supports model routing. If required role/model independence cannot be provided, record the degradation and do not claim an independent `PASS`; use `HUMAN_GATE` when that review is required for advancement.
+
+Purely mechanical tasks may remain on the primary thread.
+
+## Concurrency
+Parallelize independent read-heavy work:
+- EXPLORE: 2–3 Forge workers when genuine divergence is useful
+- REVIEW: applicable reviewers run concurrently from the same frozen artifact
+- SYNTHESIZE: starts only after required reviews freeze
+- Project State / Registry writeback: primary thread only
+
+Avoid parallel writes to active Project State.
+
 ## Sprint budget
 - maximum 4 formal Tasks per Sprint
 - maximum 2 divergence rounds on one problem
