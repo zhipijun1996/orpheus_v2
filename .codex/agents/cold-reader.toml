@@ -1,5 +1,5 @@
 name = "cold_reader"
-description = "Independent cold reader for player-facing coherence, pull, boredom, and author-forced reasoning."
+description = "Native-subagent fallback cold reader. Useful, but full context independence requires the fresh-session adapter."
 model = "gpt-5.6-terra"
 model_reasoning_effort = "high"
 sandbox_mode = "read-only"
