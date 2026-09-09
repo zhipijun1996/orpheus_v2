@@ -62,3 +62,4 @@ entries:
 - {id: IDEAS_RAW, path: project/ideas/raw_seeds.yaml, kind: idea_pool, status: raw_seed, default_load: false, scope: project, depends_on: []}
 - {id: IDEAS_CANDIDATE, path: project/ideas/candidates.yaml, kind: idea_pool, status: candidate, default_load: false, scope: project, depends_on: []}
 - {id: IDEAS_ARCHIVED, path: project/ideas/archived.yaml, kind: idea_pool, status: archived, default_load: false, scope: project, depends_on: []}
+- {id: IDEAS_CREATIVE_SEEDS, path: project/ideas/creative_seeds.yaml, kind: idea_seed_pool, status: candidate, default_load: false, scope: project, depends_on: []}
