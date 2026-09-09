@@ -2,24 +2,25 @@ route_id: BLINDSPOT
 status: current
 promise: 已可靠唯一确定的过去成为锚点；未唯一确定的过程提供自洽空间。
 shared_inputs:
-  required:
-  - SH-001
-  - SH-003
-  - SH-006
-  - SH-007
-  - SH-008
-  must_remain_open:
-  - 周启明最后关键区间
-  - 绝对尸体证明
-  - NULL身份
-  - 成熟阿尔戈载体
+  required: [SH-001, SH-003, SH-006, SH-007, SH-008]
+shared_open_dimensions:
+- zhou_final_interval
+- absolute_death_proof
+- null_ontology
+- mature_argo_carrier
+route_dimensions:
+  intervention_boundary_model:
+    engagement: REQUIRED
+    resolution: LOCAL_COMMITMENT_REQUIRED
+story_obligations:
+  shared_anchor: CH2_0317_COMMON
+  must_reinterpret: [core_route_mysteries]
 route_outputs:
   can_explain:
   - 部分2036异常来自2054有限干预
   - 锚点收束
   - 盲区救援与价值分叉
-  leaves_unexplained:
-  - 其它Route机制
+  leaves_unexplained: [other_route_mechanisms]
 collision_surface:
 - Shared层若完整展示周启明最后关键区间会杀死BLINDSPOT。
 - Shared层若给出不可争议死亡证明会大幅压缩救援空间。
