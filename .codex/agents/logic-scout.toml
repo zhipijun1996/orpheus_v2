@@ -1,6 +1,6 @@
 name = "logic_scout"
-description = "Deep causal auditor for knowledge, physical constraints, chronology, and contradiction."
-model = "gpt-5.6"
+description = "Native-subagent fallback causal auditor for knowledge, physical constraints, chronology, and contradiction."
+model = "gpt-5.6-sol"
 model_reasoning_effort = "xhigh"
 sandbox_mode = "read-only"
 developer_instructions = """
