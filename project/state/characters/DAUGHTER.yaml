@@ -1,14 +1,15 @@
 id: DAUGHTER
 name: null
-working_label: 成年养女
+working_label: 养女
 status: candidate
-role: 2054程砚生命中的女儿角色
+role: 程砚在03:17事故后的人生中形成的真实女儿关系
 candidate_facts:
 - 她与程砚形成真实父女关系，程砚不把她仅视作林岚替代品。
 - 她与林岚具有相同/近似核DNA是高价值候选，但尚未提升为Shared硬事实。
-must_remain_open:
-- 正式姓名
-- 是否每条Route都曝光
-- DNA相似性的原因和意义
-- 是否参与2036行动及参与方式
-- ORIGIN的最终人物冲突
+open_dimensions:
+- formal_name
+- entry_timing_in_post_2036_life
+- age_at_2054
+- route_exposure
+- biological_relation_meaning
+- temporal_role
