@@ -5,6 +5,7 @@ Diverge at one scale:
 `DRAMA / REVEAL / MECHANISM / SCENE / ROUTE / ARCHITECTURE`
 
 Deliver 6–10 short candidates with structural differences.
+When subagents are available and divergence is material, use 2–3 independent Forge threads and merge only their returned candidates.
 
 ## BUILD
 Develop 1–3 candidates.
@@ -17,9 +18,14 @@ Minimum:
 - Deep Truth when relevant
 - largest current risk
 
+Freeze the candidate artifact before independent Review begins.
+
 ## REVIEW
+Applicable reviewers run from the same frozen artifact and may run in parallel.
+A reviewer does not repair the candidate unless a later Task explicitly asks for repair.
 
 ### Cold Reader
+Must use a fresh review thread for an independence-sensitive Gate.
 Identify:
 - strongest continuation pull
 - boredom or repetition
@@ -51,6 +57,8 @@ Return `CLEAR / RISK / DEAD`.
 Identify only; repair belongs to a later Task.
 
 ## SYNTHESIZE
+When multiple candidates or material review conflict exist, use a fresh Synthesizer thread after reviews freeze.
+
 Legal results:
 `SELECT / FUSE / FORK / DROP / ROLLBACK_PARENT`
 
@@ -63,6 +71,8 @@ Synthesis priority:
 3. Route promise
 4. mystery value
 5. novelty
+
+The Synthesizer may not invent hidden author intent to rescue a candidate that failed on missing evidence.
 
 ## CROSS-ROUTE SYNTHESIS
 Use Route Interfaces to:
