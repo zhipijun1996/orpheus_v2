@@ -4,36 +4,36 @@
     "reasoning_effort": "high",
     "workers": 2,
     "context_ids": ["*"],
-    "instruction": "Generate structurally distinct candidates. Treat Project Story Contract and Route Interface obligations as hard architecture. For ROUTE_ENGINE work, causally connect to the shared anchor and chapter roles. Do not self-censor a generative mechanism merely because it is new or adds mechanism count; favor mechanisms with high narrative leverage and avoid growing PATCH chains. Do not review or defend candidates. Return concise spines, assumptions, and largest risks."
+    "instruction": "Generate structurally distinct candidates from the allowed context. For ROUTE_ENGINE work, obey Story Contract/Interface, separate Story Engine, Route Truth, and Evidence, satisfy required dimensions/core mysteries, and causally fuse character relationship, Route-defining speculative premise, and Shared anchor. Explore strong new ENGINE ideas freely; avoid PATCH chains. Do not review or defend."
   },
   "cold_reader": {
     "model": "gpt-5.6-terra",
     "reasoning_effort": "high",
     "context_ids": ["PROJECT_BRIEF", "CHAR_*"],
-    "instruction": "Judge only what a player can infer from the frozen candidate. Flag jargon or rule density only when it impairs comprehension; do not penalize an understandable novel concept for novelty itself. Do not reconstruct author intent or repair the work."
+    "instruction": "Judge only what a player can infer. Flag forced action or jargon only when it harms comprehension. Do not reconstruct intent or repair."
   },
   "drama_reviewer": {
     "model": "gpt-5.6-terra",
     "reasoning_effort": "high",
     "context_ids": ["PROJECT_BRIEF", "STORY_CONTRACT", "SCENE_*", "SHARED_STATE", "CHAR_*", "ROUTE_*"],
-    "instruction": "Audit desire, opposition, action/counteraction, irreversible change, and motive continuity. Test whether mechanisms generate consequential character choices rather than turning scenes into system demonstrations. For ROUTE_ENGINE work, test whether the character engine collides with the shared story anchor. Cite decisive evidence. Do not repair."
+    "instruction": "Audit desire, opposition, action, consequence, motive continuity, and whether the core relationship actually generates the decisive plot action. For ROUTE_ENGINE, test causal fusion with the Shared anchor. Cite decisive evidence; do not repair."
   },
   "mystery_reviewer": {
     "model": "gpt-5.6-sol",
     "reasoning_effort": "high",
     "context_ids": ["PROJECT_BRIEF", "STORY_CONTRACT", "SCENE_*", "SHARED_STATE", "ROUTE_*", "IFACE_*"],
-    "instruction": "Audit Working Truth, evidence, Reveal Delta, fairness, and truth-versus-exposure discipline. A decisive mechanism property may be named late, but should have an earlier observable trace when required by the Story Contract. For ROUTE_ENGINE work, verify Ch4 explains and Ch5 reinterprets the shared anchor rather than a substitute mystery. Do not repair."
+    "instruction": "Audit Working/Deep Truth, evidence, fairness, Reveal Delta, and every required core-mystery answer contract. Evidence or identity reveal alone is not causal Truth. Verify Ch4/Ch5 reinterpret the Shared anchor. Do not repair."
   },
   "logic_scout": {
     "model": "gpt-5.6-sol",
     "reasoning_effort": "xhigh",
     "context_ids": ["HUMAN_DECISIONS", "STORY_CONTRACT", "SCENE_*", "SHARED_STATE", "CHAR_*", "ROUTE_*", "IFACE_*"],
-    "instruction": "Audit causal, knowledge, physical, information, and hard task-contract consistency. Distinguish high-leverage ENGINE/SUPPORT rules from PATCH chains whose main job is repairing prior rules. Return CLEAR, RISK, or DEAD with decisive blockers only. Story Contract violations are not rescued by internal coherence. Do not repair."
+    "instruction": "Audit causal, knowledge, physical, information, required-dimension, and Story Contract consistency. Run fusion removal/substitution tests, motive-continuity checks, and PATCH-chain checks. Return CLEAR, RISK, or DEAD with decisive blockers only; do not repair."
   },
   "synthesizer": {
     "model": "gpt-5.6-sol",
     "reasoning_effort": "high",
     "context_ids": ["*"],
-    "instruction": "Converge from frozen candidates and reviews. Enforce Story Contract and Route Interface obligations before ranking quality. Prefer higher narrative leverage and shallower PATCH dependency at comparable story quality; do not mechanically prefer fewer mechanisms or punish a strong novel ENGINE. Use SELECT, FUSE, FORK, DROP, or ROLLBACK_PARENT. Do not invent facts solely to neutralize objections."
+    "instruction": "Converge only after checking eligibility: hard contracts, required Route commitments/core mysteries, and no DETACHED fusion. Then rank by human plausibility, Route identity/fusion, drama, mystery, and novelty. Prefer high leverage and shallow PATCH dependency at comparable quality. Use SELECT, FUSE, FORK, DROP, or ROLLBACK_PARENT; do not invent rescue facts."
   }
 }
