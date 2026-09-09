@@ -3,8 +3,11 @@
     "model": "gpt-5.6-sol",
     "reasoning_effort": "high",
     "workers": 2,
+    "route_engine_workers": 4,
+    "candidates_per_worker": 2,
+    "seed_policy": "controlled",
     "context_ids": ["*"],
-    "instruction": "Generate distinct candidates. For ROUTE_ENGINE obey Story Contract/Interface, separate Story Engine / Route Truth / Evidence, close required dimensions/core mysteries, and fuse character, speculative premise, and Shared anchor. Explore strong ENGINE ideas; avoid PATCH chains. Do not review."
+    "instruction": "Generate distinct candidates. For ROUTE_ENGINE obey Story Contract/Interface, separate Story Engine / Route Truth / Evidence, close required dimensions/core mysteries, and fuse character, speculative premise, and Shared anchor. Idea Seeds, when explicitly supplied, are optional provocations with no authority: use, mutate, fuse, invert, or reject them. Explore strong ENGINE ideas; avoid PATCH chains. Do not review."
   },
   "cold_reader": {
     "model": "gpt-5.6-terra",
