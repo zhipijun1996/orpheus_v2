@@ -11,6 +11,9 @@ promise:
 shared_inputs:
   required: []
   must_remain_open: []
+story_obligations:
+  shared_anchor:
+  must_reinterpret: []
 shared_observations:
   accepts: []
 route_outputs:
@@ -34,4 +37,4 @@ depends_on: []
 6. harden shared facts only after the Integration Gate passes
 
 ## Interface rule
-The Interface states dependencies and freedoms, not the Route's full solution.
+The Interface states dependencies, freedoms, and Route-specific story obligations, not the full solution. `story_obligations` may tighten a Project Story Contract for one Route but may not replace or weaken it.
