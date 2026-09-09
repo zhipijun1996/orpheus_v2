@@ -5,16 +5,16 @@
 
 **Drama Proof:** desire/incompatibility; protagonist action changes the situation; 2+ signature scenes; durable consequence; Logic Scout is not `DEAD`.
 
-**Spine Connection:** when a Project Story Contract exists, its shared anchor and chapter functions are mandatory. Working/Deep Truth must reinterpret existing material, not replace it with an unrelated center. If removing the required anchor leaves the candidate materially intact, fail or `ROLLBACK_PARENT`.
+**Spine Connection:** if a Project Story Contract exists, its anchor/chapter roles are mandatory. Working/Deep Truth must reinterpret, not replace. If removing the anchor leaves the story materially intact: fail or `ROLLBACK_PARENT`.
 
 ## Reveal Gate
-Working Truth is credible/actionable; Deep Truth creates meaningful Reveal Delta; evidence is fair; a concrete scene carries the reveal; decisive mechanism properties have prior observable setup when required. Naming/explanation may arrive later than the setup.
+Working Truth is credible/actionable; Deep Truth has meaningful Reveal Delta; evidence is fair; a scene carries the reveal; decisive mechanism properties have prior observable setup when required, even if naming arrives later.
 
 ## Prototype Gate
-6–12 beats form one causal story; action and core mechanisms are legible in ordinary language; project plain-language tests pass; new mechanisms are judged by narrative leverage and PATCH dependency, not count alone; Cold Reader finds a hook; Drama cites scene evidence.
+6–12 beats form one causal story; action/core mechanisms are plain-language legible; project comprehension tests pass; mechanisms are judged by leverage and PATCH dependency, not count; Cold Reader finds a hook; Drama cites evidence.
 
 ## Integration Gate
-Interfaces are current; shared inputs and required-open facts hold; collisions are resolved/deferred/escalated; shared additions serve cross-route function.
+Interfaces are current; shared inputs/required-open facts hold; collisions are resolved/deferred/escalated; shared additions serve cross-route function.
 
 ## Closure Gate
 `PLAUSIBLE -> SOLVABLE -> PROVEN`
