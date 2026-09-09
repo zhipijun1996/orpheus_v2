@@ -1,0 +1,15 @@
+id: CAL_MECHANISM_LEVERAGE
+kind: harness_calibration
+default_load: false
+motivating_failure:
+  case: ORIGIN候选用神经锚点、风险补遗、会话复核、紧急断连、离线终端、读取回执等多个一次性规则搭出局部闭环，人物/谜题被术语脚手架淹没
+  expected: 不因“新机制多”直接否定，而应区分ENGINE/SUPPORT/PATCH；高PATCH依赖且低叙事杠杆时回滚简化父机制
+regression_cases:
+  - case: ECHO以“未来人格覆写年轻自己”作为单个新ENGINE，同时产生身份反转、伦理冲突、场景行动和多个03:17观测解释
+    expected: 明确鼓励；不能因其是新机制或增加机制数量而扣分
+  - case: 一个新ENGINE需要两条可理解的SUPPORT限制来产生代价，且这些限制在揭示前有可观察痕迹
+    expected: 允许；检查必要性和铺垫，但不机械要求删减
+  - case: 为解释一个机制为何不出错连续新增权限锁、认证协议、离线异常，每条主要只修补上一条规则
+    expected: 标记PATCH链/复杂度债务，优先简化或回滚父机制
+  - case: Ch5首次命名一个此前未知机制，但Ch2/Ch4已经展示其关键性质的可回看现象
+    expected: 公平；不要求术语提前出现
