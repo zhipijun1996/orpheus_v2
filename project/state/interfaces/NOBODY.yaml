@@ -2,25 +2,25 @@ route_id: NOBODY
 status: current
 promise: 零未来干预的2036本地闭合。
 shared_inputs:
-  required:
-  - SH-001
-  - SH-002
-  - SH-004
-  - SH-005
-  - SH-006
-  - SH-009
-  must_remain_open:
-  - NULL唯一身份
-  - 肩部动作意义
-  - 成熟阿尔戈机制
-  - 任何客观未来来源证明
+  required: [SH-001, SH-002, SH-004, SH-005, SH-006, SH-009]
+shared_open_dimensions:
+- null_ontology
+- shoulder_event_meaning
+- mature_argo_capability
+- objective_future_origin_evidence
+route_dimensions:
+  local_causal_closure:
+    engagement: REQUIRED
+    resolution: LOCAL_COMMITMENT_REQUIRED
+story_obligations:
+  shared_anchor: CH2_0317_COMMON
+  must_reinterpret: [core_route_mysteries]
 route_outputs:
   can_explain:
   - NULL矛盾行为为多个2036本地执行者/系统
   - 周启明为某些NULL动作执行者
   - 2054林岚可由普通向前存储重建
-  leaves_unexplained:
-  - 其它Route的真实时间机制
+  leaves_unexplained: [other_route_time_mechanisms]
 collision_surface:
 - Shared层出现不可否认的未来制造物/未来信息/未来演员会直接杀死NOBODY。
 - Shared层明确同一个NULL完成全部动作会压缩NOBODY。
