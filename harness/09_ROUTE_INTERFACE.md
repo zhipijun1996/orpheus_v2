@@ -28,13 +28,8 @@ collision_surface:
 depends_on: []
 ```
 
-## Integration procedure
-1. compare current Interfaces, not full Route documents
-2. derive common required observations
-3. preserve facts any viable Route requires to remain open
-4. create a collision ticket for incompatible needs
-5. resolve a collision by changing shared story, changing a Route, merging Routes, or escalating to Human Gate
-6. harden shared facts only after the Integration Gate passes
+## Integration
+Compare Interfaces; derive common observations; preserve required-open facts; ticket incompatible needs; resolve by changing Shared/Route or escalating; harden Shared only after the Gate passes.
 
-## Interface rule
-The Interface states dependencies, freedoms, and Route-specific story obligations, not the full solution. `story_obligations` may tighten a Project Story Contract for one Route but may not replace or weaken it.
+## Rule
+The Interface states dependencies, freedoms, and Route-specific story obligations, not the full solution. Story obligations may tighten, never weaken, a Project Story Contract.
