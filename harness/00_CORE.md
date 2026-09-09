@@ -7,5 +7,5 @@
 5. **Truth differs from exposure** — world logic may close while each Route reveals only what its drama requires.
 6. **Current state is context** — active state drives work; process history serves provenance.
 7. **Minimal context** — each task receives only the information required to perform that task.
-8. **Cross-route compatibility** — shared story is derived from explicit Route Interfaces before shared facts are hardened.
+8. **Shared-route co-evolution** — Routes explain current shared observations; strong Route ideas may propose minimal Shared deltas, accepted only through cross-route review.
 9. **Human authority** — AI may advance candidates; aesthetic commitment, Route survival, architecture shifts, and `LOCKED` status remain Human decisions.
