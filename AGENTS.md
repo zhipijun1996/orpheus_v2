@@ -41,25 +41,25 @@ If a proposed Shared fact kills an active Route Interface:
 - change/merge/drop a Route through the proper Gate,
 - or escalate to Human Gate.
 
-## 5. Subagent execution
-In local Codex runtimes that expose subagents, a Formal creative Sprint must delegate cognition-sensitive Harness roles instead of silently doing all roles in the primary thread.
-
+## 5. Independent execution
 The primary thread is the Orchestrator and only writer of active Project State.
 
-Use project custom agents when applicable:
-- `forge` for divergent generation
-- `evidence_scout` for bounded extraction
-- `cold_reader`, `drama_reviewer`, `mystery_reviewer`, `logic_scout` for independent review
-- `synthesizer` for convergence after reviews freeze
+For cognition-heavy Formal creative Sprints, prefer the Codex fresh-session adapter at `harness/adapters/codex/` over relying on native subagent history isolation. The adapter starts new SDK threads for Forge, Review, and Synthesis and records model/thread provenance.
+
+Execution labels:
+- `FRESH_SESSION`: new external Codex thread; qualifies for full context-independence claims.
+- `SUBAGENT_THREAD`: native subagent; useful parallel worker, but parent-history isolation is not assumed.
+- `SELF_REVIEW`: primary thread reviewing its own work; not independent.
 
 Rules:
 - freeze candidate artifacts before Review
-- spawn review roles as fresh threads; run independent reviewers in parallel when possible
-- do not give reviewers Forge rationale, rejected variants, or each other's conclusions
-- main-thread self-critique does not count as independent Cold Reader evidence
+- Cold Reader must use `FRESH_SESSION` to count as fully independent
+- run independent Review roles in parallel from the same frozen artifact when possible
+- reviewers do not receive Forge rationale, rejected variants, or each other's conclusions
 - prefer a different model profile for at least one independent reviewer than the authoring role
-- subagents return findings; the primary thread performs state/registry writes
-- if a required fresh reviewer cannot be spawned, record the limitation and stop at `HUMAN_GATE` rather than claiming an independent PASS
+- native subagents remain valid for bounded extraction, cheap exploration, or degraded review
+- worker sessions return findings only; the primary thread performs all State/Registry writes
+- if a required independent review cannot be produced, record the downgrade and stop at `HUMAN_GATE` rather than claiming an independent PASS
 
 Purely mechanical tasks may stay on the primary thread.
 
