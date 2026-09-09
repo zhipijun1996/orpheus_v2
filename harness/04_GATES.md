@@ -5,16 +5,16 @@
 
 **Drama Proof:** desire/incompatibility; protagonist action changes the situation; 2+ signature scenes; durable consequence; Logic Scout is not `DEAD`.
 
-**Spine Connection:** if a Project Story Contract exists, its anchor/chapter roles are mandatory. Working/Deep Truth must reinterpret, not replace. If removing the anchor leaves the story materially intact: fail or `ROLLBACK_PARENT`.
+**Spine / Fusion:** obey the Project Story Contract and required Route dimensions. Character engine, Route-defining speculative premise, and Shared core mystery must be causally connected. `DETACHED` fusion fails; `PARTIAL` is a material risk, not an automatic rejection. Motive continuity must survive the Deep Truth.
 
 ## Reveal Gate
-Working Truth is credible/actionable; Deep Truth has meaningful Reveal Delta; evidence is fair; a scene carries the reveal; decisive mechanism properties have prior observable setup when required, even if naming arrives later.
+Working Truth is credible/actionable; Deep Truth creates meaningful Reveal Delta; evidence is fair and scene-borne. Required core mysteries meet their designated answer contract by the required exposure point. Identity-only reveals or investigation methods do not substitute for causal Truth. Decisive mechanism properties have prior observable setup when required.
 
 ## Prototype Gate
-6–12 beats form one causal story; action/core mechanisms are plain-language legible; project comprehension tests pass; mechanisms are judged by leverage and PATCH dependency, not count; Cold Reader finds a hook; Drama cites evidence.
+6–12 beats form one causal story; actions/core mechanisms are plain-language legible; project comprehension tests pass; required core characters retain causal function; mechanisms are judged by leverage and PATCH dependency, not count.
 
 ## Integration Gate
-Interfaces are current; shared inputs/required-open facts hold; collisions are resolved/deferred/escalated; shared additions serve cross-route function.
+Interfaces are current; Shared-open dimensions remain open; Route-required commitments are present; collisions are resolved/deferred/escalated; Shared additions serve cross-route function.
 
 ## Closure Gate
 `PLAUSIBLE -> SOLVABLE -> PROVEN`
