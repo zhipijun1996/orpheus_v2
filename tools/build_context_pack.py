@@ -14,19 +14,49 @@ if not mode:
             mode=active["mode"]
 if not mode:
     upper=str(task).upper()
-    mode="ROUTE_ENGINE" if ("ROUTE_ENGINE" in upper or "STORY_ENGINE" in upper) else "GENERAL"
+    if "ARCHITECTURE_PREFLIGHT" in upper or "PREFLIGHT" in upper:
+        mode="ARCHITECTURE_PREFLIGHT"
+    elif "ROUTE_ENGINE" in upper or "STORY_ENGINE" in upper:
+        mode="ROUTE_ENGINE"
+    else:
+        mode="GENERAL"
 
 reg=yaml.safe_load((root/"project/registry/ARTIFACT_REGISTRY.yaml").read_text(encoding="utf-8"))["entries"]
 byid={e["id"]:e for e in reg}
 if target not in byid:
     raise SystemExit(f"Unknown target id: {target}")
 
-selected=["HARNESS_CORE","PROJECT_BRIEF","HUMAN_DECISIONS",target]
-if target.startswith("ROUTE_") and target != "ROUTE_NULL":
-    rid=target.removeprefix("ROUTE_")
-    iid=f"IFACE_{rid}"
-    if iid in byid:
-        selected.append(iid)
+ordinary_target=target.startswith("ROUTE_") and target != "ROUTE_NULL"
+rid=target.removeprefix("ROUTE_") if ordinary_target else None
+
+if mode=="ARCHITECTURE_PREFLIGHT":
+    # Human-led preflight intentionally omits candidate Route State, Interfaces and full closure contracts.
+    # It asks whether the story and character causality are worth developing before engineering full closure.
+    selected=["HARNESS_CORE","PROJECT_BRIEF","AUTHOR_SHARED","AUTHOR_EXPERIENCE_MAP"]
+    if ordinary_target:
+        author_id=f"AUTHOR_{rid}"
+        if author_id not in byid:
+            raise SystemExit(f"Missing human author constraints for {target}: {author_id}")
+        selected.extend([author_id,"CHAR_CHENG","CHAR_LIN","CHAR_ZHOU","CHAR_DAUGHTER"])
+elif mode=="META_PLANNING":
+    selected=["HARNESS_CORE","PROJECT_BRIEF","AUTHOR_SHARED","AUTHOR_EXPERIENCE_MAP","META_RESERVATIONS"]
+    for route_id in ["FLESH","ECHO","ORIGIN","BLINDSPOT","NOBODY"]:
+        aid=f"AUTHOR_{route_id}"
+        if aid in byid:
+            selected.append(aid)
+        rid_state=f"ROUTE_{route_id}"
+        if rid_state in byid:
+            selected.append(rid_state)
+else:
+    selected=["HARNESS_CORE","PROJECT_BRIEF","HUMAN_DECISIONS",target]
+    if ordinary_target:
+        iid=f"IFACE_{rid}"
+        if iid in byid:
+            selected.append(iid)
+        # Route development after preflight keeps the concise human-authored intent in context.
+        for aid in ["AUTHOR_SHARED","AUTHOR_EXPERIENCE_MAP",f"AUTHOR_{rid}"]:
+            if aid in byid:
+                selected.append(aid)
 
 # Task-semantic dependencies are declared in the Registry rather than repeated in prompts.
 for e in reg:
@@ -63,6 +93,7 @@ pack={
     "mode":mode,
     "target":target,
     "files":files,
+    "human_constraints":[f["id"] for f in files if f["id"].startswith("AUTHOR_")],
     "total_chars":chars,
     "budget_chars":14000,
     "within_budget":chars<=14000,
