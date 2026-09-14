@@ -6,7 +6,7 @@
     "sprint": "node runner.mjs"
   },
   "dependencies": {
-    "@openai/codex-sdk": "^0.144.6",
+    "@openai/codex-sdk": "^0.154.0",
     "yaml": "^2.8.1"
   }
 }
