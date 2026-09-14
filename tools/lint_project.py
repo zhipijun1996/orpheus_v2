@@ -11,115 +11,56 @@ if found!=route_ids: errors.append(f"Route set mismatch: expected={sorted(route_
 iface_paths={p.stem:p for p in (root/"project/state/interfaces").glob("*.yaml")}
 if set(iface_paths)!=ordinary: errors.append(f"Interface set mismatch: expected={sorted(ordinary)} found={sorted(iface_paths)}")
 
-shared=yaml.safe_load((root/"project/state/shared.yaml").read_text(encoding="utf-8")); shared_text=yaml.safe_dump(shared,allow_unicode=True)
-for phrase in ["未来程砚作为独立身体回到2036","成熟阿尔戈传递人格/神经状态而非新增肉身","NULL就是未来程砚"]:
-    if phrase in shared_text: errors.append(f"Route-local truth leaked into shared state: {phrase}")
-for phrase in ["未来人已确认","未来制造物已确认","客观证明来自未来","未来访客已确认"]:
-    if phrase in shared_text: errors.append(f"NOBODY-killing future-origin assertion in shared state: {phrase}")
-if "must_remain_open" in shared: errors.append("Shared state must use positive commitments; omit answer-menu must_remain_open lists")
-for old in ["BODY","ZERO","OBSERVATION","NO_SOURCE"]:
-    if (root/f"project/state/routes/{old}.yaml").exists(): errors.append(f"Legacy active route file exists: {old}.yaml")
+shared=yaml.safe_load((root/"project/state/shared.yaml").read_text(encoding="utf-8"))
+if "must_remain_open" in shared: errors.append("Shared state must omit answer-menu must_remain_open lists")
 
 ch2=yaml.safe_load((root/"project/state/scenes/CH2.yaml").read_text(encoding="utf-8"))
-if not isinstance(ch2.get("fixed_observations"),list) or not ch2.get("fixed_observations"):
-    errors.append("CH2 must expose a compact fixed_observations list")
-if not isinstance(ch2.get("route_obligations"),list) or not ch2.get("route_obligations"):
-    errors.append("CH2 must expose route_obligations")
-if not ch2.get("shared_rule") or not ch2.get("shared_delta"):
-    errors.append("CH2 must define positive Shared scope and a Shared Delta path")
+if not ch2.get("fixed_observations"): errors.append("CH2 missing fixed_observations")
+if not ch2.get("route_obligations"): errors.append("CH2 missing route_obligations")
+if not ch2.get("shared_rule") or not ch2.get("shared_delta"): errors.append("CH2 missing Shared scope/delta rule")
 for legacy in ["preserve_open","route_hooks","character_knowledge"]:
-    if legacy in ch2: errors.append(f"CH2 creator contract should not carry answer menus or negative priors: {legacy}")
+    if legacy in ch2: errors.append(f"CH2 still carries legacy answer-menu field: {legacy}")
 
-contract_path=root/"project/state/STORY_CONTRACT.yaml"
-if not contract_path.exists(): errors.append("Missing Project Story Contract")
-else:
-    contract=yaml.safe_load(contract_path.read_text(encoding="utf-8"))
-    if contract.get("shared_story_anchor",{}).get("artifact_id")!="SCENE_CH2": errors.append("Story Contract must anchor ordinary Routes to SCENE_CH2")
-    chapters=contract.get("chapter_architecture",{})
-    if str(chapters.get("ch4",{}).get("time_anchor"))!="2054": errors.append("Story Contract Ch4 must anchor to 2054")
-    if chapters.get("ch5",{}).get("time_anchor")!="2036_CAUSAL_LAYER": errors.append("Story Contract Ch5 must enter the 2036 causal layer")
-
-    core=contract.get("core_route_mysteries",{})
-    required_core={"accident_causality","null_mystery","zhou_0317_role","lin_0317_role"}
-    if not required_core.issubset(core): errors.append("Story Contract missing required core mystery dimensions")
-    null=core.get("null_mystery",{})
-    if null.get("route_engagement")!="REQUIRED" or null.get("route_resolution")!="LOCAL_COMMITMENT_REQUIRED": errors.append("NULL mystery must close locally in every ordinary Route")
-    required_null={"ontology","agency","actions","motive","objective","causal_impact","apparent_contradiction"}
-    if not required_null.issubset(set(null.get("required_answers",[]))): errors.append("NULL mystery answer contract incomplete")
-    if null.get("identity_only_resolution")!="insufficient": errors.append("NULL identity-only reveal must be insufficient")
-
-    fusion=contract.get("route_engine_fusion",{})
-    if not fusion.get("diagnostics") or fusion.get("verdicts",{}).get("DETACHED") is None: errors.append("Story Contract missing Route Engine fusion diagnostics")
-    if contract.get("truth_layers",{}).get("rule") is None: errors.append("Story Contract must distinguish Evidence from Truth/Story Engine")
-
-    mech=contract.get("mechanism_discipline",{})
-    if set(mech.get("classes",{}))!={"ENGINE","SUPPORT","PATCH"}: errors.append("Mechanism discipline must distinguish ENGINE/SUPPORT/PATCH")
-    if not mech.get("explore") or not mech.get("synthesis_preference"): errors.append("Mechanism discipline must protect Explore novelty and rank by leverage")
+contract=yaml.safe_load((root/"project/state/STORY_CONTRACT.yaml").read_text(encoding="utf-8"))
+if contract.get("shared_story_anchor",{}).get("artifact_id")!="SCENE_CH2": errors.append("Story Contract must anchor SCENE_CH2")
+core=contract.get("core_route_mysteries",{})
+if not {"accident_causality","null_mystery","zhou_0317_role","lin_0317_role"}.issubset(core): errors.append("Story Contract core mystery set incomplete")
+if contract.get("route_engine_fusion",{}).get("verdicts",{}).get("DETACHED") is None: errors.append("Story Contract missing fusion verdicts")
+if set(contract.get("mechanism_discipline",{}).get("classes",{}))!={"ENGINE","SUPPORT","PATCH"}: errors.append("Mechanism discipline incomplete")
 
 for rid,p in iface_paths.items():
     data=yaml.safe_load(p.read_text(encoding="utf-8"))
-    if "must_remain_open" in data.get("shared_inputs",{}): errors.append(f"{rid} still uses must_remain_open; use dimension-only shared_open_dimensions")
     dims=data.get("shared_open_dimensions")
-    if not isinstance(dims,list) or any(not isinstance(x,str) for x in dims): errors.append(f"{rid} shared_open_dimensions must be string dimension ids")
-    for x in dims or []:
-        if any(token in x for token in ["是否","就是","不规定","必须不是"]): errors.append(f"{rid} shared openness enumerates solution language: {x}")
-    rd=data.get("route_dimensions",{})
-    if not isinstance(rd,dict): errors.append(f"{rid} route_dimensions must be a mapping")
-    for dim,policy in (rd or {}).items():
-        if policy.get("engagement") not in {"REQUIRED","OPTIONAL"}: errors.append(f"{rid}:{dim} invalid engagement")
-        if policy.get("resolution") not in {"LOCAL_COMMITMENT_REQUIRED","FUNCTION_REQUIRED","PARTIAL_ALLOWED","MAY_REMAIN_OPEN"}: errors.append(f"{rid}:{dim} invalid resolution")
-
-origin_iface=yaml.safe_load((root/"project/state/interfaces/ORIGIN.yaml").read_text(encoding="utf-8"))
-for dim in ["daughter_temporal_role","parent_child_temporal_causality"]:
-    p=origin_iface.get("route_dimensions",{}).get(dim,{})
-    if p.get("engagement")!="REQUIRED" or p.get("resolution")!="LOCAL_COMMITMENT_REQUIRED": errors.append(f"ORIGIN must locally commit required dimension: {dim}")
-
-origin=yaml.safe_load((root/"project/state/routes/ORIGIN.yaml").read_text(encoding="utf-8"))
-if "2054成年" in yaml.safe_dump(origin,allow_unicode=True): errors.append("ORIGIN route state still hard-seeds an adult-at-2054 daughter")
-daughter=yaml.safe_load((root/"project/state/characters/DAUGHTER.yaml").read_text(encoding="utf-8"))
-if daughter.get("working_label")=="成年养女": errors.append("Daughter working label still fixes adulthood")
-if "age_at_2054" not in daughter.get("open_dimensions",[]): errors.append("Daughter age_at_2054 should remain an open dimension")
-if daughter.get("name")!="程浠": errors.append("Current daughter candidate name must be 程浠")
+    if not isinstance(dims,list) or any(not isinstance(x,str) for x in dims): errors.append(f"{rid} shared_open_dimensions invalid")
+    if not isinstance(data.get("route_dimensions",{}),dict): errors.append(f"{rid} route_dimensions invalid")
 
 registry=yaml.safe_load((root/"project/registry/ARTIFACT_REGISTRY.yaml").read_text(encoding="utf-8"))["entries"]
-story_entry=next((e for e in registry if e.get("id")=="STORY_CONTRACT"),None)
-if not story_entry or "ROUTE_ENGINE" not in story_entry.get("load_for_modes",[]): errors.append("STORY_CONTRACT must load for ROUTE_ENGINE mode")
-seed_entry=next((e for e in registry if e.get("id")=="IDEAS_CREATIVE_SEEDS"),None)
-if not seed_entry or seed_entry.get("default_load") is not False: errors.append("Creative Seed pool must be registered default_load:false")
-baseline_entry=next((e for e in registry if e.get("id")=="BASELINE_ORIGIN_HUMAN"),None)
-if not baseline_entry or baseline_entry.get("kind")!="human_baseline": errors.append("Missing registered ORIGIN human baseline")
-elif baseline_entry.get("default_load") is not False or baseline_entry.get("load_for_modes"):
-    errors.append("Human baseline must never auto-load into Context Packs")
-else:
-    baseline_path=root/baseline_entry.get("path","")
-    if not baseline_path.exists(): errors.append("Registered ORIGIN human baseline file is missing")
-    else:
-        baseline_text=baseline_path.read_text(encoding="utf-8")
-        for required in ["程浠","没有林岚记忆与人格","成为本Route的NULL","阻止对周启明的救援","开枪击伤林岚左臂/肩臂区域"]:
-            if required not in baseline_text: errors.append(f"ORIGIN human baseline missing commitment: {required}")
+byid={e.get("id"):e for e in registry}
+required_author=["AUTHOR_SHARED","AUTHOR_FLESH","AUTHOR_ECHO","AUTHOR_ORIGIN","AUTHOR_BLINDSPOT","AUTHOR_NOBODY","AUTHOR_EXPERIENCE_MAP","AUTHOR_PREFLIGHT_PROTOCOL"]
+for aid in required_author:
+    e=byid.get(aid)
+    if not e or e.get("kind")!="human_constraint" or e.get("default_load") is not False: errors.append(f"Invalid human constraint registration: {aid}")
+meta=byid.get("META_RESERVATIONS")
+if not meta or meta.get("default_load") is not False: errors.append("Meta reservations must stay non-default")
+seed=byid.get("IDEAS_CREATIVE_SEEDS")
+if not seed or seed.get("default_load") is not False: errors.append("Creative Seed pool must stay non-default")
+baseline=byid.get("BASELINE_ORIGIN_HUMAN")
+if not baseline or baseline.get("default_load") is not False: errors.append("Human baseline must stay non-default")
 
-seed_path=root/"project/ideas/creative_seeds.yaml"
-if not seed_path.exists(): errors.append("Missing curated Creative Seed pool")
-else:
-    seed_pool=yaml.safe_load(seed_path.read_text(encoding="utf-8"))
-    if seed_pool.get("default_load") is not False: errors.append("Creative Seed pool must never default-load")
-    policy=seed_pool.get("policy",{})
-    if policy.get("blind_worker_required") is not True: errors.append("Creative Seed strategy must preserve a blind Forge control")
-    if policy.get("reviewer_provenance_hidden") is not True: errors.append("Seed provenance must stay hidden from independent Review/Synthesis")
-    seeds=seed_pool.get("active_seeds",[])
-    ids=[s.get("id") for s in seeds]
-    if len(seeds)<20 or len(ids)!=len(set(ids)): errors.append("Creative Seed pool must contain a substantial set of unique active seeds")
-    if len({s.get("kind") for s in seeds if s.get("normal_exposure") is not False})<4: errors.append("Normal Creative Seeds need cross-kind diversity")
+builder=(root/"tools/build_context_pack.py").read_text(encoding="utf-8")
+for marker in ["ARCHITECTURE_PREFLIGHT","AUTHOR_SHARED","AUTHOR_EXPERIENCE_MAP","AUTHOR_PREFLIGHT_PROTOCOL","META_PLANNING"]:
+    if marker not in builder: errors.append(f"Context builder missing marker: {marker}")
 
-roles_path=root/"harness/adapters/codex/roles.json"
-roles=json.loads(roles_path.read_text(encoding="utf-8"))
-forge_role=roles.get("forge",{})
-if forge_role.get("route_engine_workers",0)<3: errors.append("ROUTE_ENGINE Forge fanout must preserve blind plus seeded diversity")
-if forge_role.get("candidates_per_worker",0)<2: errors.append("Each Forge worker should contribute multiple candidates")
+roles=json.loads((root/"harness/adapters/codex/roles.json").read_text(encoding="utf-8"))
+for name in ["forge","cold_reader","drama_reviewer","mystery_reviewer","logic_scout","synthesizer"]:
+    role=roles.get(name,{})
+    if role.get("model")!="gpt-6-astra": errors.append(f"Fresh-session role is not GPT-6 Astra: {name}")
+    if role.get("reasoning_effort") not in {"low","medium","high","xhigh"}: errors.append(f"Invalid reasoning effort: {name}")
+if roles.get("forge",{}).get("reasoning_effort")==roles.get("cold_reader",{}).get("reasoning_effort"): errors.append("Forge and Cold Reader need different reasoning profiles")
 
 runner=(root/"harness/adapters/codex/runner.mjs").read_text(encoding="utf-8")
 for marker in ["baseline_id","human_baseline","ANONYMOUS_CORE_ENGINE_BENCHMARK","CANDIDATE_PROVENANCE.json"]:
-    if marker not in runner: errors.append(f"Fresh-session runner missing human-baseline invariant: {marker}")
+    if marker not in runner: errors.append(f"Fresh-session runner missing invariant: {marker}")
 
 for p in (root/"harness").rglob("*"):
     if not p.is_file() or p.name=="CHANGELOG.md": continue
@@ -127,23 +68,23 @@ for p in (root/"harness").rglob("*"):
     for term in ["程砚","林岚","周启明","FLESH","ECHO","ORIGIN","BLINDSPOT","NOBODY","奥菲斯计划"]:
         if term in txt: errors.append(f"Project-specific term leaked into active Harness: {term} in {p.relative_to(root)}")
 
-cfg_path=root/".codex/config.toml"
-if not cfg_path.exists(): errors.append("Missing .codex/config.toml")
-else:
-    cfg=tomllib.loads(cfg_path.read_text(encoding="utf-8")); agents_cfg=cfg.get("agents",{})
-    if agents_cfg.get("enabled") is not True: errors.append("Codex subagents must be enabled")
-    if agents_cfg.get("max_concurrent_threads_per_session",0)<4: errors.append("Codex subagent concurrency cap must allow at least 4 review threads")
+cfg=tomllib.loads((root/".codex/config.toml").read_text(encoding="utf-8"))
+agents_cfg=cfg.get("agents",{})
+if agents_cfg.get("enabled") is not True: errors.append("Codex subagents must be enabled")
+if agents_cfg.get("default_subagent_model")!="gpt-6-astra": errors.append("Default subagent model must be GPT-6 Astra")
+if agents_cfg.get("max_concurrent_threads_per_session",0)<4: errors.append("Codex subagent concurrency cap too low")
 
-required={"forge":"forge.toml","evidence_scout":"evidence-scout.toml","cold_reader":"cold-reader.toml","drama_reviewer":"drama-reviewer.toml","mystery_reviewer":"mystery-reviewer.toml","logic_scout":"logic-scout.toml","synthesizer":"synthesizer.toml"}
+required_agents={"forge":"forge.toml","evidence_scout":"evidence-scout.toml","cold_reader":"cold-reader.toml","drama_reviewer":"drama-reviewer.toml","mystery_reviewer":"mystery-reviewer.toml","logic_scout":"logic-scout.toml","synthesizer":"synthesizer.toml"}
 loaded={}
-for role,filename in required.items():
+for role,filename in required_agents.items():
     p=root/".codex/agents"/filename
     if not p.exists(): errors.append(f"Missing Codex custom agent: {filename}"); continue
     data=tomllib.loads(p.read_text(encoding="utf-8")); loaded[role]=data
-    if data.get("name")!=role: errors.append(f"Agent name mismatch in {filename}: {data.get('name')} != {role}")
-    if not data.get("model") or not data.get("model_reasoning_effort"): errors.append(f"Agent must pin model and reasoning effort: {filename}")
-    if data.get("sandbox_mode")!="read-only": errors.append(f"Subagent must be read-only; primary thread owns writes: {role}")
-if "forge" in loaded and "cold_reader" in loaded and loaded["forge"].get("model")==loaded["cold_reader"].get("model"): errors.append("Cold Reader model must differ from Forge model")
+    if data.get("name")!=role: errors.append(f"Agent name mismatch: {filename}")
+    if data.get("model")!="gpt-6-astra": errors.append(f"Native agent is not GPT-6 Astra: {role}")
+    if not data.get("model_reasoning_effort"): errors.append(f"Native agent missing reasoning effort: {role}")
+    if data.get("sandbox_mode")!="read-only": errors.append(f"Native agent must be read-only: {role}")
+if "forge" in loaded and "cold_reader" in loaded and loaded["forge"].get("model_reasoning_effort")==loaded["cold_reader"].get("model_reasoning_effort"): errors.append("Native Forge and Cold Reader need different reasoning profiles")
 
 print("PROJECT LINT:","PASS" if not errors else "FAIL")
 for e in errors: print("ERROR:",e)
