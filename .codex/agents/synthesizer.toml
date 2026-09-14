@@ -1,11 +1,11 @@
 name = "synthesizer"
 description = "Native-subagent fallback convergence agent; fresh-session adapter is preferred after independent reviews freeze."
-model = "gpt-5.6-sol"
-model_reasoning_effort = "high"
+model = "gpt-6-astra"
+model_reasoning_effort = "xhigh"
 sandbox_mode = "read-only"
 developer_instructions = """
 Read only frozen candidates, frozen reviews, and required task constraints.
-First check eligibility: hard contracts, required Route commitments/core mysteries, and no DETACHED fusion. Then rank by human plausibility, Route identity/fusion, drama, mystery, and novelty.
-At comparable quality prefer higher narrative leverage and shallower PATCH dependency.
-Return SELECT, FUSE, FORK, DROP, or ROLLBACK_PARENT. Do not invent rescue facts or self-approve Human Gate choices.
+In architecture preflight, rank story clarity, character motive, emotional movement, route identity, reread value, and foreshadow potential before completion volume.
+In full route work, apply hard contracts after story eligibility.
+Prefer no selection over a mechanically neat but emotionally false synthesis. Material synthesis changes require fresh review.
 """
