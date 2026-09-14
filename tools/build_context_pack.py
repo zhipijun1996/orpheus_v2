@@ -30,9 +30,7 @@ ordinary_target=target.startswith("ROUTE_") and target != "ROUTE_NULL"
 rid=target.removeprefix("ROUTE_") if ordinary_target else None
 
 if mode=="ARCHITECTURE_PREFLIGHT":
-    # Human-led preflight intentionally omits candidate Route State, Interfaces and full closure contracts.
-    # It asks whether the story and character causality are worth developing before engineering full closure.
-    selected=["HARNESS_CORE","PROJECT_BRIEF","AUTHOR_SHARED","AUTHOR_EXPERIENCE_MAP"]
+    selected=["HARNESS_CORE","PROJECT_BRIEF","AUTHOR_SHARED","AUTHOR_EXPERIENCE_MAP","AUTHOR_PREFLIGHT_PROTOCOL"]
     if ordinary_target:
         author_id=f"AUTHOR_{rid}"
         if author_id not in byid:
@@ -53,17 +51,14 @@ else:
         iid=f"IFACE_{rid}"
         if iid in byid:
             selected.append(iid)
-        # Route development after preflight keeps the concise human-authored intent in context.
         for aid in ["AUTHOR_SHARED","AUTHOR_EXPERIENCE_MAP",f"AUTHOR_{rid}"]:
             if aid in byid:
                 selected.append(aid)
 
-# Task-semantic dependencies are declared in the Registry rather than repeated in prompts.
 for e in reg:
     if mode in e.get("load_for_modes", []):
         selected.append(e["id"])
 
-# Registry dependencies are curated context edges; resolve them transitively.
 seen=set()
 queue=list(selected)
 selected=[]
