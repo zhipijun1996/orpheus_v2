@@ -72,3 +72,4 @@ entries:
 - {id: AUTHOR_NOBODY, path: project/author/06_NOBODY.md, kind: human_constraint, status: provisional, default_load: false, scope: NOBODY, depends_on: []}
 - {id: AUTHOR_EXPERIENCE_MAP, path: project/author/07_EXPERIENCE_MAP.md, kind: human_constraint, status: provisional, default_load: false, scope: project, depends_on: []}
 - {id: META_RESERVATIONS, path: project/author/08_META_RESERVATIONS.md, kind: meta_reservation, status: candidate, default_load: false, scope: NULL, depends_on: []}
+- {id: AUTHOR_PREFLIGHT_PROTOCOL, path: project/author/09_PREFLIGHT_PROTOCOL.md, kind: human_constraint, status: provisional, default_load: false, scope: project, depends_on: []}
