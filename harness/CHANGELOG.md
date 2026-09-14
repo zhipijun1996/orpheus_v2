@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.7.0
+Human-led architecture preflight:
+- adds concise human-authored common/Route constraints plus a short cross-route experience map as the creative basis for early architecture work
+- adds `ARCHITECTURE_PREFLIGHT` context routing that loads the common constraints, one Route's constraints, core character state, and a compact preflight protocol while omitting sibling Route answers
+- separates story-worth exploration from full Route closure so unresolved engineering details can remain OPEN while present motive/POV/causal contradictions are still detected
+- makes character experience, motive, emotional movement, Shared-scene reread value, truth differentiation, and foreshadow potential the early selection criteria
+- reserves Meta inputs separately from ordinary Route authoring while tracking cross-route contradiction/provenance needs for later NULL development
+- moves fresh-session and native narrative roles to GPT-6 Astra with role-specific reasoning depth; Codex SDK dependency moves to the current Astra-capable line
+- updates lint to treat model + reasoning effort as the role profile, allowing one GPT-6 family with different thinking depths
+
 ## v0.6.10
 Shared-scene co-evolution:
 - makes current Shared observations the starting point for Route Engine work instead of deriving a new common scene after independent Route rewrites
