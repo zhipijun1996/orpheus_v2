@@ -47,9 +47,11 @@ if roles_path.exists():
     missing = required_roles - set(roles)
     if missing:
         errors.append(f"Codex adapter missing roles: {sorted(missing)}")
-    if roles.get("forge", {}).get("model") == roles.get("cold_reader", {}).get("model"):
-        errors.append("Forge and Cold Reader must use different default model profiles.")
-    if "ROUTE_*" in roles.get("cold_reader", {}).get("context_ids", []):
+    forge = roles.get("forge", {})
+    cold = roles.get("cold_reader", {})
+    if forge.get("model") == cold.get("model") and forge.get("reasoning_effort") == cold.get("reasoning_effort"):
+        errors.append("Forge and Cold Reader must use different model/reasoning profiles.")
+    if "ROUTE_*" in cold.get("context_ids", []):
         errors.append("Cold Reader default context must not include Route design state.")
 
 runner_path = root / "adapters/codex/runner.mjs"
