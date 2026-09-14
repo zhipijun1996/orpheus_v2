@@ -1,4 +1,4 @@
-version: '0.1'
+version: '0.2'
 entries:
 - {id: HARNESS_CORE, path: harness/00_CORE.md, kind: policy, status: stable, default_load: true, scope: harness, depends_on: []}
 - {id: PROJECT_BRIEF, path: project/PROJECT_BRIEF.md, kind: state, status: provisional, default_load: true, scope: project, depends_on: []}
@@ -64,3 +64,11 @@ entries:
 - {id: IDEAS_ARCHIVED, path: project/ideas/archived.yaml, kind: idea_pool, status: archived, default_load: false, scope: project, depends_on: []}
 - {id: IDEAS_CREATIVE_SEEDS, path: project/ideas/creative_seeds.yaml, kind: idea_seed_pool, status: candidate, default_load: false, scope: project, depends_on: []}
 - {id: BASELINE_ORIGIN_HUMAN, path: project/baselines/ORIGIN_HUMAN_BASELINE.md, kind: human_baseline, status: candidate, default_load: false, scope: ORIGIN, depends_on: []}
+- {id: AUTHOR_SHARED, path: project/author/01_SHARED.md, kind: human_constraint, status: provisional, default_load: false, scope: shared, depends_on: []}
+- {id: AUTHOR_FLESH, path: project/author/02_FLESH.md, kind: human_constraint, status: provisional, default_load: false, scope: FLESH, depends_on: []}
+- {id: AUTHOR_ECHO, path: project/author/03_ECHO.md, kind: human_constraint, status: provisional, default_load: false, scope: ECHO, depends_on: []}
+- {id: AUTHOR_ORIGIN, path: project/author/04_ORIGIN.md, kind: human_constraint, status: provisional, default_load: false, scope: ORIGIN, depends_on: []}
+- {id: AUTHOR_BLINDSPOT, path: project/author/05_BLINDSPOT.md, kind: human_constraint, status: provisional, default_load: false, scope: BLINDSPOT, depends_on: []}
+- {id: AUTHOR_NOBODY, path: project/author/06_NOBODY.md, kind: human_constraint, status: provisional, default_load: false, scope: NOBODY, depends_on: []}
+- {id: AUTHOR_EXPERIENCE_MAP, path: project/author/07_EXPERIENCE_MAP.md, kind: human_constraint, status: provisional, default_load: false, scope: project, depends_on: []}
+- {id: META_RESERVATIONS, path: project/author/08_META_RESERVATIONS.md, kind: meta_reservation, status: candidate, default_load: false, scope: NULL, depends_on: []}
