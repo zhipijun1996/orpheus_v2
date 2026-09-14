@@ -38,3 +38,15 @@ debts:
   - shared
   statement: 养女/DNA候选可能同时服务ECHO与ORIGIN，但不得在Shared层过早解释成单一机制。
   resolution_condition: ORIGIN成熟后重新审计DAUGHTER Interface。
+
+
+- id: ID-PREFLIGHT-20260914-EXECUTION
+  priority: critical
+  scope: [shared, FLESH, ECHO, ORIGIN, BLINDSPOT, NOBODY]
+  statement: 本轮仅SUBAGENT_THREAD；冷读不满足FRESH_SESSION独立性，不能宣称Formal独立PASS。
+  resolution_condition: 在可用FRESH_SESSION环境对冻结候选重新按角色上下文独立验收。
+- id: ID-PREFLIGHT-20260914-CH2
+  priority: critical
+  scope: [shared, ECHO, ORIGIN, NOBODY]
+  statement: 统一Ch2仅候选，换装与枪后时序、爆炸前操作、声画揭示边界仍未完成场景验证。
+  resolution_condition: 人工确认演出方向后，验证同一场景可以承载各线，并独立复审；本轮不再修订。

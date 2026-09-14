@@ -1,7 +1,7 @@
 state: GENERATED
 task_id: FIVE_ROUTE_ARCHITECTURE_PREFLIGHT
 mode: ARCHITECTURE_PREFLIGHT
-target: ROUTE_FLESH
+target: ROUTE_BLINDSPOT
 files:
 - id: HARNESS_CORE
   path: harness/00_CORE.md
@@ -23,10 +23,10 @@ files:
   path: project/author/09_PREFLIGHT_PROTOCOL.md
   status: provisional
   chars: 649
-- id: AUTHOR_FLESH
-  path: project/author/02_FLESH.md
+- id: AUTHOR_BLINDSPOT
+  path: project/author/05_BLINDSPOT.md
   status: provisional
-  chars: 454
+  chars: 469
 - id: CHAR_CHENG
   path: project/state/characters/CHENG_YAN.yaml
   status: provisional
@@ -47,13 +47,8 @@ human_constraints:
 - AUTHOR_SHARED
 - AUTHOR_EXPERIENCE_MAP
 - AUTHOR_PREFLIGHT_PROTOCOL
-- AUTHOR_FLESH
-total_chars: 5695
+- AUTHOR_BLINDSPOT
+total_chars: 5710
 budget_chars: 14000
 within_budget: true
-route_context_packs:
-  FLESH: runtime/PREFLIGHT_CONTEXT/FLESH.yaml
-  ECHO: runtime/PREFLIGHT_CONTEXT/ECHO.yaml
-  ORIGIN: runtime/PREFLIGHT_CONTEXT/ORIGIN.yaml
-  BLINDSPOT: runtime/PREFLIGHT_CONTEXT/BLINDSPOT.yaml
-  NOBODY: runtime/PREFLIGHT_CONTEXT/NOBODY.yaml
+

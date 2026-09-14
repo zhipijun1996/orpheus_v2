@@ -1,0 +1,32 @@
+{
+  "base_commit": "229ee53eb72e13974b343865d1c1f3995a579142",
+  "requested_model": "gpt-6-astra",
+  "configured_efforts": {
+    "forge": "high",
+    "cold_reader": "medium",
+    "drama_reviewer": "high",
+    "mystery_reviewer": "high",
+    "logic_scout": "xhigh",
+    "synthesizer": "xhigh"
+  },
+  "local_model_catalog_supports": [
+    "medium",
+    "high",
+    "xhigh"
+  ],
+  "native_dispatch_accepted": true,
+  "provider_resolved_backend_model": "not independently exposed",
+  "cli_version": "0.154.0-alpha.3",
+  "fresh_session_probe": "STALLED_NO_SUCCESS_RECEIPT",
+  "execution_label": "SUBAGENT_THREAD",
+  "full_independence_pass": false,
+  "notes": [
+    "No fallback to a different model requested.",
+    "Codex CLI exists outside PATH; nested exec probes did not return PREFLIGHT_OK.",
+    "Repository SDK adapter not executed. Native threads explicitly requested model/effort and fork_turns=none; harness does not treat this as FRESH_SESSION.",
+    "Adapter runner currently does not use architecture_workers or architecture_candidates_per_worker; direct native orchestration used one candidate per route as requested.",
+    "All reports retain HUMAN_GATE; no promotion to LOCKED."
+  ],
+  "native_role_configs_match_adapter": true,
+  "revisions_used": 1
+}

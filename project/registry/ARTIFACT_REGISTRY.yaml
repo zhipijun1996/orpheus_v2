@@ -73,3 +73,14 @@ entries:
 - {id: AUTHOR_EXPERIENCE_MAP, path: project/author/07_EXPERIENCE_MAP.md, kind: human_constraint, status: provisional, default_load: false, scope: project, depends_on: []}
 - {id: META_RESERVATIONS, path: project/author/08_META_RESERVATIONS.md, kind: meta_reservation, status: candidate, default_load: false, scope: NULL, depends_on: []}
 - {id: AUTHOR_PREFLIGHT_PROTOCOL, path: project/author/09_PREFLIGHT_PROTOCOL.md, kind: human_constraint, status: provisional, default_load: false, scope: project, depends_on: []}
+
+
+- id: PREFLIGHT_FIVE_ROUTE_20260914
+  path: runtime/CURRENT_SPRINT/PRIMARY/STORIES.md
+  kind: candidate
+  status: candidate
+  default_load: false
+  scope: project
+  depends_on: []
+  source: [main@229ee53eb72e13974b343865d1c1f3995a579142]
+  notes: Five-route architecture candidates only; HUMAN_GATE; SUBAGENT_THREAD downgrade; no canon promotion.

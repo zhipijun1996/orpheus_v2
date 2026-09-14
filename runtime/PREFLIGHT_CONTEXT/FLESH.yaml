@@ -51,9 +51,4 @@ human_constraints:
 total_chars: 5695
 budget_chars: 14000
 within_budget: true
-route_context_packs:
-  FLESH: runtime/PREFLIGHT_CONTEXT/FLESH.yaml
-  ECHO: runtime/PREFLIGHT_CONTEXT/ECHO.yaml
-  ORIGIN: runtime/PREFLIGHT_CONTEXT/ORIGIN.yaml
-  BLINDSPOT: runtime/PREFLIGHT_CONTEXT/BLINDSPOT.yaml
-  NOBODY: runtime/PREFLIGHT_CONTEXT/NOBODY.yaml
+

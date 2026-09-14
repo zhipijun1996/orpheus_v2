@@ -1,0 +1,66 @@
+created:
+- runtime/CURRENT_SPRINT/AUDIT_REPORT.md
+- runtime/CURRENT_SPRINT/PRIMARY/STORIES.md
+- runtime/CURRENT_SPRINT/SPRINT_REPORT.md
+- runtime/FROZEN_V1/BLINDSPOT.md
+- runtime/FROZEN_V1/ECHO.md
+- runtime/FROZEN_V1/FLESH.md
+- runtime/FROZEN_V1/NOBODY.md
+- runtime/FROZEN_V1/ORIGIN.md
+- runtime/FROZEN_V1/SHA256.json
+- runtime/FROZEN_V1/STORIES_ONLY.md
+- runtime/FROZEN_V2/BLINDSPOT.md
+- runtime/FROZEN_V2/COMMON_CH2.md
+- runtime/FROZEN_V2/ECHO.md
+- runtime/FROZEN_V2/FLESH.md
+- runtime/FROZEN_V2/NOBODY.md
+- runtime/FROZEN_V2/ORIGIN.md
+- runtime/FROZEN_V2/SHA256.json
+- runtime/FROZEN_V2/STORIES_ONLY.md
+- runtime/MODEL_PREFLIGHT.json
+- runtime/PREFLIGHT_CONTEXT/BLINDSPOT.md
+- runtime/PREFLIGHT_CONTEXT/BLINDSPOT.yaml
+- runtime/PREFLIGHT_CONTEXT/ECHO.md
+- runtime/PREFLIGHT_CONTEXT/ECHO.yaml
+- runtime/PREFLIGHT_CONTEXT/FLESH.md
+- runtime/PREFLIGHT_CONTEXT/FLESH.yaml
+- runtime/PREFLIGHT_CONTEXT/NOBODY.md
+- runtime/PREFLIGHT_CONTEXT/NOBODY.yaml
+- runtime/PREFLIGHT_CONTEXT/ORIGIN.md
+- runtime/PREFLIGHT_CONTEXT/ORIGIN.yaml
+- runtime/PREFLIGHT_CONTEXT/REVIEW_SHARED.md
+- runtime/REVIEWS_V1/REVIEW_SUMMARY.md
+- runtime/REVIEWS_V1/SYNTHESIS.md
+- runtime/REVIEWS_V2/SYNTHESIS_GATE.md
+- runtime/REVIEWS_V2/cold_reader.md
+- runtime/REVIEWS_V2/drama_reviewer.md
+- runtime/REVIEWS_V2/logic_scout.md
+- runtime/REVIEWS_V2/mystery_reviewer.md
+- runtime/REVISION_BRIEF/COMMON_CH2.md
+- runtime/USER_GATE.md
+- runtime/CURRENT_SPRINT/STATE_DELTA.yaml
+updated:
+- runtime/ACTIVE_TASK.yaml
+- runtime/CONTEXT_PACK.yaml
+- project/registry/ARTIFACT_REGISTRY.yaml
+- project/state/open_questions.yaml
+- project/state/integration_debt.yaml
+removed:
+- runtime/CURRENT_SPRINT/README.md
+status_changes: []
+interface_changes: []
+open_questions:
+  added:
+  - OQ-PREFLIGHT-20260914-COMMON
+  - OQ-PREFLIGHT-20260914-ECHO
+  - OQ-PREFLIGHT-20260914-NOBODY
+  - OQ-PREFLIGHT-20260914-ORIGIN
+  closed: []
+shared_state_changed: false
+human_decisions_changed: false
+route_truth_changed: false
+archive: []
+terminal_state: HUMAN_GATE
+writeback_scope: task_branch_only
+main_merge: false
+execution: SUBAGENT_THREAD

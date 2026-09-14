@@ -48,3 +48,21 @@ questions:
   scope: 'NULL'
   priority: later
   question: 普通Route成熟后，NULL Meta Route如何从互斥但闭合的因果模型自然涌现，而不是预写答案。
+
+
+- id: OQ-PREFLIGHT-20260914-COMMON
+  scope: shared
+  priority: critical
+  question: 是否接受本轮候选Ch2遮挡、换装及親手拖拽方向，作为五线共演验证基础？尚未批准。
+- id: OQ-PREFLIGHT-20260914-ECHO
+  scope: ECHO
+  priority: critical
+  question: 2054日志来源及程砚出发前知情边界如何成立；两身体换装、枪后POV能否满足同一Ch2？
+- id: OQ-PREFLIGHT-20260914-NOBODY
+  scope: NOBODY
+  priority: high
+  question: 恢复记忆与外部声画记录如何分界，枪手身份如何独立定位？
+- id: OQ-PREFLIGHT-20260914-ORIGIN
+  scope: ORIGIN
+  priority: high
+  question: 枪击到爆炸之间的采样转移动作如何容纳；女儿明知可求助仍割缆的黑暗尺度是否值得保留？

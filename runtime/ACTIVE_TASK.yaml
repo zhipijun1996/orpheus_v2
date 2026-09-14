@@ -1,6 +1,15 @@
-state: IDLE
-task_id: null
-mode: null
-target: null
-decision_required: false
-notes: Main branch should normally remain IDLE. Formal Codex work creates/updates this on a task branch.
+state: HUMAN_GATE
+task_id: FIVE_ROUTE_ARCHITECTURE_PREFLIGHT
+mode: ARCHITECTURE_PREFLIGHT
+target:
+- ROUTE_FLESH
+- ROUTE_ECHO
+- ROUTE_ORIGIN
+- ROUTE_BLINDSPOT
+- ROUTE_NOBODY
+decision_required: true
+revisions_used: 1
+max_revisions: 1
+base_commit: 229ee53eb72e13974b343865d1c1f3995a579142
+execution: SUBAGENT_THREAD
+notes: Candidate work only; no canon promotion; full independent review unavailable.
