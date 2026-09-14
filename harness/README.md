@@ -1,14 +1,18 @@
-# Narrative Harness v0.6.10
+# Narrative Harness v0.7.0
 
 Purpose: a compact, project-agnostic process OS for generating, testing, integrating, and distilling narrative candidates.
 
-The Harness owns context routing, task state, review gates, cross-route integration, artifact lifecycle, distillation, self-change policy, and role independence. Project facts, Route truths, Story Contracts, open dimensions, Ideas, Human Baselines, and Ledgers belong to Project Data; platform-specific model mappings belong to adapters.
+The Harness owns context routing, task state, review gates, cross-route integration, artifact lifecycle, distillation, self-change policy, and role independence. Project facts, Human Constraints, Route truths, Story Contracts, Ideas, Human Baselines, and Ledgers belong to Project Data; platform-specific model mappings belong to adapters.
 
 Primary flow:
-`EXPLORE -> BUILD -> REVIEW -> SYNTHESIZE -> INTEGRATION_CHECK -> NEXT | HUMAN_GATE | ROLLBACK_PARENT`
+`ARCHITECTURE_PREFLIGHT -> EXPLORE -> BUILD -> REVIEW -> SYNTHESIZE -> INTEGRATION_CHECK -> NEXT | HUMAN_GATE | ROLLBACK_PARENT`
 
-Route Engine work now begins from the current Shared Scene observations: each Route explains the same observable scene, while strong Route ideas may propose one minimal Shared Delta for cross-route review. Creator context carries positive commitments rather than answer catalogs; omitted Shared details are undefined.
+`ARCHITECTURE_PREFLIGHT` is the story-worth gate. It uses concise human-authored common constraints, the current Route constraints, a short cross-route experience map, and core character state. It judges readable story, character causality, emotional movement, Shared-scene reread value, Route identity, and foreshadow potential before demanding a finished technical closure or evidence ledger.
 
-Route Engine review still separates Story Engine / Route Truth / Evidence, requires designated core-mystery closure, and tests causal fusion among character relationship, Route-defining speculative premise, and Shared mystery. Mechanism review protects generative novelty during Explore, then distinguishes high-leverage `ENGINE` ideas from necessary `SUPPORT` and explanatory `PATCH` debt during convergence.
+Single-Route authors do not receive sibling Routes' detailed answers during first-pass creation. Cross-route synthesis reads the frozen Route outputs together and checks repetition, truth differentiation, Shared compatibility, and proposed Shared Deltas.
 
-For local/Remote Codex, `adapters/codex/` runs independence-sensitive roles as fresh SDK sessions when available. Route Engine Forge fanout can mix one permanent blind control with optional Seed-exposed workers; Seed provenance stays outside Review/Synthesis and the Seed pool never enters ordinary Context Packs. A registered Human Baseline can be injected only after Forge, anonymized among candidate sets, and compared on core engine value before present completion. Default working context is current state, not process history.
+Full Route Engine work still begins from the current Shared Scene, separates Story Engine / Route Truth / Evidence, closes required mysteries, and audits mechanism dependencies after story eligibility is established.
+
+The Codex adapter now defaults its formal fresh-session roles to GPT-6 Astra with role-specific reasoning depth: medium for cold reading, high for generation/drama/mystery, and xhigh for logic/convergence. Native subagents use the same model family. The project SDK dependency is updated for current Astra-capable Codex clients.
+
+Default working context is current state, not process history. Calibration and rejected ideas remain outside ordinary creative context.
