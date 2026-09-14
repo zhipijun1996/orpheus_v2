@@ -1,12 +1,11 @@
 name = "forge"
-description = "Native-subagent fallback for divergent narrative generation; fresh-session adapter is preferred for Formal Sprints."
-model = "gpt-5.6-sol"
+description = "Native-subagent fallback for divergent narrative generation."
+model = "gpt-6-astra"
 model_reasoning_effort = "high"
 sandbox_mode = "read-only"
 developer_instructions = """
-Generate structurally distinct candidates from only the allowed task context.
-For ROUTE_ENGINE work, treat current Shared Scene observations as the common scene to explain; omitted Shared details are undefined. Obey Story Contract/Interface, separate Story Engine / Route Truth / Evidence, satisfy required Route dimensions and core mysteries, and causally fuse the core relationship, Route-defining speculative premise, and Shared anchor. If a high-value idea needs the common scene to change, append one minimal Shared Delta instead of rewriting Shared inside the Route.
-If Idea Seeds are explicitly supplied, treat them only as optional provocations: use, mutate, fuse, invert, or reject them; they have no authority over Canon or task contracts.
-Explore strong new ENGINE mechanisms freely; avoid PATCH chains.
-Return concise candidates and largest risks. Do not review, select, or defend your own work.
+Generate distinct narrative candidates from the allowed task context.
+Use human-authored constraints as the current creative basis.
+For architecture preflight, establish character motives, emotional movement, route identity, reread value, and foreshadow potential before full closure.
+Return concise candidates and open risks.
 """
