@@ -1,42 +1,45 @@
 {
   "forge": {
-    "model": "gpt-5.6-sol",
+    "model": "gpt-6-astra",
     "reasoning_effort": "high",
     "workers": 2,
     "route_engine_workers": 4,
+    "architecture_workers": 3,
     "candidates_per_worker": 2,
+    "architecture_candidates_per_worker": 1,
     "seed_policy": "controlled",
+    "architecture_seed_policy": "off",
     "context_ids": ["*"],
-    "instruction": "Generate distinct candidates. For ROUTE_ENGINE treat the current Shared Scene observations as the common scene to explain; omitted Shared details are undefined. Obey Story Contract/Interface, separate Story Engine / Route Truth / Evidence, close required dimensions/core mysteries, and fuse character, speculative premise, and Shared anchor. If a high-value idea needs the common scene to change, append one minimal Shared Delta instead of rewriting Shared inside the Route. Idea Seeds, when explicitly supplied, are optional provocations with no authority: use, mutate, fuse, invert, or reject them. Explore strong ENGINE ideas; avoid PATCH chains. Do not review."
+    "instruction": "Generate distinct candidates. Human-authored constraints are authoritative. For ROUTE_ENGINE obey Story Contract/Interface and close required dimensions. For ARCHITECTURE_PREFLIGHT write the readable story and character motives first, keep unresolved engineering details explicit, and show route identity, Ch2 reinterpretation, foreshadow potential, and active roles for the core cast. Background history may be invented when it earns present motives. Do not review."
   },
   "cold_reader": {
-    "model": "gpt-5.6-terra",
-    "reasoning_effort": "high",
-    "context_ids": ["PROJECT_BRIEF", "CHAR_*"],
-    "instruction": "Judge only what a player can infer. Flag forced action or comprehension failure. Do not reconstruct intent or repair."
+    "model": "gpt-6-astra",
+    "reasoning_effort": "medium",
+    "context_ids": ["PROJECT_BRIEF", "AUTHOR_SHARED", "CHAR_*"],
+    "instruction": "Judge only what a player can infer. Summarize what happened and why the main characters acted before judging pull, comprehension, emotional movement, and believable action. Do not reconstruct intent or repair."
   },
   "drama_reviewer": {
-    "model": "gpt-5.6-terra",
+    "model": "gpt-6-astra",
     "reasoning_effort": "high",
-    "context_ids": ["PROJECT_BRIEF", "STORY_CONTRACT", "SCENE_*", "SHARED_STATE", "CHAR_*", "ROUTE_*"],
-    "instruction": "Audit desire, action, consequence, motive continuity, and whether the core relationship generates the decisive action. Test Route fusion. Cite evidence; do not repair."
+    "context_ids": ["PROJECT_BRIEF", "AUTHOR_*", "CHAR_*", "STORY_CONTRACT", "SCENE_*", "SHARED_STATE", "ROUTE_*"],
+    "instruction": "Audit experience, knowledge, desire, action, consequence, motive continuity, and relationship-driven action for every consequential character. Distinguish unresolved architecture details from implausible motives. Cite evidence; do not repair."
   },
   "mystery_reviewer": {
-    "model": "gpt-5.6-sol",
+    "model": "gpt-6-astra",
     "reasoning_effort": "high",
-    "context_ids": ["PROJECT_BRIEF", "STORY_CONTRACT", "SCENE_*", "SHARED_STATE", "ROUTE_*", "IFACE_*"],
-    "instruction": "Audit Working/Deep Truth, evidence, fairness, Reveal Delta, and required core-mystery contracts. Evidence or identity alone is not causal Truth. Do not repair."
+    "context_ids": ["PROJECT_BRIEF", "AUTHOR_*", "STORY_CONTRACT", "SCENE_*", "SHARED_STATE", "ROUTE_*", "IFACE_*"],
+    "instruction": "Audit reread value, route truth difference, setup/payoff, and fairness. ROUTE_ENGINE also checks required mystery closure. ARCHITECTURE_PREFLIGHT judges reveal potential without demanding a finished evidence ledger. Do not repair."
   },
   "logic_scout": {
-    "model": "gpt-5.6-sol",
+    "model": "gpt-6-astra",
     "reasoning_effort": "xhigh",
-    "context_ids": ["HUMAN_DECISIONS", "STORY_CONTRACT", "SCENE_*", "SHARED_STATE", "CHAR_*", "ROUTE_*", "IFACE_*"],
-    "instruction": "Audit causal/knowledge/physical/information consistency, required dimensions, fusion removal tests, motive continuity, and PATCH chains. Return CLEAR, RISK, or DEAD; do not repair."
+    "context_ids": ["HUMAN_DECISIONS", "AUTHOR_*", "STORY_CONTRACT", "SCENE_*", "SHARED_STATE", "CHAR_*", "ROUTE_*", "IFACE_*"],
+    "instruction": "Audit chronology, POV, knowledge, causality, information flow, and mechanism dependencies. Judge a rule by its actual story function rather than its label. In ARCHITECTURE_PREFLIGHT separate OPEN from CONTRADICTION. In ROUTE_ENGINE also run full closure checks. Return CLEAR, RISK, or DEAD; do not repair."
   },
   "synthesizer": {
-    "model": "gpt-5.6-sol",
-    "reasoning_effort": "high",
+    "model": "gpt-6-astra",
+    "reasoning_effort": "xhigh",
     "context_ids": ["*"],
-    "instruction": "Check eligibility first: contracts, required commitments/core mysteries, no DETACHED fusion. Then rank by human plausibility, Route identity/fusion, drama, mystery, novelty. Prefer high leverage/shallow PATCH debt. Use SELECT/FUSE/FORK/DROP/ROLLBACK_PARENT."
+    "instruction": "In ARCHITECTURE_PREFLIGHT rank readable story, motive, emotional movement, route identity, Ch2 reinterpretation, and foreshadow potential before completeness. Prefer NO_SELECTION over a mechanically neat but emotionally false synthesis. In ROUTE_ENGINE apply hard closure after story eligibility. Material synthesis changes require fresh review before promotion."
   }
 }
